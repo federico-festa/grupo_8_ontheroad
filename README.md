@@ -10,3 +10,20 @@ Referencias:
 3- https://www.yelp.com.ar/
 4- 
 5-
+
+
+
+
+
+
+
+
+
+
+
+
+
+INTEGRANTES
+
+Oscar Betancur
+Soy nuevo en este tema de la programación, pero tengo muchas expectativas de este proyecto.
