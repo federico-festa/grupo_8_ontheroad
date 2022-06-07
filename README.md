@@ -2,7 +2,8 @@ Descripción:
 En "On the road" ofrecemos experiencias únicas para tus viajes. Nuestro objetivo es proponer 
 
 Integrantes:
-
+Oscar Betancur
+Soy nuevo en este tema de la programación, pero tengo muchas expectativas de este proyecto.
 
 Referencias:
 1- https://www.despegar.com.ar/
@@ -23,7 +24,6 @@ Referencias:
 
 
 
-INTEGRANTES
 
-Oscar Betancur
-Soy nuevo en este tema de la programación, pero tengo muchas expectativas de este proyecto.
+
+
