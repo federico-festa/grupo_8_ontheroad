@@ -4,8 +4,12 @@ En "On the road" ofrecemos experiencias de viaje únicas. Nuestro objetivo es ex
 Integrantes:
 Oscar Betancur
 Soy nuevo en este tema de la programación, pero tengo muchas expectativas de este proyecto.
+
 Federico Festa
 Me interesaron mucho los temas de programación vistos hasta ahora, no tengo experiencia previa en el area. Estoy motivado para avanzar con este proyecto.
+
+Alcaraz Ariel
+Saber que estos simples "bocetos" se pueden convertir en una página funcional me emociona mucho. Quiero llegar a la parte de BDD y ver como se relaciona todo.
 
 Referencias:
 1- https://www.despegar.com.ar/
