@@ -97,6 +97,20 @@ button.login {
     text-decoration: none;
 }
 
+.product a {
+    text-decoration: none;
+    color: black;
+}
+
+.jujuyMain {
+    padding: 0 5%;
+}
+
+.jujuyMain img{
+    width: 90%;
+    margin: auto;
+}
+
 /*Banner*/
 
 .banner {
