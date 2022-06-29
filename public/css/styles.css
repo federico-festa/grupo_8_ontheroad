@@ -68,6 +68,11 @@ header form input {
     color: black;
     font-size: 32px;
     padding: 20px;
+    transition: all 450ms;
+}
+
+.headerRight i:hover {
+    font-size: 40px;
 }
 
 button.login {
