@@ -49,7 +49,7 @@ header .logo {
     width: 33%;
     display: flex;
     justify-content: center;
-} 
+}
 
 header form input {
     height: 40px;
@@ -86,6 +86,7 @@ button.login {
 .login a {
     color: white;
     text-decoration: none;
+    font-size: 15px;
 }
 
 /*Main*/
@@ -139,7 +140,7 @@ button.login {
 }
 
 .banner-text h3:hover {
-    color: rgba(0,212,255,1);
+    color: rgba(0, 212, 255, 1);
 }
 
 /*Product Showcase*/
@@ -245,3 +246,148 @@ footer .logo {
 }
 
 /*Breakpoints*/
+
+/*Mobile*/
+
+@media (max-width: 369px) {
+
+    /*Header*/
+    header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .headerLeft {
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    header .logo {
+        height: 100%;
+        width: 100%;
+        display: none;
+    }
+
+    .brand {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    .headerCenter {
+        width: 33%;
+        display: flex;
+        justify-content: center;
+    }
+
+    header form input {
+        height: 40px;
+        width: 130%;
+        border-radius: 50px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .headerRight {
+        display: none;
+    }
+
+    /*Top nav*/
+    .top-nav {
+        display: none;
+    }
+
+    /*Banner*/
+
+    .banner {
+        display: none;
+    }
+
+    /*Product showcase*/
+
+    section.product-showcase {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        border-top: 1px solid #ebebeb;
+
+    }
+
+    article.product {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 80%;
+        border: 1px solid #dadada;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 4px;
+    }
+
+    article.product img {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 4px;
+    }
+
+    article .product-description {
+        width: 100%;
+        height: 100%;
+        border-top: 1px solid #ebebeb;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .place {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .description {
+        text-align: center;
+    }
+
+    .product-description li {
+        text-align: justify;
+        list-style-type: none;
+        display: none;
+    }
+
+    .price {
+        font-size: 19px;
+        text-align: center;
+        font-weight: bold;
+        align-items: flex-end;
+    }
+
+    /*Bottom banner*/
+
+    section.bottom-banner {
+        background-color: #f2f1ec;
+        margin: 50px 10px 100px 10px;
+        padding: 10px;
+        display: flex;
+        border: 1px solid #ebebeb;
+    }
+
+    .bottom-banner img {
+        width: 25%;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .bottom-text {
+        margin: 10px;
+        padding: 10px;
+    }
+
+
+}

@@ -86,6 +86,7 @@ button.login {
 .login a {
     color: white;
     text-decoration: none;
+    font-size: 15px;
 }
 
 /*Main*/
@@ -141,6 +142,7 @@ main {
     width: 20%;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     height: 500px;
+    border-radius: 4px;
 }
 
 .cart {
@@ -149,6 +151,7 @@ main {
     padding: 10px;
     width: 50%;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    border-radius: 4px;
 }
 
 .cart-bar {
@@ -156,9 +159,11 @@ main {
     justify-content: space-around;
     border: 1px solid #666;
     margin-top: 20px;
+    border-radius: 10px;
 }
 
 .checkout {
+    border-radius: 4px;
     background-color: white;
     margin: 20px;
     padding: 10px;
