@@ -13,6 +13,10 @@ app.get('/', (req,res) => {
     res.sendFile(path.resolve(__dirname, './views/index.html'));
 });
 
+app.get('/cart', (req,res) => {
+    res.sendFile(path.resolve(__dirname, './views/productCart.html'));
+});
+
 app.get('/jujuy', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/jujuy.html'));
 });

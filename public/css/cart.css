@@ -1,0 +1,181 @@
+/*Estilo General*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Header*/
+
+header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+    margin: 0px 5px 0px 5px;
+}
+
+.headerLeft {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 33%;
+}
+
+header .logo {
+    height: 30%;
+    width: 30%;
+}
+
+.brand {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    line-height: 25px;
+}
+
+.brand h2 {
+    font-size: 16px;
+    color: #666;
+}
+
+.headerCenter {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+} 
+
+header form input {
+    height: 40px;
+    width: 130%;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.headerRight {
+    width: 33%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.headerRight i {
+    color: black;
+    font-size: 32px;
+    padding: 20px;
+    transition: all 450ms;
+}
+
+.headerRight i:hover {
+    font-size: 40px;
+}
+
+button.login {
+    background-color: black;
+    height: 40px;
+    width: 50%;
+    border-radius: 50px;
+}
+
+.login a {
+    color: white;
+    text-decoration: none;
+}
+
+/*Main*/
+
+main {
+    background-image: url('/img/cart-banner.webp');
+}
+
+/*Top nav*/
+
+.top-nav {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-left: 25px;
+    border-top: 1px solid #666;
+}
+
+.top-nav a {
+    color: black;
+    text-decoration: none;
+    transition: all 450ms;
+}
+
+.top-nav a:hover {
+    font-weight: bold;
+}
+
+/*Cart*/
+
+.cart-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-container h2 {
+    text-align: center;
+}
+
+.cart-container h1 {
+    text-align: center;
+}
+
+.explore {
+    background-color: white;
+    margin: 20px;
+    padding: 10px;
+    width: 20%;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    height: 1000px;
+}
+
+.cart {
+    background-color: white;
+    margin: 20px;
+    padding: 10px;
+    width: 50%;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.cart-bar {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #666;
+    margin-top: 20px;
+}
+
+.checkout {
+    background-color: white;
+    margin: 20px;
+    padding: 10px;
+    width: 20%;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+/*Footer*/
+
+footer {
+    background-color: #ebebeb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .logo {
+    width: 7%;
+    height: 7%;
+}
+
+/*Breakpoints*/
+
