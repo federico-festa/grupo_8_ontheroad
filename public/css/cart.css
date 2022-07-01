@@ -91,7 +91,9 @@ button.login {
 /*Main*/
 
 main {
-    background-image: url('/img/cart-banner.webp');
+    background-image: url('/img/cart-back.webp');
+    background-size: contain;
+    background-color: #f2f1ec;
 }
 
 /*Top nav*/
@@ -104,12 +106,13 @@ main {
     gap: 100px;
     padding-left: 25px;
     border-top: 1px solid #666;
+    padding: 5px;
 }
 
 .top-nav a {
     color: black;
     text-decoration: none;
-    transition: all 450ms;
+    transition: all 200ms;
 }
 
 .top-nav a:hover {
@@ -137,7 +140,7 @@ main {
     padding: 10px;
     width: 20%;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    height: 1000px;
+    height: 500px;
 }
 
 .cart {
@@ -161,6 +164,28 @@ main {
     padding: 10px;
     width: 20%;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.checkout-button {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    width: 92%;
+    height: 50px;
+    position: absolute;
+    bottom: 10px;
+    border: 0px;
+    border-radius: 50px;
+    transition: all 500ms;
+}
+
+.checkout-button:hover {
+    border: 1px solid black;
+    background-color: white;
+    color: black;
 }
 
 /*Footer*/

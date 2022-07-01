@@ -100,12 +100,13 @@ button.login {
     gap: 100px;
     padding-left: 25px;
     border-top: 1px solid #666;
+    padding: 5px;
 }
 
 .top-nav a {
     color: black;
     text-decoration: none;
-    transition: all 450ms;
+    transition: all 200ms;
 }
 
 .top-nav a:hover {
