@@ -199,6 +199,7 @@ h3 {
 
 .sesion-button:hover {
     background-color: #e99f55;
+    border: 2px solid #e99f55;
 }
 
 .register-button {
