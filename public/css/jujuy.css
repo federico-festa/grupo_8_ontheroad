@@ -91,7 +91,7 @@ button.login {
 /* main */
 
 main {
-    margin: 0 10%;
+    margin: 0 5%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -172,38 +172,63 @@ main {
     border: 1px solid black;
 }
 
-#calendario tr td {
+#calendario tr {
+    border-bottom: 1px solid black;
+}
+
+#calendario td {
     text-align: center;
     border-radius: 100%;
-    border: 1px solid grey;
     width: 50px;
     height: 50px;
 }
 
-#calendario tr td:hover {
-    background-color: #666;
+#calendario td:hover {
+    border: 1px solid black;
 }
 
 /* formaPago */
 
-#formaPago {
-    flex-grow: 0.5;
-    align-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
 
-#formaPago img {
-    height: auto;
-    width: auto;
-}
 
 /* opiniones */
 
-#opiniones img {
-    width: 10%;
+#opiniones {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#opniones img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#opiniones article {
+    width: 50%;
+    padding: 3%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#opiniones .userName {
+    order: 1;
+    flex-grow: 0.3;
+}
+
+#opiniones .imgPerfil {
+    order: 2;
+    flex-grow: 0.4;
+    width: 150px;
+    height: 250px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+#opiniones .textOpinion {
+    order: 3;
+    position: relative;
 }
 
 /*Product Showcase*/
