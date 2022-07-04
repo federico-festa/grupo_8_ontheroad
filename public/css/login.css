@@ -194,11 +194,11 @@ h3 {
     letter-spacing: 1px;
     margin: auto;
     cursor: pointer;
-    transition: all 500ms;
+    transition: all 0.4s;
 }
 
 .sesion-button:hover {
-    color: #e7994c;
+    background-color: #e99f55;
 }
 
 .register-button {
