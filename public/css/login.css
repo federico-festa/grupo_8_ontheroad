@@ -1,0 +1,311 @@
+/*Estilo General*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Header*/
+
+header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+    margin: 0px 5px 0px 5px;
+}
+
+.headerLeft {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 33%;
+}
+
+header .logo {
+    height: 30%;
+    width: 30%;
+}
+
+.brand {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    line-height: 25px;
+}
+
+.brand h2 {
+    font-size: 16px;
+    color: #666;
+}
+
+.headerCenter {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+}
+
+header form input {
+    height: 40px;
+    width: 130%;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.headerRight {
+    width: 33%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.headerRight i {
+    color: black;
+    font-size: 32px;
+    padding: 20px;
+    transition: all 450ms;
+}
+
+.headerRight i:hover {
+    font-size: 40px;
+}
+
+button.login {
+    background-color: black;
+    height: 40px;
+    width: 50%;
+    border-radius: 50px;
+}
+
+.login a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/*Main*/
+
+/*Top nav*/
+
+.top-nav {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-left: 25px;
+    border-top: 1px solid #666;
+    padding: 5px;
+}
+
+.top-nav a {
+    color: black;
+    text-decoration: none;
+    transition: all 200ms;
+}
+
+.top-nav a:hover {
+    font-weight: bold;
+}
+
+/*Banner*/
+
+div {
+    display: block;
+}
+
+.account-page {
+    width: 100%;
+    height: 500px;
+    background-image: url("/img/banner.jpg");
+    background-size: cover;
+}
+
+h3 {
+    color: white;
+    font-size: 42px;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: auto;
+    max-width: 30%;
+}
+
+.form-group {   
+    margin-bottom: 20px; 
+    position: relative;
+    width: 100%;
+}
+
+.form-label {
+    color: white;
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.form-control {
+    display: block;
+    padding: 10px 8px;
+    width: 100%;
+    font-size: 12px;
+    border: 1px solid white;
+    appearance: none;
+    color: black;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 14px;
+}
+
+.forgot-button {
+    padding: 10px 15px;
+    color: white;
+}
+
+.sesion-button {
+    display: block;
+    padding: 15px 25px;
+    background-color: #e68524;
+    border: 2px solid #e68524;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin: auto;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.sesion-button:hover {
+    background-color: #e99f55;
+    border: 2px solid #e99f55;
+}
+
+.register-button {
+    font-weight: bold;
+    color: white;
+}
+
+.t2 {
+    color: white;
+}
+
+/*Footer*/
+
+footer {
+    background-color: #ebebeb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .logo {
+    width: 7%;
+    height: 7%;
+}
+
+/*Breakpoints*/
+
+/*Mobile*/
+
+@media (max-width: 369px) {
+
+    /*Header*/
+    header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .headerLeft {
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    header .logo {
+        height: 100%;
+        width: 100%;
+        display: none;
+    }
+
+    .brand {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    .headerCenter {
+        width: 33%;
+        display: flex;
+        justify-content: center;
+    }
+
+    header form input {
+        height: 40px;
+        width: 130%;
+        border-radius: 50px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .headerRight {
+        display: none;
+    }
+
+    /*Top nav*/
+    .top-nav {
+        display: none;
+    }
+
+    /*Banner*/
+
+    .banner {
+        display: none;
+    }
+
+    /*Bottom banner*/
+
+    section.bottom-banner {
+        background-color: #f2f1ec;
+        margin: 50px 10px 100px 10px;
+        padding: 10px;
+        display: flex;
+        border: 1px solid #ebebeb;
+    }
+
+    .bottom-banner img {
+        width: 25%;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .bottom-text {
+        margin: 10px;
+        padding: 10px;
+    }
+
+
+}
