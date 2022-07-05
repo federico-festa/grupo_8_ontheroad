@@ -76,26 +76,6 @@ header form input {
     font-size: 40px;
 }
 
-button.login {
-    background-color: black;
-    height: 40px;
-    width: 30%;
-    border-radius: 50px;
-    margin: 1%;
-    transition: all 0.4s;
-}
-
-.login:hover {
-    background-color: rgba(0, 0, 0, 0.651);
-    border-color: rgba(0, 0, 0, 0.651);
-}
-
-.login a {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-}
-
 .register {
     background-color: black;
     height: 40px;
