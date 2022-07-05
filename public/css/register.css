@@ -79,8 +79,17 @@ header form input {
 button.login {
     background-color: black;
     height: 40px;
-    width: 50%;
+    width: 30%;
+    border: 1px solid black;
     border-radius: 50px;
+    margin: 1%;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.login:hover {
+    background-color: rgba(0, 0, 0, 0.651);
+    border-color: rgba(0, 0, 0, 0.651);
 }
 
 .login a {
