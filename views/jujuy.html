@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./img/favicon.png">
+    <script src="https://kit.fontawesome.com/6488dd7609.js" crossorigin="anonymous"></script>
     <title>On the road</title>
     <link rel="stylesheet" href="/css/jujuy.css">
 </head>
@@ -22,11 +23,10 @@
         <div class="headerCenter">
             <form class="search">
                 <input type="search" placeholder="¿Qué lugar querés visitar hoy?">
-                <!--<button><i
-                        class="fa-solid fa-magnifying-glass"></i></button>!--></input>
             </form>
         </div>
         <div class="headerRight">
+            <button><i class="fas fa-bars"></i></button>
             <a href="#cart"><i class="fa-solid fa-cart-shopping"></i></a>
             <a href="/login"><button class="login">Iniciar sesión</button>
             <a href="/register"><button class="register">Registrarse</button>
@@ -34,15 +34,17 @@
     </header>
     <main>
         <nav class="top-nav">
-            <a href="/">Inicio</a>
+            <a href="/index">Inicio</a>
             <a href="#ofertas">Ofertas</a>
             <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
             <a href="#contacto">Contacto</a>
-        </nav>
+        </nav> 
         <section class="imgMuestra">
             <img id="img1" src="./img/jujuy/jujuyHumahuaca1.jpg" alt="jujuyHumahuaca1">
-            <img id="img2" src="./img/jujuy/jujuyHumahuaca2.jpg" alt="jujuyHumahuaca2">
-            <img id="img3" tabindex="3" src="./img/jujuy/jujuyHumahuaca4.jpg" alt="jujuyHumahuaca4">
+            <div>
+                <img src="./img/jujuy/jujuyHumahuaca2.jpg" alt="jujuyHumahuaca2">
+                <img src="./img/jujuy/jujuyHumahuaca4.jpg" alt="jujuyHumahuaca4">
+            </div>
         </section>
         <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, sapiente aut explicabo
             eum atque cum? Expedita error laboriosam assumenda, reprehenderit vitae iste placeat? Quasi iste fugit
@@ -131,7 +133,7 @@
                 <button type="submit">VER</button>
             </form>
         </section> -->
-        <section id="opiniones">
+        <!-- <section id="opiniones">
             <article>
                 <p class="userName">nombreApellido</p>
                 <img class="imgPerfil" src="./img/jujuy/perfil1.webp" alt="iconAvatar">
@@ -160,7 +162,7 @@
                     officiis consequatur, magni explicabo perferendis fuga asperiores, dolores maxime laudantium
                     consequuntur omnis aliquam? Nemo ex dolores recusandae.</p>
             </article>
-        </section>
+        </section> -->
         <p>Queres visitar otro lugar?</p>
         <section class="product-showcase">
             <article class="product">
