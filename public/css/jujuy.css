@@ -44,6 +44,9 @@ header form input {
     width: 100%;
     border-radius: 50px;
     padding-left: 2%;
+    border-style: none;
+    border: 1px solid black;
+    text-shadow: #666;
 }
 
 .headerRight {
@@ -285,7 +288,8 @@ footer .logo {
     }
 
     .headerRight button{
-        background-color: rgb(87, 184, 255);
+        /* background-color: rgb(87, 184, 255); */
+        background-color: rgb(253, 141, 66);
         border-radius: 20%;
         padding: 5px 10px;
         color: white;
@@ -311,6 +315,15 @@ footer .logo {
 
     article.product {
         width: 45%;
+    }
+
+    header {
+        height: 100px;
+    }
+
+    header .logo {
+        width: 70%;
+        margin-top: 5px;
     }
 
 }
@@ -347,4 +360,11 @@ footer .logo {
         width: 20%;
     }
 
+    header {
+        height: 150px;
+    }
+
+    header .logo {
+        width: 80%;
+    }
 }
