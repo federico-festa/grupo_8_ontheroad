@@ -32,4 +32,4 @@ const userRouter = require('./routers/userRouter');
 
 app.use('/mainRouter', mainRouter);
 app.use('/')
-app.use('/productsRouter', productsRouter);
+app.use('/userRouter', userRouter);
