@@ -26,3 +26,10 @@ app.get('/login', (req, res) => {
 app.get('/register', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/register.html'));
 });
+const mainRouter = require('./routers/mainRouter');
+const productsRouter = require('./routers/productsRouter');
+const userRouter = require('./routers/userRouter');
+
+app.use('/mainRouter', mainRouter);
+app.use('/')
+app.use('/productsRouter', productsRouter);
