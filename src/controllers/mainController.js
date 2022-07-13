@@ -1,7 +1,7 @@
 const path = require('path');
 const mainController = {
-    productCart: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/productCart.html'));    
+    index: (req, res) => {
+        res.sendFile(path.join(__dirname, '../views/index.html'));    
     },
 };
 
