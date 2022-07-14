@@ -6,6 +6,7 @@ const mainRouter = require('./routes/mainRouter');
 const productsRouter = require('./routes/productsRouter');
 const userRouter = require('./routes/userRouter');
 
+app.set('view engine', 'ejs');
 app.use(express.static(publicPath));
 
 app.listen(3000, () => {
