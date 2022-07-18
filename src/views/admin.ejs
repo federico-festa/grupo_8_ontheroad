@@ -20,23 +20,28 @@
                 <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
                 <a href="#contacto">Contacto</a>
             </nav>
-            <section class="products-admin">
-                <h3>Pagina de Administrador</h3>
-                <form id="admin-form" action="/admin" method="POST" class="form">
+            <section class="products-form">
+                <h3>Página de Administrador</h3>
+                <form id="admin-form" action="/admin" method="POST" class="admin-form">
                     <label class="form-label " for="name">Nombre del producto</label>
                     <input type="text" class="form-control" autocorrect="off" autocapitalize="off" name="name" required>
-                   
+
                     <label class="form-label " for="description">Descripción</label>
-                    <input type="text" class="form-control" autocorrect="off" autocapitalize="off" name="description" required>
-                   
+                    <input type="text" class="form-control" autocorrect="off" autocapitalize="off" name="description"
+                        required>
+
                     <label class="form-label " for="image">Imagen</label>
                     <input type="file" class="form-control" name="image" required>
-                   
+
                     <label class="form-label " for="category">Categoría</label>
-                    <input type="text" class="form-control" autocorrect="off" autocapitalize="off" name="category" required>
-                
+                    <input type="text" class="form-control" autocorrect="off" autocapitalize="off" name="category"
+                        required>
+
                     <label class="form-label " for="price">Precio</label>
-                    <input type="number" class="form-control" autocorrect="off" autocapitalize="off" name="price" required>
+                    <input type="number" class="form-control" autocorrect="off" autocapitalize="off" name="price"
+                        required>
+
+                    <button class="create" type="submit">Crear producto</button>
                 </form>
             </section>
         </main>

@@ -147,7 +147,73 @@ button.login {
 
 /*Admin*/
 
+.products-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    /*background-color: #989898;*/
+    background-image: radial-gradient(circle, #7f7f7f, #999999, #b3b3b3, #cfcfcf, #ebebeb);
+}
 
+h3 {
+    color: white;
+    font-size: 42px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.form-control {
+    border: 1px solid white;
+    width: 100%;
+    padding: 8px 8px;
+    font-size: 12px;
+}
+
+.create {
+    display: block;
+    padding: 15px 25px;
+    background-color: #e68524;
+    border: 2px solid #e68524;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin: auto;
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-top: 20px;
+}
+
+.create:hover {
+    background-color: #e99f55;
+    border: 2px solid #e99f55;
+}
 
 /*Footer*/
 
