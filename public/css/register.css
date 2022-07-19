@@ -172,7 +172,7 @@ h3 {
     display: block;
     padding: 10px 8px;
     width: 100%;
-    font-size: 12px;
+    font-size: 14px;
     border: 1px solid white;
     appearance: none;
     color: black;
@@ -261,7 +261,7 @@ footer .logo {
 
 /*Mobile*/
 
-@media (max-width: 369px) {
+@media (max-width: 480px) {
 
     /*Header*/
     header {
@@ -339,5 +339,30 @@ footer .logo {
         padding: 10px;
     }
 
+        /*login*/
 
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin: auto;
+        max-width: 85%;
+    }
+
+    h3 {
+        color: white;
+        font-size: 38px;
+        padding-top: 60px;
+        padding-bottom: 15px;
+        text-align: center;
+    }
+}
+
+/* Tablet */
+
+@media (min-width: 481px) and (max-width: 883px) {
+    
+    .container {
+        margin: auto;
+        max-width: 50%;
+    }
 }

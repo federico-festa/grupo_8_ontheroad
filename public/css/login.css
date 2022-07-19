@@ -335,10 +335,10 @@ footer .logo {
 
 /* Tablet */
 
-@media (min-width: 481px) and (max-width: 882px) {
+@media (min-width: 481px) and (max-width: 883px) {
     
     .container {
         margin: auto;
-        max-width: 45%;
+        max-width: 50%;
     }
 }
