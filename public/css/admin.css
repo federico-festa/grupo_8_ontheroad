@@ -82,7 +82,7 @@ button.login {
     width: 130px;
     border: 1px solid black;
     border-radius: 50px;
-    margin: 1%;
+    margin: -7%;
     cursor: pointer;
     transition: all 0.4s;
 }
@@ -104,7 +104,6 @@ button.login {
     width: 130px;
     border: 1px;
     border-radius: 50px;
-    margin: 1%;
     cursor: pointer;
     transition: all 0.4s;
 }
@@ -162,7 +161,7 @@ h3 {
     color: white;
     font-size: 42px;
     padding-top: 50px;
-    padding-bottom: 30px;
+    padding-bottom: 0px;
     text-align: center;
 }
 
@@ -183,12 +182,13 @@ h3 {
     width: 100%;
     font-size: 14px;
     font-weight: 400;
+    margin-top: 20px;
 }
 
 .form-control {
     border: 1px solid white;
     width: 100%;
-    padding: 8px 8px;
+    padding: 10px 8px;
     font-size: 12px;
 }
 
