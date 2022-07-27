@@ -1,0 +1,223 @@
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    margin: 0;
+    border-bottom: 1px solid #666;
+}
+
+.headerLeft {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 33%;
+}
+
+header .logo {
+    height: 30%;
+    width: 30%;
+}
+
+.brand {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    line-height: 25px;
+}
+
+.brand h2 {
+    font-size: 16px;
+    color: #666;
+}
+
+.headerCenter {
+    width: 33%;
+}
+
+header form input {
+    height: 40px;
+    width: 100%;
+    border-radius: 50px;
+    padding-left: 2%;
+    border-style: none;
+    border: 1px solid black;
+}
+
+.headerRight {
+    width: 33%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.headerRight i:hover {
+    color: rgba(0, 0, 0, 0.651);
+}
+
+.login {
+    background-color: white;
+    color: black;
+    height: 40px;
+    width: 130px;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin: -7%;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.login:hover {
+    background-color: rgba(251, 177, 60, 0.651);
+    border-color: rgba(251, 177, 60, 0.651);
+}
+
+.register {
+    background-color: rgb(253, 141, 66);
+    height: 40px;
+    width: 130px;
+    border: 1px;
+    border-radius: 50px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.top-nav {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-left: 25px;
+    padding: 5px;
+}
+
+.top-nav a {
+    color: black;
+    text-decoration: none;
+    transition: all 200ms;
+}
+
+.top-nav a:hover {
+    font-weight: bold;
+}
+
+/* mobile */
+
+@media (min-width: 320px) {
+    header {
+        justify-content: space-between;
+    }
+
+    .brand {
+        display: none;
+    }
+
+    .headerLeft {
+        display: block;
+        text-align: center;
+        width: 20%;
+    }
+
+    .headerLeft img {
+        width: 100%;
+    }
+
+    .headerCenter {
+        width: 60%;
+    }
+
+    .headerRight {
+        display: block;
+        text-align: center;
+        width: 10%;
+    }
+
+    .headerRight div {
+        display: none;
+    }
+
+    #btnOrange {
+        background-color: rgb(253, 141, 66);
+        border-radius: 20%;
+        padding: 5px 10px;
+        color: white;
+        border-style: none;
+        font-size: 20px;
+    }
+
+    .top-nav {
+        display: none;
+    }
+}
+
+/* tablet */
+
+@media (min-width: 768px) {
+
+}
+
+/* notebook */
+
+@media (min-width: 1024px) {
+
+    header {
+        justify-content: space-between;
+    }
+
+    .brand {
+        display: flex;
+        text-align: left;
+        font-size: 12px;
+    }
+
+    .headerLeft {
+        display: flex;
+        width: 20%;
+        max-width: 100%;
+    }
+
+    header .logo {
+        width: 30%;
+        height: 30%;
+        align-self: center;
+    }
+
+    .headerCenter {
+        width: 50%;
+        align-items: flex-start;
+    }
+
+    .headerRight {
+        width: 20%;
+    }
+
+    .headerRight div {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .headerRight div a {
+        margin: 0 2%;
+    }
+
+    #btnOrange {
+        display: none;
+    }
+
+    .top-nav {
+        display: flex;
+        margin: 0 25% 0 25%;
+        justify-content: space-around;
+    }
+
+}
