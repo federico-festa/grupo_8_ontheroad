@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "firstName": "Federico",
+        "lastName": "Festa",
+        "email": "federico.festa@gmail.com",
+        "password": "spinetta123",
+        "category": "admin",
+        "image": "profile1.jpg"
+    }
+]
