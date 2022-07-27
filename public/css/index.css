@@ -9,139 +9,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/*Header*/
-
-header {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: start;
-    align-items: center;
-    margin: 0px 5px 0px 5px;
-}
-
-.headerLeft {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 33%;
-}
-
-header .logo {
-    height: 30%;
-    width: 30%;
-}
-
-.brand {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    line-height: 25px;
-}
-
-.brand h2 {
-    font-size: 16px;
-    color: #666;
-}
-
-.headerCenter {
-    width: 33%;
-    display: flex;
-    justify-content: center;
-}
-
-header form input {
-    height: 40px;
-    width: 130%;
-    border-radius: 50px;
-    text-align: center;
-}
-
-.headerRight {
-    width: 33%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.headerRight i {
-    color: black;
-    font-size: 32px;
-    padding: 20px;
-    transition: all 450ms;
-}
-
-.headerRight i:hover {
-    color: rgba(0, 0, 0, 0.651);
-}
-
-button.login {
-    background-color: black;
-    height: 40px;
-    width: 130px;
-    border: 1px solid black;
-    border-radius: 50px;
-    margin: -7%;
-    cursor: pointer;
-    transition: all 0.4s;
-}
-
-.login:hover {
-    background-color: rgba(0, 0, 0, 0.651);
-    border-color: rgba(0, 0, 0, 0.651);
-}
-
-.login {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.register {
-    background-color: black;
-    height: 40px;
-    width: 130px;
-    border: 1px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.4s;
-}
-
-.register:hover {
-    background-color: rgba(0, 0, 0, 0.651);
-    border-color: rgba(0, 0, 0, 0.651);
-}
-
-.register {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-}
-
 /*Main*/
 
-/*Top nav*/
-
-.top-nav {
-    background-color: white;
-    width: 100%;
+main {
     display: flex;
-    justify-content: center;
-    gap: 100px;
-    padding-left: 25px;
-    border-top: 1px solid #666;
-    padding: 5px;
-}
-
-.top-nav a {
-    color: black;
-    text-decoration: none;
-    transition: all 200ms;
-}
-
-.top-nav a:hover {
-    font-weight: bold;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 /*Banner*/
@@ -177,7 +51,7 @@ button.login {
 
 section.product-showcase {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     margin-top: 30px;
 }
 
@@ -279,69 +153,13 @@ footer .logo {
 
 /*Mobile*/
 
-@media (max-width: 369px) {
-
-    /*Header*/
-    header {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .headerLeft {
-        display: flex;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    header .logo {
-        height: 100%;
-        width: 100%;
-        display: none;
-    }
-
-    .brand {
-        text-align: center;
-        margin-bottom: 10px;
-        font-size: 12px;
-    }
-
-    .headerCenter {
-        width: 33%;
-        display: flex;
-        justify-content: center;
-    }
-
-    header form input {
-        height: 40px;
-        width: 130%;
-        border-radius: 50px;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .headerRight {
-        display: none;
-    }
-
-    /*Top nav*/
-    .top-nav {
-        display: none;
-    }
-
-    /*Banner*/
-
-    .banner {
-        display: none;
-    }
+@media (min-width: 320px) {
 
     /*Product showcase*/
 
     section.product-showcase {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         margin-top: 30px;
@@ -419,5 +237,33 @@ footer .logo {
         padding: 10px;
     }
 
+}
 
+@media (min-width: 768px) {
+
+    section.product-showcase {
+        justify-content: space-around;
+    }
+
+    article.product {
+        width: 45%;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    article.product {
+        width: 30%;
+    }
+
+    article.product:hover {
+        box-shadow: 0 0 10 rgb(100, 100, 100);
+    }
+
+    article.product:hover img {
+        transition: all 1s;
+        transform: scale(1.05);
+    }
+    
 }
