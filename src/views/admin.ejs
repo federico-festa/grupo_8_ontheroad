@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/favicon.png">
+    <link href="../css/admin.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6488dd7609.js" crossorigin="anonymous"></script>
+    <title>On the road</title>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+        <main>
+            <nav class="top-nav">
+                <a href="/">Inicio</a>
+                <a href="#ofertas">Ofertas</a>
+                <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <section class="products-form">
+                <h3>Página de Administrador</h3>
+                <form id="admin-form" action="/admin" method="POST" class="admin-form">
+                    <label class="form-label " for="name">Nombre del producto</label>
+                    <input type="text" class="form-control" autocorrect="off" autocapitalize="off" name="name" required>
+
+                    <label class="form-label " for="description">Descripción</label>
+                    <input type="text" class="form-control" autocorrect="off" autocapitalize="off" name="description"
+                        required>
+
+                    <label class="form-label " for="image">Imagen</label>
+                    <input type="file" class="form-control" name="image" required>
+
+                    <label class="form-label " for="category">Categoría</label>
+                    <input type="text" class="form-control" autocorrect="off" autocapitalize="off" name="category"
+                        required>
+
+                    <label class="form-label " for="price">Precio</label>
+                    <input type="number" class="form-control" autocorrect="off" autocapitalize="off" name="price"
+                        required>
+
+                    <button class="create" type="submit">Crear producto</button>
+                </form>
+            </section>
+        </main>
+        <%- include('./partials/footer') %>
+</body>
+
+</html>
