@@ -23,14 +23,24 @@ const productsController = {
         res.redirect('/');
     },
     edit: (req,res) => {
-        res.render('product-edit-form');
+        let productToEdit = products.find(product => product.id == req.params.id);
+        res.render('product-edit-form', {productToEdit: productToEdit});
     },
     update: (req,res) => {
-        //Logica para editar producto
+        const productToUpdate = products.find(product => product.id == req.params.id);
+		const productToEdit = req.body;
+		productToUpdate.name = productToEdit.name;
+		productToUpdate.price = productToEdit.price;
+		productToUpdate.discount = productToEdit.discount;
+		productToUpdate.category = productToEdit.category;
+		productToUpdate.shortDescription = productToEdit.shortDescription;
+        productToUpdate.longDescription = productToEdit.longDescription;
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
         res.redirect('/');
     },
     destroy: (req,res) => {
-        //Logica para eliminar producto
+        let productsFilter = products.filter(product => product.id != req.params.id);
+		fs.writeFileSync(productsFilePath, JSON.stringify(productsFilter, null, ' '));
         res.redirect('/');
     },
     cart: (req, res) => {

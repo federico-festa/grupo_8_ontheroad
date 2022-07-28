@@ -5,8 +5,8 @@
         "price": 1500,
         "discount": 10,
         "category": "urbano",
-        "short-description": "Un dia para conocer los rincones de la ciudad y sentirte un porteño más.",
-        "long-description": "Tarde de teatro off. En la ciudad hay numerosas obras de teatro en cartel, muchas de las cuales pertenecen a la escena off (no comercial), cuya entrada suele ser más económica que la de los teatros de la avenida Corrientes. Lecturas únicas. Las librerías son una atracción de la ciudad, que no solo ofrece las grandes cadenas sino también las pequeñas, independientes y con una selección personal.",
+        "shortDescription": "Un dia para conocer los rincones de la ciudad y sentirte un porteño más.",
+        "longDescription": "Tarde de teatro off. En la ciudad hay numerosas obras de teatro en cartel, muchas de las cuales pertenecen a la escena off (no comercial), cuya entrada suele ser más económica que la de los teatros de la avenida Corrientes. Lecturas únicas. Las librerías son una atracción de la ciudad, que no solo ofrece las grandes cadenas sino también las pequeñas, independientes y con una selección personal.",
         "image": "bsas3.jpg"
     },
     {

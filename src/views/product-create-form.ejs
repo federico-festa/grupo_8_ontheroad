@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('partials/head', {title: 'Formulario de creación', css: product-create-form.css}) %>
+
+    <body>
+        <%- include('partials/header') %>
+            <main>
+                <div class="<">
+                    <div class="<">
+                        <div class="<">
+                            <h2 class="create-title">Formulario de creación de productos</h2>
+                        </div>
+                    </div>
+                    <div class="<">
+                        <form action="/products/create" method="post" enctype="multipart/form-data">
+                            <div class="<">
+                                <div class="<">
+                                    <label for="name" class="<">Lugar:</label>
+                                    <input type="text" id="name" name="name" placeholder="Ej: Buenos Aires" class="<">
+                                </div>
+                                <div class="<">
+                                    <label for="price" class="<">Precio:</label>
+                                    <input type="text" id="price" name="price" placeholder="Ej: 1500" class="<">
+                                </div>
+                                <div class="<">
+                                    <label for="discount" class="<">Descuento:</label>
+                                    <input type="text" id="discount" name="discount" placeholder="Ej: 15" class="<">
+                                </div>
+                                <div class="<">
+                                    <label for="category" class="<">Categoría:</label>
+                                    <select name="category" id="category" class="<">
+                                        <option value="">Elegí</option>
+                                        <option value="urbano">Urbano</option>
+                                        <option value="naturaleza">Naturaleza</option>
+                                        <option value="adrenalina">Adrenalina</option>
+                                    </select>
+                                </div>
+                                <div class="<">
+                                    <label for="shortDescription" class="<">Descipción breve:</label>
+                                    <textarea name="shortDescription" id="shortDescription"
+                                        class="form-input"></textarea>
+                                </div>
+                                <div class="<">
+                                    <label for="longDescription" class="<">Descipción completa:</label>
+                                    <textarea name="longDescription" id="longDescription" class="form-input"></textarea>
+                                </div>
+                                <div class="<">
+                                    <label for="image" class="form-label">Imagen:</label>
+                                    <input type="file" name="image" id="image" class="form-input"></input>
+                                </div>
+                                <div class="<">
+                                    <button type="submit" class="submit-button">Guardar producto</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+            <%- include('partials/footer') %>
+    </body>
+
+</html>
