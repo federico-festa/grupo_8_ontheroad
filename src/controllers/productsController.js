@@ -9,7 +9,8 @@ const productsController = {
         res.render('products', {products: products});
     },
     detail: (req,res) => {
-        res.render('detail', {products: products});
+        let product = products.find(product => product.id == req.params.id);
+        res.render('detail', {product: product});
     },
     create: (req,res) => {
         res.render('product-create-form');

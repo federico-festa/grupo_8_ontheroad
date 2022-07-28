@@ -14,10 +14,10 @@
                 </section>
                 <section class="product-showcase">
                     <h2>Experiencias destacadas</h2>
-                    <% products.forEach((product)=> { %>
-                      <!--  <% if(products.id <=4) { %> -->
-                            <article class="product">
-                                <img src="./img/products/<%= product.image %>" alt="imagen de producto">
+                    <article class="product">
+                        <% products.forEach((product)=> { %>
+                            <% if(product.id <=4) { %>
+                                <img src="./img/products/<%= product.image %>" alt="product image">
                                 <div class="product-description">
                                     <h5 class="name">
                                         <%= product.name %>
@@ -28,59 +28,25 @@
                                     <p class="price">$<%= product.price %>
                                     </p>
                                 </div>
-                               <!-- <% }; %> -->
+                                <% }; %>
                                     <% }); %>
-                            </article>
-
-                            <!-- Show the "visited" products 
-                <article class="product">
-                    <img src="./img/bsas3.jpg" alt="bsas">
-                    <div class="product-description">
-                        <h5 class="place">Buenos Aires</h5>
-                        <p class="description">Un dia para conocer los rincones de la ciudad y sentirte un
-                            porteño más. </p>
-                        <p class="price">$1.500</p>
-                    </div>
-                </article>
-                <article class="product">
-                    <img src="./img/cba1.jpg" alt="cba">
-                    <div class="product-description">
-                        <h5 class="place">Córdoba</h5>
-                        <p class="description">Adrenalina y vistas épicas en la sierra cordobesa</p>
-                        <p class="price">$3.000</p>
-                    </div>
-                </article>
-                <article class="product">
-                    <a href="/products/jujuy"><img src="./img/juj2.jpg" alt="juj"></a>
-                    <div class="product-description">
-                        <h5 class="place">Jujuy</h5>
-                        <p class="description">Recorriendo la huella gaucha del norte</p>
-                        <p class="price">$3.000</p>
-                    </div>
-                </article>
-                <article class="product">
-                    <img src="./img/rn1.jpeg" alt="rn">
-                    <div class="product-description">
-                        <h5 class="place">Rio Negro</h5>
-                        <p class="description">Una noche estrellada en plena Patagonia</p>
-                        <p class="price">$2.000</p>
-                    </div>
-                </article>
-            </section>
-            <section class="bottom-banner">
-                <img src="./img/bottom-banner1.jpg" alt="bottom-banner">
-                <div class="bottom-text">
-                    <h3>Lorem ipsum</h3>
+                    </article>
+                </section>
+                    <section class="bottom-banner">
+                        <img src="./img/bottom-banner1.jpg" alt="bottom-banner">
+                        <div class="bottom-text">
+                            <h3>Lorem ipsum</h3>
+                            <br>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident exercitationem
+                                officia,
+                                distinctio
+                                illo, fugit aspernatur ad, cumque atque eaque tenetur similique laboriosam voluptatem
+                                nesciunt
+                                hic
+                                fugiat. Quo, nihil accusamus! Sit.</p>
+                        </div>
+                    </section>
                     <br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident exercitationem officia,
-                        distinctio
-                        illo, fugit aspernatur ad, cumque atque eaque tenetur similique laboriosam voluptatem nesciunt
-                        hic
-                        fugiat. Quo, nihil accusamus! Sit.</p>
-                </div>
-            </section>
-            <br>
-            --->
             </main>
             <%- include('./partials/footer') %>
     </body>
