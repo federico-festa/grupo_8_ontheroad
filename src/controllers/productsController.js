@@ -9,7 +9,7 @@ const productsController = {
         res.render('products');
     },
     detail: (req,res) => {
-        res.render('detail');
+        res.render('detail', {products: products});
     },
     create: (req,res) => {
         res.render('product-create-form');

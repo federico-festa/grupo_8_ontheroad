@@ -1,49 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/img/favicon.png">
-    <link href="../css/admin.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/6488dd7609.js" crossorigin="anonymous"></script>
-    <title>On the road</title>
-</head>
+<%- include('partials/head', {title: 'Formulario de edición', css: product-edit-form.css}) %>
+
 
 <body>
     <%- include('./partials/header') %>
         <main>
-            <nav class="top-nav">
-                <a href="/">Inicio</a>
-                <a href="#ofertas">Ofertas</a>
-                <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
-            <section class="products-form">
-                <h3>Página de Administrador</h3>
-                <form id="admin-form" action="/admin" method="POST" class="admin-form">
-                    <label class="form-label " for="name">Nombre del producto</label>
-                    <input type="text" class="form-control" autocorrect="off" autocapitalize="off" name="name" required>
-
-                    <label class="form-label " for="description">Descripción</label>
-                    <input type="text" class="form-control" autocorrect="off" autocapitalize="off" name="description"
-                        required>
-
-                    <label class="form-label " for="image">Imagen</label>
-                    <input type="file" class="form-control" name="image" required>
-
-                    <label class="form-label " for="category">Categoría</label>
-                    <input type="text" class="form-control" autocorrect="off" autocapitalize="off" name="category"
-                        required>
-
-                    <label class="form-label " for="price">Precio</label>
-                    <input type="number" class="form-control" autocorrect="off" autocapitalize="off" name="price"
-                        required>
-
-                    <button class="create" type="submit">Crear producto</button>
-                </form>
-            </section>
+            <div class="<">
+                <div class="<">
+                    <div class="<">
+                        <h2 class="edit-title">Formulario de edición de productos</h2>
+                    </div>
+                </div>
+                <div class="<">
+                    <form action="/products/edit/<%= productToEdit.id %>?_method=put" method="post" enctype="multipart/form-data">
+                        <div class="<">
+                            <div class="<">
+                                <label for="name" class="<">Lugar:</label>
+                                <input type="text" id="name" name="name" class="<" value="<%= productToEdit.name %>">
+                            </div>
+                            <div class="<">
+                                <label for="price" class="<">Precio:</label>
+                                <input type="text" id="price" name="price" class="<" value="<%= productToEdit.price %>">
+                            </div>
+                            <div class="<">
+                                <label for="discount" class="<">Descuento:</label>
+                                <input type="text" id="discount" name="discount" class="<" value="<%= productToEdit.discount %>">
+                            </div>
+                            <div class="<">
+                                <label for="category" class="<">Categoría:</label>
+                                <select name="category" id="category" class="<">
+                                    <option value="">Elegí</option>
+                                    <option value="urbano">Urbano</option>
+                                    <option value="naturaleza">Naturaleza</option>
+                                    <option value="aventura">Aventura</option>
+                                </select>
+                            </div>
+                            <div class="<">
+                                <label for="shortDescription" class="<">Descipción breve:</label>
+                                <textarea name="shortDescription" id="shortDescription"
+                                    class="form-input" value="<%= productToEdit.shortDescription %>"></textarea>
+                            </div>
+                            <div class="<">
+                                <label for="longDescription" class="<">Descipción completa:</label>
+                                <textarea name="longDescription" id="longDescription" class="form-input" value="<%= productToEdit.longDescription %>"></textarea>
+                            </div>
+                            <div class="<">
+                                <label for="image" class="form-label">Imagen:</label>
+                                <input type="file" name="image" id="image" class="form-input"></input>
+                            </div>
+                            <div class="<">
+                                <button type="submit" class="submit-button">Guardar producto</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </main>
         <%- include('./partials/footer') %>
 </body>
