@@ -10,13 +10,33 @@
         "image": "bsas3.jpg"
     },
     {
-        "id": 1,
-        "name": "Buenos Aires",
-        "price": 1500,
+        "id": 2,
+        "name": "Córdoba",
+        "price": 3000,
         "discount": 10,
-        "category": "urbano",
-        "short-description": "Un dia para conocer los rincones de la ciudad y sentirte un porteño más.",
-        "long-description": "Tarde de teatro off. En la ciudad hay numerosas obras de teatro en cartel, muchas de las cuales pertenecen a la escena off (no comercial), cuya entrada suele ser más económica que la de los teatros de la avenida Corrientes. Lecturas únicas. Las librerías son una atracción de la ciudad, que no solo ofrece las grandes cadenas sino también las pequeñas, independientes y con una selección personal.",
-        "image": "bsas3.jpg"
+        "category": "aventura",
+        "shortDescription": "Adrenalina y vistas épicas en la sierra cordobesa",
+        "longDescription": "Vuelo de bautismo. Despegá desde las increíbles sierras cordobesas con los mejores profesionales del parapente. Preparate para una experiencia llena de adrenalina y con vistas aereas épicas. Asado y fernet. Al volver te esperamos con un tradicional chivito al asador, para disfrutar un buen almuerzo en un entorno natural único. Como aperitivo un imperdible fernet, la bebida emblemática.",
+        "image": "cba1.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Jujuy",
+        "price": 3000,
+        "discount": 10,
+        "category": "naturaleza",
+        "shortDescription": "Recorriendo la huella gaucha del norte",
+        "longDescription": "Cabalgata por senderos prehispánicos. En pocas ocasiones Jujuy es asociada con la Cultura Gaucha sin saber que nuestra tierra posee una amplia herencia criolla que podrás conocer al ritmo de los caballos y los lugareños. Relax en aguas termales. Luego de atravesar un sendero de dificultad media y alta, que nace en la RP 83, se llega a las aguas termales del rio Jordán. Una serie de piletones naturales de una belleza impactante y frondosa vegetación",
+        "image": "juj2.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Rio Negro",
+        "price": 2000,
+        "discount": 10,
+        "category": "naturaleza",
+        "shortDescription": "Una noche estrellada en plena Patagonia",
+        "longDescription": "Refugio Meseta Somuncura. Alejado de la civilización, en un paraje exclusivo e imponente, se encuentra el refugio de montaña donde se pasa una noche de absoluta paz con vistas de un cielo estrellado como nunca antes viste. Cultura Mapuche. Las distintas comunidades mapuches de Rio Negro invitan a los viajeros a descubrir sus tradiciones, música, artesanías y gastronomía entre lagos, bosques y montañas. Una perspectiva diferente de esta cultura milenaria que conserva su cosmovisión y costumbres ancestrales a pesar de la amenaza permanente.",
+        "image": "rn1,jpg"
     }
 ]
