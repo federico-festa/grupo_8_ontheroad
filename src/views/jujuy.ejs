@@ -7,195 +7,236 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./img/favicon.png">
     <script src="https://kit.fontawesome.com/6488dd7609.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function changeTab(id, id2, id3) {
+            var elemento = [document.getElementById(id), document.getElementById(id2), document.getElementById(id3)];
+            if (window.getComputedStyle(elemento[0]).display === 'block') {
+                elemento[0].style.display = 'block';
+                elemento[1].style.display = 'none';
+                elemento[2].style.display = 'none';
+            } else {
+                elemento[0].style.display = 'block';
+                elemento[1].style.display = 'none';
+                elemento[2].style.display = 'none';
+            }
+        }
+    </script>
     <link rel="stylesheet" href="/css/jujuy.css">
     <link rel="stylesheet" href="/css/mainHeader.css">
     <title>On the road</title>
 </head>
+
 <body>
     <%- include('./partials/header')%>
-    <main>
-        <section class="imgMuestra">
-            <img id="img1" src="/img/jujuyHumahuaca1.jpg" alt="jujuyHumahuaca1">
-            <div>
-                <img src="/img/jujuyHumahuaca2.jpg" alt="jujuyHumahuaca2">
-                <img src="/img/jujuyHumahuaca4.jpg" alt="jujuyHumahuaca4">
-            </div>
-        </section>
-        <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, sapiente aut explicabo
-            eum atque cum? Expedita error laboriosam assumenda, reprehenderit vitae iste placeat? Quasi iste fugit
-            incidunt culpa numquam? Excepturi.</p>
-        <p class="informacion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore voluptatem modi odio
-            blanditiis qui nobis fugiat fugit obcaecati, similique mollitia, quis corrupti eius itaque ullam. Alias
-            consequuntur cupiditate error similique.</p>
-        <!-- <section id="calendario">
-            <table>
-                <tr>
-                    <th colspan="1"><-</th>
-                    <th colspan="5">Julio 2022</th>
-                    <th colspan="1">-></th>
-                </tr>
-                <tr>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thu</th>
-                    <th>Fri</th>
-                    <th>Sat</th>
-                    <th>Sun</th>
-                </tr>
-                <tr>
-                    <td style="empty-cells: hide;"></td>
-                    <td style="empty-cells: hide;"></td>
-                    <td style="empty-cells: hide;"></td>
-                    <td style="empty-cells: hide;"></td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>10</td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td>12</td>
-                    <td>13</td>
-                    <td>14</td>
-                    <td>15</td>
-                    <td>16</td>
-                    <td>17</td>
-                </tr>
-                <tr>
-                    <td>18</td>
-                    <td>19</td>
-                    <td>20</td>
-                    <td>21</td>
-                    <td>22</td>
-                    <td>23</td>
-                    <td>24</td>
-                </tr>
-                <tr>
-                    <td>25</td>
-                    <td>26</td>
-                    <td>27</td>
-                    <td>28</td>
-                    <td>29</td>
-                    <td>30</td>
-                    <td>31</td>
-                </tr>
-            </table>
-        </section> -->
-        <!-- <section id="formaPago">
-            <form>
-                <label for=""></label>
-                <select name="" id="">
-                    <option value="">Visa</option>
-                    <option value="">MasterCard</option>\
-                    <option value="">American Express</option>
-                    <option value="">Naranja X</option>
-                    <option value="">Cabal</option>
-                </select>
-                <label for=""></label>
-                <select name="" id="">
-                    <option value="">Debito</option>
-                    <option value="">Credito</option>
-                </select>
-                <button type="submit">VER</button>
-            </form>
-        </section> -->
-        <!-- <section id="opiniones">
-            <article>
-                <p class="userName">nombreApellido</p>
-                <img class="imgPerfil" src="./img/jujuy/perfil1.webp" alt="iconAvatar">
-                <p class="textOpinion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores nihil accusamus adipisci
-                    officiis consequatur, magni explicabo perferendis fuga asperiores, dolores maxime laudantium
-                    consequuntur omnis aliquam? Nemo ex dolores recusandae.</p>
-            </article>
-            <article>
-                <p class="userName">nombreApellido</p>
-                <img class="imgPerfil" src="./img/jujuy/iconAvatar.png" alt="iconAvatar">
-                <p class="textOpinion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores nihil accusamus adipisci
-                    officiis consequatur, magni explicabo perferendis fuga asperiores, dolores maxime laudantium
-                    consequuntur omnis aliquam? Nemo ex dolores recusandae.</p>
-            </article>
-            <article>
-                <p class="userName">nombreApellido</p>
-                <img class="imgPerfil" src="./img/jujuy/perfil2.jpeg" alt="iconAvatar">
-                <p class="textOpinion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores nihil accusamus adipisci
-                    officiis consequatur, magni explicabo perferendis fuga asperiores, dolores maxime laudantium
-                    consequuntur omnis aliquam? Nemo ex dolores recusandae.</p>
-            </article>
-            <article>
-                <p class="userName">nombreApellido</p>
-                <img class="imgPerfil" src="./img/jujuy/perfil3.jpg" alt="iconAvatar">
-                <p class="textOpinion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores nihil accusamus adipisci
-                    officiis consequatur, magni explicabo perferendis fuga asperiores, dolores maxime laudantium
-                    consequuntur omnis aliquam? Nemo ex dolores recusandae.</p>
-            </article>
-        </section> -->
-        <p>Queres visitar otro lugar?</p>
-        <section class="product-showcase">
-            <article class="product">
-                <img src="/img/bsas3.jpg" alt="bsas">
-                <div class="product-description">
-                    <h5 class="place">Buenos Aires</h5>
-                    <p class="description">Un dia para conocer los rincones de la ciudad y sentirte un
-                        porteño más. </p>
-                    <br>
-                    <ul>
-                        <li>Tarde de teatro off. En la ciudad hay numerosas obras de teatro en cartel, muchas de las
-                            cuales pertenecen a la escena off (no comercial), cuya entrada suele ser más económica que
-                            la de los teatros de la avenida Corrientes.</li>
-                        <li>Lecturas únicas. Las librerías son una atracción de la ciudad, que no solo ofrece las
-                            grandes cadenas sino también las pequeñas, independientes y con una selección personal</li>
-                    </ul>
-                    <p class="price">$1.500</p>
+        <main>
+            <section class="bannerShow">
+                <img id="img1" src="/img/jujuyHumahuaca1.jpg" alt="jujuyHumahuaca1">
+                <div>
+                    <img src="/img/jujuyHumahuaca2.jpg" alt="jujuyHumahuaca2">
+                    <img src="/img/jujuyHumahuaca4.jpg" alt="jujuyHumahuaca4">
                 </div>
-            </article>
-            <article class="product">
-                <img src="/img/cba1.jpg" alt="cba">
-                <div class="product-description">
-                    <h5 class="place">Córdoba</h5>
-                    <p class="description">Adrenalina y vistas épicas en la sierra cordobesa</p>
-                    <br>
-                    <ul>
-                        <li>Vuelo de bautismo. Despegá desde las increíbles sierras cordobesas con los mejores
-                            profesionales del parapente. Preparate para una experiencia llena de adrenalina y con vistas
-                            aereas épicas. </li>
-                        <li>Asado y fernet. Al volver te esperamos con un tradicional chivito al asador, para disfrutar
-                            un buen almuerzo en un entorno natural único. Como aperitivo un imperdible fernet, la bebida
-                            emblemática. </li>
-                    </ul>
-                    <p class="price">$3.000</p>
-                </div>
-            </article>
-            <article class="product">
-                <img src="/img/rn1.jpeg" alt="rn">
-                <div class="product-description">
-                    <h5 class="place">Rio Negro</h5>
-                    <p class="description">Una noche estrellada en plena Patagonia</p>
-                    <br>
-                    <ul>
-                        <li>Refugio Meseta Somuncura. Alejado de la civilización, en un paraje exclusivo e imponente, se
-                            encuentra el refugio de montaña donde se pasa una noche de absoluta paz con vistas de un
-                            cielo estrellado como nunca antes viste.</li>
-                        <li>Cultura Mapuche. Las distintas comunidades mapuches de Rio Negro invitan a los viajeros a
-                            descubrir sus tradiciones, música, artesanías y gastronomía entre lagos, bosques y montañas.
-                            Una perspectiva diferente de esta cultura milenaria que conserva su cosmovisión y costumbres
-                            ancestrales a pesar de la amenaza permanente.
-                        </li>
-                    </ul>
-                    <p class="price">$2.000</p>
-                </div>
-            </article>
-        </section>
-    </main>
-    <%- include('./partials/footer') %>
+            </section>
+            <p class="descripcion">El pueblo de Humahuaca se encuentra cerca de los 3.000 metros de altura, rodeado de
+                cordones montañosos de gran belleza. El pueblo es la entrada a La Puna jujeña y es la última localidad
+                importante de la Quebrada de Humahuaca, en el camino hacia el norte (La Quiaca). El pueblo al igual que
+                la quebrada toma el nombre de los antiguos pobladores de la zona que fueron los omaguacas.</p>
+            <p class="informacion">Humahuaca cuenta con diferentes servicios turísticos para los visitantes como hoteles
+                y hostales, restaurantes y peñas folclóricas, estación de servicio, campings, museos y feria artesanal,
+                agencias de viajes y hospital.</p>
+            <section id="multiTab">
+                <button id="infoTab" onclick="changeTab('tabMain', 'tabCalendar', 'tabReview')">Info</button>
+                <button id="calendarTab" onclick="changeTab('tabCalendar', 'tabReview', 'tabMain')">Calendario</button>
+                <button id="reviewTab" onclick="changeTab('tabReview', 'tabMain', 'tabCalendar')">Review</button>
+            </section>
+            <section id="tabMain" style="display: block">
+                <iframe id="showMaps"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14667.68003662089!2d-65.35970775994967!3d-23.209585586580353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9404e9a4ba40a8c1%3A0x5ff8703d0479ecf9!2sHumahuaca%2C%20Jujuy!5e0!3m2!1ses-419!2sar!4v1658960062384!5m2!1ses-419!2sar"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <p class="titleProducts">Otros lugares para visitar</p>
+                <section class="product-showcase">
+                    <article class="product">
+                        <img src="/img/bsas3.jpg" alt="bsas">
+                        <div class="product-description">
+                            <h5 class="place">Buenos Aires</h5>
+                            <p class="description">Un dia para conocer los rincones de la ciudad y sentirte un
+                                porteño más. </p>
+                            <br>
+                            <ul>
+                                <li>Tarde de teatro off. En la ciudad hay numerosas obras de teatro en cartel,
+                                    muchas de
+                                    las
+                                    cuales pertenecen a la escena off (no comercial), cuya entrada suele ser más
+                                    económica
+                                    que
+                                    la de los teatros de la avenida Corrientes.</li>
+                                <li>Lecturas únicas. Las librerías son una atracción de la ciudad, que no solo
+                                    ofrece
+                                    las
+                                    grandes cadenas sino también las pequeñas, independientes y con una selección
+                                    personal
+                                </li>
+                            </ul>
+                            <p class="price">$1.500</p>
+                        </div>
+                    </article>
+                    <article class="product">
+                        <img src="/img/cba1.jpg" alt="cba">
+                        <div class="product-description">
+                            <h5 class="place">Córdoba</h5>
+                            <p class="description">Adrenalina y vistas épicas en la sierra cordobesa</p>
+                            <br>
+                            <ul>
+                                <li>Vuelo de bautismo. Despegá desde las increíbles sierras cordobesas con los
+                                    mejores
+                                    profesionales del parapente. Preparate para una experiencia llena de adrenalina
+                                    y
+                                    con
+                                    vistas
+                                    aereas épicas. </li>
+                                <li>Asado y fernet. Al volver te esperamos con un tradicional chivito al asador,
+                                    para
+                                    disfrutar
+                                    un buen almuerzo en un entorno natural único. Como aperitivo un imperdible
+                                    fernet,
+                                    la
+                                    bebida
+                                    emblemática. </li>
+                            </ul>
+                            <p class="price">$3.000</p>
+                        </div>
+                    </article>
+                    <article class="product">
+                        <img src="/img/rn1.jpeg" alt="rn">
+                        <div class="product-description">
+                            <h5 class="place">Rio Negro</h5>
+                            <p class="description">Una noche estrellada en plena Patagonia</p>
+                            <br>
+                            <ul>
+                                <li>Refugio Meseta Somuncura. Alejado de la civilización, en un paraje exclusivo e
+                                    imponente, se
+                                    encuentra el refugio de montaña donde se pasa una noche de absoluta paz con
+                                    vistas
+                                    de un
+                                    cielo estrellado como nunca antes viste.</li>
+                                <li>Cultura Mapuche. Las distintas comunidades mapuches de Rio Negro invitan a los
+                                    viajeros
+                                    a
+                                    descubrir sus tradiciones, música, artesanías y gastronomía entre lagos, bosques
+                                    y
+                                    montañas.
+                                    Una perspectiva diferente de esta cultura milenaria que conserva su cosmovisión
+                                    y
+                                    costumbres
+                                    ancestrales a pesar de la amenaza permanente.
+                                </li>
+                            </ul>
+                            <p class="price">$2.000</p>
+                        </div>
+                    </article>
+                </section>
+            </section>
+            <section id="tabCalendar" style="display: none">
+                <section id="calendario">
+                    <table>
+                    <tr>
+                        <th colspan="1"><-</th>
+                        <th colspan="5">Julio 2022</th>
+                        <th colspan="1">-></th>
+                    </tr>
+                    <tr>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                        <th>Sun</th>
+                    </tr>
+                    <tr>
+                        <td style="empty-cells: hide;"></td>
+                        <td style="empty-cells: hide;"></td>
+                        <td style="empty-cells: hide;"></td>
+                        <td style="empty-cells: hide;"></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                    </tr>
+                    </table>
+                </section>
+            </section>
+            <section id="tabReview" style="display: none">
+                <section id="opiniones">
+                    <article>
+                        <p class="userName">nombreApellido</p>
+                        <img class="imgPerfil" src="/img/perfil1.webp" alt="iconAvatar">
+                        <p class="textOpinion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores
+                            nihil accusamus adipisci officiis consequatur, magni explicabo perferendis fuga asperiores,
+                            dolores maxime laudantium consequuntur omnis aliquam? Nemo ex dolores recusandae.</p>
+                    </article>
+                    <article>
+                        <p class="userName">nombreApellido</p>
+                        <img class="imgPerfil" src="/img/iconAvatar.png" alt="iconAvatar">
+                        <p class="textOpinion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores
+                            nihil accusamus adipisci
+                            officiis consequatur, magni explicabo perferendis fuga asperiores, dolores maxime laudantium
+                            consequuntur omnis aliquam? Nemo ex dolores recusandae.</p>
+                    </article>
+                    <article>
+                        <p class="userName">nombreApellido</p>
+                        <img class="imgPerfil" src="/img/perfil2.jpeg" alt="iconAvatar">
+                        <p class="textOpinion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores
+                            nihil accusamus adipisci
+                            officiis consequatur, magni explicabo perferendis fuga asperiores, dolores maxime laudantium
+                            consequuntur omnis aliquam? Nemo ex dolores recusandae.</p>
+                    </article>
+                    <article>
+                        <p class="userName">nombreApellido</p>
+                        <img class="imgPerfil" src="/img/perfil3.jpg" alt="iconAvatar">
+                        <p class="textOpinion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores
+                            nihil accusamus adipisci
+                            officiis consequatur, magni explicabo perferendis fuga asperiores, dolores maxime laudantium
+                            consequuntur omnis aliquam? Nemo ex dolores recusandae.</p>
+                    </article>
+                </section>
+            </section>
+        </main>
+        <%- include('./partials/footer') %>
 </body>
 
 </html>
