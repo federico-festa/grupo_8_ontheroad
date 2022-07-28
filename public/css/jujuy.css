@@ -14,33 +14,128 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    margin: 0 15%;
 }
 
 /*imgMuestra*/
 
-.imgMuestra #img1 {
-    width: 60%;
-    display: block;
-    margin: 0 auto;
+.bannerShow {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.imgMuestra div {
+#img1 {
+    width: 80%;
+    border-radius: 15px;
+}
+
+.bannerShow div {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
 }
 
-.imgMuestra div img {
-    padding: 1%;
+.bannerShow div img {
+    width: 20%;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.descripcion, .informacion {
+    width: 45%;
+    line-height: 27px;
+}
+
+#multiTab {
+    margin: 2% 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#multiTab button {
+    border-style: none;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 10px;
+    width: 15%;
+    height: 50px;
+    margin: 0 5%;
+    transition: all 0.3s;
+}
+
+#multiTab button:hover {
+    background-color: rgba(87, 184, 255, 0.745);
+    border-color: rgba(87, 184, 255, 0.745);;
+}
+
+#showMaps {
+    width: 100%;
+    height: 600px;
+    border: 0;
+    border-radius: 20px;
+}
+
+/* calendarSection */
+
+#calendario table {
+    border-spacing: 5px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+#calendario tr td {
+    text-align: center;
+    border-radius: 100%;
+    border: 1px solid grey;
+    width: 50px;
+    height: 50px;
+}
+
+#calendario tr td:hover {
+    background-color: #666;
+}
+
+/* reviewSection */
+
+#opiniones {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#opiniones article {
+    width: 45%;
+    margin: 10px;
+    max-width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#opiniones .imgPerfil {
+    width: 40%;
+    border-radius: 10px;
 }
 
 /*Product Showcase*/
 
+.titleProducts {
+    font-size: 2.5em;
+}
+
 section.product-showcase {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 30px;
+    flex-direction: row;
+    justify-content: center;
 }
 
 article.product {
@@ -48,10 +143,9 @@ article.product {
     flex-direction: column;
     justify-content: flex-start;
     border: 0px solid #dadada;
+    width: 30%;
     margin: 10px;
-    padding: 10px;
     transition: all 450ms;
-    border-radius: 4px;
 }
 
 article.product img {
@@ -111,31 +205,32 @@ footer .logo {
 
 /* mobile */
 
-@media (min-width: 320px) {
+/* @media (min-width: 320px) {
 
-    .imgMuestra {
-        width: 100%;
+    main {
+        margin: 0;
     }
 
-    .imgMuestra div {
+    .bannerShow div {
         display: none;
     }
 
-    .imgMuestra #img1 {
-        padding: 3%;
-        padding-bottom: 0;
+    .descripcion {
         width: 100%;
+        line-height: normal;
+        margin-bottom: 2%;
     }
 
-    article.product {
+    .informacion {
         width: 100%;
+        line-height: normal;
     }
 
-}
+} */
 
 /* tablet */
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
 
     section.product-showcase {
         justify-content: space-around;
@@ -145,11 +240,11 @@ footer .logo {
         width: 45%;
     }
 
-}
+} */
 
 /* Desktop */
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
     
     article.product {
         width: 30%;
@@ -164,21 +259,9 @@ footer .logo {
         transform: scale(1.05);
     }
 
-    .imgMuestra #img1 {
-        width: 70%;
-    }
-
-    .imgMuestra div {
+    .bannerShow div {
         display: flex;
         margin-bottom: 2%;
     }
-
-    .imgMuestra div img {
-        width: 15%;
-    }
     
-    .imgMuestra div img:hover {
-        width: 20%;
-    }
-    
-}
+} */
