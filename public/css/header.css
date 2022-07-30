@@ -1,12 +1,65 @@
+/*Mobile first*/
+
 header {
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
+    width: 95%;
     margin: 0;
-    border-bottom: 1px solid #666;
 }
 
+.brand {
+    display: none;
+}
+
+.headerLeft {
+    display: block;
+    text-align: center;
+    width: 20%;
+}
+
+.headerLeft img {
+    width: 100%;
+}
+
+.headerCenter {
+    width: 60%;
+}
+
+.headerRight {
+    display: block;
+    text-align: center;
+    width: 10%;
+}
+
+.headerCenter input {
+    height: 40px;
+    width: 100%;
+    border-radius: 50px;
+    padding-left: 2%;
+    border-style: none;
+    border: 1px solid black;
+}
+
+.headerRight div {
+    display: none;
+}
+
+#btnOrange {
+    background-color: rgb(253, 141, 66);
+    border-radius: 20%;
+    padding: 5px 10px;
+    color: white;
+    border-style: none;
+    font-size: 20px;
+}
+
+.top-nav {
+    display: none;
+}
+
+/*
 .headerLeft {
     display: flex;
     flex-direction: row;
@@ -108,79 +161,26 @@ header form input {
     font-weight: bold;
 }
 
-/* mobile */
+/*Breakpoints*/
 
-@media (min-width: 320px) {
-    header {
-        justify-content: space-between;
-    }
-
-    .brand {
-        display: none;
-    }
-
-    .headerLeft {
-        display: block;
-        text-align: center;
-        width: 20%;
-    }
-
-    .headerLeft img {
-        width: 100%;
-    }
-
-    .headerCenter {
-        width: 60%;
-    }
-
-    .headerRight {
-        display: block;
-        text-align: center;
-        width: 10%;
-    }
-
-    .headerRight div {
-        display: none;
-    }
-
-    #btnOrange {
-        background-color: rgb(253, 141, 66);
-        border-radius: 20%;
-        padding: 5px 10px;
-        color: white;
-        border-style: none;
-        font-size: 20px;
-    }
-
-    .top-nav {
-        display: none;
-    }
-}
-
-/* tablet */
-
-@media (min-width: 768px) {
-
-}
-
-/* notebook */
+/* Desktop */
 
 @media (min-width: 1024px) {
 
     header {
-        justify-content: space-between;
-    }
-
-    .brand {
         display: flex;
-        text-align: left;
-        font-size: 12px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 95%;
+        margin: 0px 5px 0px 5px;
     }
 
     .headerLeft {
         display: flex;
-        width: 20%;
-        max-width: 100%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 33%;
     }
 
     header .logo {
@@ -189,21 +189,103 @@ header form input {
         align-self: center;
     }
 
+    .brand {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        line-height: 25px;
+        text-align: left;
+    }
+
+    .brand h2 {
+        font-size: 16px;
+        color: #666;
+    }
+
     .headerCenter {
-        width: 50%;
-        align-items: flex-start;
+        width: 33%;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+    }
+
+    .headerCenter input {
+        height: 40px;
+        width: 130%;
+        border-radius: 50px;
+        text-align: center;
     }
 
     .headerRight {
-        width: 20%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 33%;
     }
 
     .headerRight div {
         display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+    }
+
+    .headerRight button {
+        border: none;
+    }
+
+    .headerRight i {
+        color: black;
+        background-color: white;
+        font-size: 32px;
+        padding: 20px;
+        transition: all 450ms;
+    }
+    
+    .headerRight i:hover {
+        color: rgba(0, 0, 0, 0.651);
+    }
+
+    button.login {
+        background-color: black;
+        height: 40px;
+        width: 130px;
+        border: 1px solid black;
+        border-radius: 50px;
+        margin: -7%;
+        cursor: pointer;
+        transition: all 0.4s;
+    }
+
+    .login:hover {
+        background-color: rgba(0, 0, 0, 0.651);
+        border-color: rgba(0, 0, 0, 0.651);
+    }
+
+    .login {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    .register {
+        background-color: black;
+        height: 40px;
+        width: 130px;
+        border: 1px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.4s;
+    }
+
+    .register:hover {
+        background-color: rgba(0, 0, 0, 0.651);
+        border-color: rgba(0, 0, 0, 0.651);
+    }
+
+    .register {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
     }
 
     .headerRight div a {
