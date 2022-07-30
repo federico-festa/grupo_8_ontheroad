@@ -27,12 +27,6 @@ header {
     width: 60%;
 }
 
-.headerRight {
-    display: block;
-    text-align: center;
-    width: 10%;
-}
-
 .headerCenter input {
     height: 40px;
     width: 100%;
@@ -40,6 +34,12 @@ header {
     padding-left: 2%;
     border-style: none;
     border: 1px solid black;
+}
+
+.headerRight {
+    display: block;
+    text-align: center;
+    width: 10%;
 }
 
 .headerRight div {
@@ -59,108 +59,6 @@ header {
     display: none;
 }
 
-/*
-.headerLeft {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 33%;
-}
-
-header .logo {
-    height: 30%;
-    width: 30%;
-}
-
-.brand {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    line-height: 25px;
-}
-
-.brand h2 {
-    font-size: 16px;
-    color: #666;
-}
-
-.headerCenter {
-    width: 33%;
-}
-
-header form input {
-    height: 40px;
-    width: 100%;
-    border-radius: 50px;
-    padding-left: 2%;
-    border-style: none;
-    border: 1px solid black;
-}
-
-.headerRight {
-    width: 33%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.headerRight i:hover {
-    color: rgba(0, 0, 0, 0.651);
-}
-
-.login {
-    background-color: white;
-    color: black;
-    height: 40px;
-    width: 130px;
-    border: 1px solid black;
-    border-radius: 50px;
-    margin: -7%;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.login:hover {
-    background-color: rgba(251, 177, 60, 0.651);
-    border-color: rgba(251, 177, 60, 0.651);
-}
-
-.register {
-    background-color: rgb(253, 141, 66);
-    height: 40px;
-    width: 130px;
-    border: 1px;
-    border-radius: 50px;
-    cursor: pointer;
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.top-nav {
-    background-color: white;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    padding-left: 25px;
-    padding: 5px;
-}
-
-.top-nav a {
-    color: black;
-    text-decoration: none;
-    transition: all 200ms;
-}
-
-.top-nav a:hover {
-    font-weight: bold;
-}
-
 /*Breakpoints*/
 
 /* Desktop */
@@ -172,8 +70,8 @@ header form input {
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        width: 95%;
-        margin: 0px 5px 0px 5px;
+        width: 100%;
+        margin: 0px;
     }
 
     .headerLeft {
@@ -181,6 +79,7 @@ header form input {
         flex-direction: row;
         flex-wrap: nowrap;
         width: 33%;
+        margin: 5px;
     }
 
     header .logo {
@@ -195,34 +94,35 @@ header form input {
         flex-direction: column;
         align-items: left;
         justify-content: center;
-        line-height: 25px;
         text-align: left;
     }
 
     .brand h2 {
         font-size: 16px;
         color: #666;
+        line-height: 25px;
     }
 
     .headerCenter {
         width: 33%;
-        display: flex;
+        display: flex   ;
         justify-content: center;
         align-items: start;
     }
 
     .headerCenter input {
         height: 40px;
-        width: 130%;
+        width: 110%;
         border-radius: 50px;
         text-align: center;
     }
 
     .headerRight {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
         width: 33%;
+        margin: 0px;
     }
 
     .headerRight div {
@@ -237,8 +137,11 @@ header form input {
         color: black;
         background-color: white;
         font-size: 32px;
-        padding: 20px;
+        padding: 25px;
+        padding-left: 0px;
+        padding-right: 3px;
         transition: all 450ms;
+        cursor: pointer;
     }
     
     .headerRight i:hover {
@@ -251,7 +154,7 @@ header form input {
         width: 130px;
         border: 1px solid black;
         border-radius: 50px;
-        margin: -7%;
+        margin-top: 20px;
         cursor: pointer;
         transition: all 0.4s;
     }
@@ -275,6 +178,7 @@ header form input {
         border-radius: 50px;
         cursor: pointer;
         transition: all 0.4s;
+        margin-top: 20px;
     }
 
     .register:hover {
@@ -297,9 +201,24 @@ header form input {
     }
 
     .top-nav {
+        background-color: white;
+        width: 100%;
         display: flex;
-        margin: 0 25% 0 25%;
-        justify-content: space-around;
+        justify-content: center;
+        gap: 100px;
+        padding-left: 25px;
+        border-top: 1px solid #666;
+        padding: 5px;
     }
+    
+    .top-nav a {
+        color: black;
+        text-decoration: none;
+        transition: all 200ms;
+    }
+    
+    .top-nav a:hover {
+        font-weight: bold;
+    }   
 
 }
