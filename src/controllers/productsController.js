@@ -13,7 +13,7 @@ const productsController = {
         res.render('detail', {product: product});
     },
     create: (req,res) => {
-        res.render('product-create-form');
+        res.render('productCreateForm');
     },
     store: (req,res) => {
         let newProduct = req.body;
@@ -25,7 +25,7 @@ const productsController = {
     },
     edit: (req,res) => {
         let productToEdit = products.find(product => product.id == req.params.id);
-        res.render('product-edit-form', {productToEdit: productToEdit});
+        res.render('productEditForm', {productToEdit: productToEdit});
     },
     update: (req,res) => {
         const productToUpdate = products.find(product => product.id == req.params.id);

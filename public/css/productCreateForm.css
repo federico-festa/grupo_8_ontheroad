@@ -1,0 +1,20 @@
+/*Mobile first*/
+
+/*Main*/
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/*Breakpoints*/
+
+/*Desktop*/
+
+@media (min-width: 1024px) {
+
+
+    
+}

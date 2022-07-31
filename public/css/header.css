@@ -201,13 +201,14 @@ header {
     }
 
     .top-nav {
-        background-color: white;
+       background-color: white;
         width: 100%;
         display: flex;
         justify-content: center;
         gap: 100px;
         padding-left: 25px;
-        border-top: 1px solid #666;
+        border-top: 1px solid #ebebeb;
+        border-bottom: 1px solid #ebebeb;
         padding: 5px;
     }
     

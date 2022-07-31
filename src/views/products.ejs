@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('partials/head', {title: 'Todas las experiencias', css: 'products.css' }) %>
+<%- include('partials/head', {title: 'Todas las experiencias' , css: 'products.css' }) %>
 
     <body>
         <%- include('./partials/header') %>
             <main>
-                <section class="product-showcase">
-                    <h2>Todas nuestras experiencias:</h2>
-                    <article class="product">
-                        <% products.forEach((product)=> { %>
-                                <img src="./img/products/<%= product.image %>" alt="imagen de producto">
+                </section>
+                <h2 class="todas">Todas nuestras experiencias</h2>
+                <div class="product-showcase">
+                    <% products.forEach((product)=> { %>
+                        <article class="product">
+                            <a href="/products/detail/<%= product.id %>">
+                                <img src="./img/products/<%= product.image %>" alt="product image">
                                 <div class="product-description">
                                     <h5 class="name">
                                         <%= product.name %>
@@ -21,8 +23,10 @@
                                     <p class="price">$<%= product.price %>
                                     </p>
                                 </div>
-                                    <% }); %>
-                    </article>
+                            </a>
+                        </article>
+                        <% }); %>
+                </div>
                 </section>
             </main>
     </body>
