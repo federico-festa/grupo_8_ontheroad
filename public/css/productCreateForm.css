@@ -7,6 +7,13 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    background-color: #ebebeb;
+}
+
+.form-container {
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
 }
 
 /*Breakpoints*/
@@ -15,6 +22,98 @@ main {
 
 @media (min-width: 1024px) {
 
+    main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: #ebebeb;
+    }
 
+    .create-title {
+        color: #666;
+        margin: 25px 0px 10px 15px;
+    }
+    
+    .container {
+        background-color: white;
+        width: 100%;
+        border-radius: 10px;
+        margin: 10px 50px 10px 50px;
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .form-containter {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .c-1 {
+        width: 50%;
+        height: 100%;
+    }
+
+    .c-2 {
+        width: 50%;
+        height: 100%;
+    }
+
+    .input-container {
+        margin: 5px;
+        width: 100%;
+    }
+
+    .label-container {
+        margin: 5px;
+        font-size: 1.2em;
+    }
+
+    .input {
+        border-radius: 5px;
+        border: solid 1px gray;
+        height: 45px;
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        padding: 0px 15px;
+    }
+
+    .category {
+        border-radius: 5px;
+        border: solid 1px gray;
+        height: 45px;
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        padding: 0px 15px;
+    }
+
+    .img-input {
+        border-radius: 5px;
+        border: solid 1px gray;
+        height: 45px;
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .submit-button {
+        background-color: black;
+        color: white;
+        height: 40px;
+        width: 130px;
+        border: 1px solid black;
+        border-radius: 50px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: all 0.4s;
+    }
+
+    .submit-button:hover {
+        background-color: rgba(0, 0, 0, 0.651);
+        border-color: rgba(0, 0, 0, 0.651);
+    }
     
 }
