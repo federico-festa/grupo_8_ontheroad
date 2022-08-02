@@ -46,6 +46,10 @@ main {
     padding: 0px 15px;
 }
 
+.input-desc {
+    width: 100%;
+}
+
 .category {
     border-radius: 5px;
     border: solid 1px gray;
@@ -176,13 +180,18 @@ main {
     }
 
     .img-input {
-        width: 180%;
+        width: 80%;
         border-radius: 5px;
         border: solid 1px gray;
         height: 45px;
         font-size: 1.2em;
         margin-bottom: 15px;
         padding: 10px;
+    }
+
+    .input-desc {
+        width: 180%;
+        height: 80px;
     }
 
     .submit-button {

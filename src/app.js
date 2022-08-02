@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(publicPath));
 app.use(methodOverride('_method'));
 
-app.listen(3030, () => {
+app.listen(3000, () => {
     console.log('Servidor corriendo - 3000');
 });
 
