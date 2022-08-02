@@ -1,64 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <base href="/" />
-<%- include('partials/head', {title: 'Formulario de edición', css: 'productEditForm.css'}) %>
+<%- include('partials/head', {title: 'Formulario de edición' , css: 'productEditForm.css' }) %>
 
-
-<body>
-    <%- include('./partials/header') %>
-        <main>
-            <div class="<">
-                <div class="<">
-                    <div class="<">
-                        <h2 class="edit-title">Formulario de edición de productos</h2>
-                    </div>
-                </div>
-                <div class="<">
-                    <form action="/products/edit/<%= productToEdit.id %>?_method=put" method="post" enctype="multipart/form-data">
-                        <div class="<">
-                            <div class="<">
-                                <label for="name" class="<">Lugar:</label>
-                                <input type="text" id="name" name="name" class="<" value="<%= productToEdit.name %>">
+    <body>
+        <%- include('./partials/header') %>
+            <main>
+                <h2 class="edit-title">Formulario de edición de producto: <%= productToEdit.name %>
+                </h2>
+                <div class="container">
+                    <div class="form-container">
+                        <form action="/products/edit/<%= productToEdit.id %>?_method=put" method="post"
+                            enctype="multipart/form-data">
+                            <div class="row-1">
+                                <div class="c-1">
+                                    <div class="input-container">
+                                        <label for="name" class="label-container">Lugar:</label>
+                                        <br>
+                                        <input type="text" id="name" name="name" placeholder="Ej: Buenos Aires"
+                                            class="input">
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="discount" class="label-container">Descuento:</label>
+                                        <br>
+                                        <input type="text" id="discount" name="discount" placeholder="Ej: 15"
+                                            class="input">
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="shortDescription" class="label-container">Descipción breve:</label>
+                                        <br>
+                                        <textarea name="shortDescription" id="shortDescription"
+                                            class="input"></textarea>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="image" class="label-container">Imagen:</label><br>
+                                        <input type="file" name="image" id="image" class="img-input"></input>
+                                    </div>
+                                </div>
+                                <div class="c-2">
+                                    <div class="input-container">
+                                        <label for="price" class="label-container">Precio:</label>
+                                        <br>
+                                        <input type="text" id="price" name="price" placeholder="Ej: 1500" class="input">
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="category" class="label-container">Categoría:</label>
+                                        <br>
+                                        <select name="category" id="category" class="category">
+                                            <option value="">Elegí</option>
+                                            <option value="urbano">Urbano</option>
+                                            <option value="naturaleza">Naturaleza</option>
+                                            <option value="aventura">Aventura</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="longDescription" class="label-container">Descipción
+                                            completa:</label>
+                                        <br>
+                                        <textarea name="longDescription" id="longDescription" class="input"></textarea>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="<">
-                                <label for="price" class="<">Precio:</label>
-                                <input type="text" id="price" name="price" class="<" value="<%= productToEdit.price %>">
-                            </div>
-                            <div class="<">
-                                <label for="discount" class="<">Descuento:</label>
-                                <input type="text" id="discount" name="discount" class="<" value="<%= productToEdit.discount %>">
-                            </div>
-                            <div class="<">
-                                <label for="category" class="<">Categoría:</label>
-                                <select name="category" id="category" class="<">
-                                    <option value="">Elegí</option>
-                                    <option value="urbano">Urbano</option>
-                                    <option value="naturaleza">Naturaleza</option>
-                                    <option value="aventura">Aventura</option>
-                                </select>
-                            </div>
-                            <div class="<">
-                                <label for="shortDescription" class="<">Descipción breve:</label>
-                                <textarea name="shortDescription" id="shortDescription"
-                                    class="form-input" value="<%= productToEdit.shortDescription %>"></textarea>
-                            </div>
-                            <div class="<">
-                                <label for="longDescription" class="<">Descipción completa:</label>
-                                <textarea name="longDescription" id="longDescription" class="form-input" value="<%= productToEdit.longDescription %>"></textarea>
-                            </div>
-                            <div class="<">
-                                <label for="image" class="form-label">Imagen:</label>
-                                <input type="file" name="image" id="image" class="form-input"></input>
-                            </div>
-                            <div class="<">
+                            <div class="input-container">
                                 <button type="submit" class="submit-button">Guardar producto</button>
                             </div>
-                        </div>
+                    </div>
                     </form>
                 </div>
-            </div>
-        </main>
-        <%- include('./partials/footer') %>
-</body>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
 
 </html>

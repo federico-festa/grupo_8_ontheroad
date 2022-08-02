@@ -25,6 +25,7 @@ main {
     flex-wrap: wrap;
     margin-top: 15px;
     border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
 }
 
 article.product {
@@ -101,6 +102,7 @@ article.product img {
         display: flex;
         flex-wrap: nowrap;
         margin: 0px;
+        margin-bottom: 20px;
     }
 
     article.product {

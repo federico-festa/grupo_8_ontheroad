@@ -1,0 +1,132 @@
+/*Mobile first*/
+
+/*Main*/
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #ebebeb;
+}
+
+.form-container {
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/*Breakpoints*/
+
+/*Desktop*/
+
+@media (min-width: 1024px) {
+
+    main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: #ebebeb;
+    }
+
+    .edit-title {
+        color: #666;
+        margin: 25px 0px 10px 15px;
+    }
+    
+    .container {
+        background-color: white;
+        width: 100%;
+        border-radius: 10px;
+        margin: 10px 50px 10px 50px;
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .form-containter {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .row-1 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .c-1 {
+        width: 50%;
+        height: 100%;
+    }
+
+    .c-2 {
+        width: 50%;
+        height: 100%;
+    }
+
+    .input-container {
+        margin: 5px;
+        width: 100%;
+    }
+
+    .label-container {
+        margin: 5px;
+        font-size: 1.2em;
+    }
+
+    .input {
+        width: 80%;
+        border-radius: 5px;
+        border: solid 1px gray;
+        height: 45px;
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        padding: 0px 15px;
+    }
+
+    .category {
+        border-radius: 5px;
+        border: solid 1px gray;
+        height: 45px;
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        padding: 0px 15px;
+        width: 80%;
+    }
+
+    .img-input {
+        width: 180%;
+        border-radius: 5px;
+        border: solid 1px gray;
+        height: 45px;
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .submit-button {
+        background-color: black;
+        color: white;
+        height: 45px;
+        width: 200px;
+        border: 1px solid black;
+        border-radius: 50px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: all 0.4s;
+        text-align: center;
+        font-size: 1em;
+    }
+
+    .submit-button:hover {
+        background-color: rgba(0, 0, 0, 0.651);
+        border-color: rgba(0, 0, 0, 0.651);
+    }
+    
+}
