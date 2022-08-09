@@ -7,7 +7,7 @@ const publicPath = path.resolve(__dirname, '../public');
 
 const mainRouter = require('./routes/mainRouter');
 const productsRouter = require('./routes/productsRouter');
-const userRouter = require('./routes/userRouter');
+const usersRouter = require('./routes/usersRouter');
 
 app.set('view engine', 'ejs');
 app.use(express.static(publicPath));
@@ -19,6 +19,6 @@ app.listen(3000, () => {
 
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
-app.use('/user', userRouter);
+app.use('/user', usersRouter);
 
 module.exports = app;

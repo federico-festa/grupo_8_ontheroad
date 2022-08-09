@@ -1,11 +1,11 @@
 [
-    {
-        "id": 1,
-        "firstName": "Federico",
-        "lastName": "Festa",
-        "email": "federico.festa@gmail.com",
-        "password": "spinetta123",
-        "category": "admin",
-        "image": "profile1.jpg"
-    }
+ {
+  "fisrtName": "Federico",
+  "lastName": "Festa",
+  "email": "fede.festa@hotmail.com",
+  "phoneNumber": "1159629389",
+  "password": "$2a$10$Zal0BaJHjwhyNSI6rWWAwu7BhmQC0f.6ZidNmZAp6HP8kdN/w9gfu",
+  "id": 1,
+  "image": "image-1660003188351"
+ }
 ]
