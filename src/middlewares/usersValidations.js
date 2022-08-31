@@ -8,3 +8,8 @@ exports.reg = [
     body('email').notEmpty().withMessage('Por favor complete con su email').bail().isEmail().withMessage('Por favor ingrese un email válido'),
     body('password').notEmpty().withMessage('Por favor ingrese su contraseña').bail(),    
 ];
+
+exports.log = [
+    body('email').notEmpty().withMessage('Por favor ingrese su email').bail().isEmail().withMessage('Por favor ingrese un email válido'),
+    body('password').notEmpty().withMessage('Por favor ingrese su contraseña').bail(),    
+];
