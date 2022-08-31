@@ -13,31 +13,42 @@
                             <div class="form-group">
                                 <label class="form-label " for="name">Nombre</label>
                                 <input type="text" class="form-control" autocorrect="off" autocapitalize="off"
-                                    name="fisrtName" placeholder="ej: Pablo" required>
+                                    name="firstName" placeholder="ej: Pablo">
+                                    <div>
+                                        <p>Error</p>
+                                        <% if(locals && locals.errors) { %>
+                                        <% for(let error in errors) { %>
+                                            <p><%= errors[error].msg %></p>
+                                        <% } %>
+                                        <% } %>
+                                        <!-- <% if(locals.errors && errors.firstName) { %>
+                                            <%= errors.firstName.msg %>
+                                        <% } %>              -->
+                                    </div>                   
                             </div>
                             <div class="form-group">
                                 <label class="form-label " for="lastName">Apellido</label>
                                 <input type="text" class="form-control" autocorrect="off" autocapitalize="off"
-                                    name="lastName" placeholder="ej: Pérez" required>
+                                    name="lastName" placeholder="ej: Pérez">
                             </div>
                             <div class="form-group">
                                 <label class="form-label " for="email">Email</label>
                                 <input type="email" class="form-control" autocorrect="off" autocapitalize="off"
-                                    name="email" placeholder="ej: name@email.com" required>
+                                    name="email" placeholder="ej: name@email.com">
                             </div>
                             <div class="form-group">
                                 <label class="form-label " for="category">Categoría</label>
                                 <input type="text" class="form-control" autocorrect="off" autocapitalize="off"
-                                    name="category" placeholder="ej: Admin" required>
+                                    name="category" placeholder="ej: Admin">
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="password">Contraseña</label>
                                 <input type="password" class="form-control" autocorrect="off" autocapitalize="off"
-                                    autocomplete="off" name="password" placeholder="8 caratéres mínimo" required>
+                                    autocomplete="off" name="password" placeholder="8 caratéres mínimo">
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="image">Imagen de perfil</label>
-                                <input type="file" class="form-control" name="image" required>
+                                <input type="file" class="form-control" name="image">
                             </div>
                             <button class="reset-button" type="reset">Borrar todo</button>
                             <button class="register-button" type="submit">Crear cuenta</button>
