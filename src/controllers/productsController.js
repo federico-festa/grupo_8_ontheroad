@@ -4,9 +4,6 @@ const db = require('../database/models')
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 
-// const productsFilePath = path.join(__dirname, '../data/products.json');
-// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
 const productsController = {
     products: (req,res) => {
         res.render('products', {products: products});
@@ -49,12 +46,6 @@ const productsController = {
     },
     cart: (req, res) => {
         res.render('cart');    
-    },
-    show: (req, res) => {
-        db.Product.findAll()
-        .then(product => {
-            res.render('show', {product})
-        })
     }
 };
 

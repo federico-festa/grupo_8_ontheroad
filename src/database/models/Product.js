@@ -1,4 +1,4 @@
-module.exports = (sequelize, datatype)=>{
+module.exports = (sequelize, datatype) => {
     const alias = "Product";
     const columns = {
         id:{
@@ -28,18 +28,18 @@ module.exports = (sequelize, datatype)=>{
             type: datatype.INTEGER
         }
     };
-    //Opcional
     const config = {
         tableName: "products",
         timestamps: false,
     }
-    //
     const Product = sequelize.define(alias, columns, config);
+
     Product.associate = (models) => {
         Product.belongsTo(models.Region, {
             as: 'product',
             foreignKey: 'regions_id'
         })
     }
+
     return Product;
 }

@@ -2,9 +2,9 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
-
-// const usersFilePath = path.join(__dirname, '../data/users.json');
-// const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
 
 const userController = {
     register: (req, res) => {
@@ -14,7 +14,17 @@ const userController = {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
              res.render('register', { errors: errors.mapped() });
-           };        
+           };     
+           db.User.create({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10),
+            category_id: req.body.category_id
+        })
+        .then((user)=>{
+            res.redirect('/');
+        });   
     },
     login: (req, res) => {
         res.render('login');
@@ -47,6 +57,8 @@ module.exports = userController;
 
 
 //Controller para JSON
+// const usersFilePath = path.join(__dirname, '../data/users.json');
+// const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 // const userController = {
 //     register: (req, res) => {
 //         res.render('register');    
