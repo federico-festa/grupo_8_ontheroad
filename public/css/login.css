@@ -58,6 +58,13 @@ h3 {
     font-size: 14px;
 }
 
+.errors-msg {
+    background-color: rgb(225,83,82);
+    color: white;
+    margin-top: 2px;
+    padding-left: 10px;
+}
+
 .forgot-button {
     padding: 10px 15px;
     color: white;

@@ -1,12 +1,19 @@
 const path = require('path');
 const fs = require('fs');
-
-//const productsFilePath = path.join(__dirname, '../data/products.json');
-//const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
 
 const mainController = {
     index: (req, res) => {
-        res.render('index', {products: products});    
+        db.Product.findAll()
+            .then(data => {
+                res.render('index', {products: data})
+            })
+            .catch((error) => {
+                console.log("Error", error.original.sqlMessage);
+                res.send('Error');
+            })
     },
 };
 

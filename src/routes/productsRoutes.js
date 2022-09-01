@@ -2,17 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const productsController = require('../controllers/productsController');
-
-const multer = require('multer');
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'public/img/products');
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now());
-    }
-});
-const upload = multer({ storage: storage });
+const upload = require('../middlewares/multerProduct');
 
 router.get('/', productsController.products);
 router.get('/detail/:id', productsController.detail);
@@ -27,7 +17,7 @@ router.delete('/delete/:id', productsController.destroy);
 
 router.get('/cart', productsController.cart);
 
-router.get('/show', productsController.show);
+//router.get('/show', productsController.show);
 
 
 module.exports = router;

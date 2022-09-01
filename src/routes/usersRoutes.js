@@ -3,7 +3,7 @@ const router = express.Router();
 
 const usersController = require('../controllers/usersController');
 const userValidations = require('../middlewares/usersValidations');
-const upload = require('../middlewares/multer');
+const upload = require('../middlewares/multerUser');
 
 router.get('/register', usersController.register);
 router.get('/login', usersController.login);

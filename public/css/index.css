@@ -81,7 +81,7 @@ article.product img {
     margin-bottom: 5px;
 }
 
-.shortDescription {
+.descriptionShort {
     width: 100%;
     height: 100%;
     border-top: 1px solid #ebebeb;
@@ -225,7 +225,7 @@ section.bottom-banner {
         text-decoration: none;
     }
 
-    .shortDescription {
+    .descriptionShort {
         width: 100%;
         height: 100%;
         border-top: 1px solid #ebebeb;

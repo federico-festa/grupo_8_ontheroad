@@ -15,23 +15,70 @@ const userController = {
         if (!errors.isEmpty()) {
              res.render('register', { errors: errors.mapped() });
            };     
-           db.User.create({
+        db.User.create({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
-            category_id: req.body.category_id
+            category_id: 2
         })
         .then((user)=>{
             res.redirect('/');
-        });   
+        })
+        .catch((error) => {
+            console.log('Error', error.original.sqlMessage);
+            res.send('Error');
+        });
     },
     login: (req, res) => {
         res.render('login');
     },
     log: (req,res) => {
-        //Logica para loguear usuario
-        res.redirect('/');
+        const userLog = db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        })
+        if(userLog) {
+            const passwordOk = bcrypt.compareSync(req.body.password, userLog.password);
+            if(passwordOk) {
+                res.redirect('/');
+            } else {
+                res.render('login', {
+                    errors: {
+                        email: {
+                            msg: 'Las credenciales son invalidas'
+                        }
+                    }
+                });  
+            }
+        } else {
+            res.render('login', {
+                errors: {
+                    email: {
+                        msg: 'Email no encontrado'
+                    }
+                }
+            })
+        }
+        
+        // const userLog = db.User.findOne({
+        //     where: {
+        //         email: req.body.email
+        //     }
+        // })
+        // if(userLog){
+        //     res.redirect('/')
+        // } else {
+        //     res.send(req.body.email);
+        // }
+        // .then((user) => {
+        //     res.redirect('/')
+        // }) 
+        // .catch((error) => {
+        //     console.log('Error', error.original.sqlMessage);
+        //     res.send('Error');
+        // });
     },
     profile: (req,res) => {
         res.render('profile', {})
@@ -48,8 +95,6 @@ const userController = {
     destroy: (req,res) => {
 
     }
-    //Editar usuario?
-    //Destruir usuario?
 };
 
 module.exports = userController;
