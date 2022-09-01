@@ -53,7 +53,7 @@ const productsController = {
     show: (req, res) => {
         db.Product.findAll()
         .then(product => {
-            res.render('show', product)
+            res.render('show', {product})
         })
     }
 };

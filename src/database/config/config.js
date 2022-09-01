@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "ontheroad_db",
+    "database": "ontheroad",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
