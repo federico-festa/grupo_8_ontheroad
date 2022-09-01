@@ -1,5 +1,5 @@
 module.exports = (sequelize, datatype)=>{
-    const alias = "Region";
+    const alias = "Category";
     const columns = {
         id:{
             type: datatype.INTEGER , 
@@ -12,17 +12,17 @@ module.exports = (sequelize, datatype)=>{
     };
     //Opcional
     const config = {
-        tableName: "regions",
+        tableName: "category",
         timestamps: false,
 
     }
     //
-    const Region = sequelize.define(alias, columns, config);
-    Region.associate = (models) => {
-        Region.hasMany(models.Product, {
-            as: 'region',
-            foreignKey: 'region_id'
+    const Category = sequelize.define(alias, columns, config);
+    Category.associate = (models) => {
+        Category.hasMany(models.User, {
+            as: 'category',
+            foreignKey: 'category_id'
         })
     }
-    return Region;
+    return Category;
 }

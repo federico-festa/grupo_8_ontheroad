@@ -27,5 +27,7 @@ router.delete('/delete/:id', productsController.destroy);
 
 router.get('/cart', productsController.cart);
 
+router.get('/show', productsController.show);
+
 
 module.exports = router;
