@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
 const sequelize = db.sequelize;
@@ -19,7 +19,7 @@ const userController = {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
+            password: bcryptjs.hashSync(req.body.password, 10),
             category_id: 2
         })
             .then((user) => {
@@ -43,26 +43,15 @@ const userController = {
                 email: req.body.email
             }
         })
-        .then((user) => {
-            if(!user) {
-                res.render('login', {
-                    errors: {
-                        email: {
-                            msg: 'No se encuentra el email'
-                        }
-                    }
-                })
-            } else if(user && bcrypt.compareSync(req.body.password, user.password)) {
-                res.send(bcrypt.compareSync(req.body.password.toString(), user.password))
-            } else {
-                res.send(bcrypt.compareSync(req.body.password.toString(), user.password))
-            }
-        })
-        .catch((error) => {
-            res.send(error)
-        })
-            // .then((user) => {
-            //     const passwordOk = bcrypt.compareSync(req.body.password, user.password);
+            .then((user) => {
+                res.send([bcryptjs.compareSync(req.body.password, user.password), req.body.password, user.password]);
+            })
+        },
+        
+
+
+
+
             //     if (!user) {
             //         res.render('login', {
             //             errors: {
@@ -70,22 +59,16 @@ const userController = {
             //                     msg: 'No se encuentra el email'
             //                 }
             //             }
-            //         })
-            //     } else if (passwordOk) {
-            //         res.redirect('/');
+            //         });
+            //     } else if (user && bcrypt.compareSync(req.body.password, user.password)) {
+            //         res.send(bcrypt.compareSync(req.body.password.toString(), user.password));
             //     } else {
-            //         res.render('login', {
-            //             errors: {
-            //                 password: {
-            //                     msg: 'La contraseña es incorrecta'
-            //                 }
-            //             }
-            //         })
+            //         res.send(bcrypt.compareSync(req.body.password.toString(), user.password));
             //     }
             // })
-    },
-
-
+            // .catch((error) => {
+            //     res.send(error);
+            // });
     // const userLog = db.User.findOne({
     //     where: {
     //         email: req.body.email
