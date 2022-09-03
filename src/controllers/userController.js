@@ -19,7 +19,7 @@ const userController = {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
-            password: bcryptjs.hashSync(req.body.password, 10),
+            password: req.body.password,
             category_id: 2
         })
             .then((user) => {
@@ -38,23 +38,37 @@ const userController = {
         if (!errors.isEmpty()) {
             res.render('login', { errors: errors.mapped() });
         }
-        let userPass = '';
         let userFound = await db.User.findOne({ where: {email: {[Op.like]: req.body.email} }})
-        if(userFound) {
-            userPass = userFound.password;
-        }
-        let passOk = bcryptjs.compareSync(req.body.password, userPass);
-        if(userFound && passOk) {
+        if(!userFound) {
+            res.render('login', {
+                errors: {
+                    email: {
+                        msg: 'No se encuentra el email'
+                    }
+                }
+            })
+        };
+        if(userFound && !(req.body.password==userFound.password)) {
+            res.render('login', {
+                errors: {
+                    password: {
+                        msg: 'La contraseña es incorrecta'
+                    }
+                }
+            })
+        };
+        if(userFound && (req.body.password==userFound.password)) {
+            delete userFound.password;
             req.session.userLog = userFound
             res.redirect('/')
-        } else {
-            let infoUser = null;
-            let errors = 'El email y la contraseña no coinciden'
-            return res.render('login', {errors})
         };
     },
+    logout: (req,res) => {
+        req.session.destroy();
+        res.redirect('/');
+    },
     profile: (req, res) => {
-        res.render('profile', {})
+        res.render('profile', {user: req.session.userLog})
     },
     edit: (req, res) => {
 

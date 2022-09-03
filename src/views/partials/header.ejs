@@ -13,12 +13,17 @@
     </div>
     <div class="headerRight">
         <button id="btnOrange"><i class="fas fa-bars"></i></button>
-        <div>
+        <% if(locals.log) { %>
+            <p>Hola, <%= locals.userLog.firstName %></p>
             <a href="/products/cart"><button class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></button></a>
+            <% } else { %>
+        <div>
             <a href="/user/login"><button class="login">Iniciar sesión</button></a>
             <a href="/user/register"><button class="register">Registrarse</button></a>
         </div>
+        <% } %>
     </div>
+
     <nav class="top-nav">
         <a href="/">Inicio</a>
         <a href="/products">Experiencias</a>

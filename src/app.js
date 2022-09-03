@@ -6,16 +6,19 @@ const app = express();
 
 const publicPath = path.resolve(__dirname, '../public');
 
+const userLog = require('./middlewares/userLog');
+
 const mainRoutes = require('./routes/mainRoutes');
 const productsRoutes = require('./routes/productsRoutes');
-const usersRoutes = require('./routes/usersRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 app.set('view engine', 'ejs');
 
+app.use(session( {secret: 'kerouac', resave: false, saveUninitialized: false}));
 app.use(express.static(publicPath));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false}));
-app.use(session( {secret: 'ontheroad'}));
+app.use(userLog);
 
 app.listen(3000, () => {
     console.log('Servidor corriendo - 3000');
@@ -23,6 +26,6 @@ app.listen(3000, () => {
 
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
-app.use('/user', usersRoutes);
+app.use('/user', userRoutes);
 
 module.exports = app;
