@@ -30,6 +30,11 @@
                                             <p><%= errors.password.msg %> </p>
                                                 <% } %>
                                     </div>
+                                    <div class="errors-msg">
+                                        <% if(locals.errors) { %>
+                                            <p><%= errors %> </p>
+                                                <% } %>
+                                    </div>
                                 <div class="text-center">
                                     <a href="#account/reset" class="forgot-button">¿Olvidaste tu contraseña?</a>
                                 </div>

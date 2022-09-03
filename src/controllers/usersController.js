@@ -4,7 +4,7 @@ const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
 const sequelize = db.sequelize;
-const { Op } = require("sequelize");
+const { Op } = require('sequelize');
 
 const userController = {
     register: (req, res) => {
@@ -33,87 +33,26 @@ const userController = {
     login: (req, res) => {
         res.render('login');
     },
-    log: (req, res) => {
+    log: async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             res.render('login', { errors: errors.mapped() });
+        }
+        let userPass = '';
+        let userFound = await db.User.findOne({ where: {email: {[Op.like]: req.body.email} }})
+        if(userFound) {
+            userPass = userFound.password;
+        }
+        let passOk = bcryptjs.compareSync(req.body.password, userPass);
+        if(userFound && passOk) {
+            req.session.userLog = userFound
+            res.redirect('/')
+        } else {
+            let infoUser = null;
+            let errors = 'El email y la contraseña no coinciden'
+            return res.render('login', {errors})
         };
-        db.User.findOne({
-            where: {
-                email: req.body.email
-            }
-        })
-            .then((user) => {
-                res.send([bcryptjs.compareSync(req.body.password, user.password), req.body.password, user.password]);
-            })
-        },
-        
-
-
-
-
-            //     if (!user) {
-            //         res.render('login', {
-            //             errors: {
-            //                 email: {
-            //                     msg: 'No se encuentra el email'
-            //                 }
-            //             }
-            //         });
-            //     } else if (user && bcrypt.compareSync(req.body.password, user.password)) {
-            //         res.send(bcrypt.compareSync(req.body.password.toString(), user.password));
-            //     } else {
-            //         res.send(bcrypt.compareSync(req.body.password.toString(), user.password));
-            //     }
-            // })
-            // .catch((error) => {
-            //     res.send(error);
-            // });
-    // const userLog = db.User.findOne({
-    //     where: {
-    //         email: req.body.email
-    //     }
-    // })
-    // if(userLog) {
-    //     const passwordOk = bcrypt.compareSync(req.body.password, userLog.password);
-    //     if(passwordOk) {
-    //         res.redirect('/');
-    //     } else {
-    //         res.render('login', {
-    //             errors: {
-    //                 email: {
-    //                     msg: 'Las credenciales son invalidas'
-    //                 }
-    //             }
-    //         });  
-    //     }
-    // } else {
-    //     res.render('login', {
-    //         errors: {
-    //             email: {
-    //                 msg: 'Email no encontrado'
-    //             }
-    //         }
-    //     })
-    // }
-
-    // const userLog = db.User.findOne({
-    //     where: {
-    //         email: req.body.email
-    //     }
-    // })
-    // if(userLog){
-    //     res.redirect('/')
-    // } else {
-    //     res.send(req.body.email);
-    // }
-    // .then((user) => {
-    //     res.redirect('/')
-    // }) 
-    // .catch((error) => {
-    //     console.log('Error', error.original.sqlMessage);
-    //     res.send('Error');
-    // });
+    },
     profile: (req, res) => {
         res.render('profile', {})
     },
