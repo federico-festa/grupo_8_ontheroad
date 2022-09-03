@@ -28,12 +28,13 @@
                                     <div class="errors-msg">
                                         <% if(locals.errors && errors.password) { %>
                                             <p><%= errors.password.msg %> </p>
+                                        </div>
+                                            <div class="text-center">
+                                                <a href="#account/reset" class="forgot-button">¿Olvidaste tu contraseña?</a>
+                                            </div>
                                                 <% } %>
-                                    </div>
-                                <div class="text-center">
-                                    <a href="#account/reset" class="forgot-button">¿Olvidaste tu contraseña?</a>
-                                </div>
                             </div>
+                            <input type="checkbox" class="checkbox" name="rememberUser"> Recordar mi usuario
                             <button class="sesion-button" type="submit">Iniciar sesión</button>
                         </form>
                         <p class="text-center t2">¿No tenés una cuenta? <a href="/user/register"

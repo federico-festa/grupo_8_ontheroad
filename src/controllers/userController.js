@@ -37,8 +37,8 @@ const userController = {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             res.render('login', { errors: errors.mapped() });
-        }
-        let userFound = await db.User.findOne({ where: {email: {[Op.like]: req.body.email} }})
+        };
+        let userFound = await db.User.findOne({ where: {email: {[Op.like]: req.body.email} }});
         if(!userFound) {
             res.render('login', {
                 errors: {
@@ -59,16 +59,20 @@ const userController = {
         };
         if(userFound && (req.body.password==userFound.password)) {
             delete userFound.password;
-            req.session.userLog = userFound
-            res.redirect('/')
+            req.session.userLog = userFound;
+            if(req.body.rememberUser) {
+                res.cookie('userEmail', req.body.email, { maxAge: 86400000});
+            };
+            res.redirect('/');
         };
     },
     logout: (req,res) => {
+        res.clearCookie('userEmail');
         req.session.destroy();
         res.redirect('/');
     },
     profile: (req, res) => {
-        res.render('profile', {user: req.session.userLog})
+        res.render('profile', {user: req.session.userLog});
     },
     edit: (req, res) => {
 
