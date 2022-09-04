@@ -1,5 +1,3 @@
-const fs = require('fs');
-const path = require('path');
 const { body } = require('express-validator');
 
 exports.reg = [
