@@ -11,3 +11,7 @@ exports.log = [
     body('email').notEmpty().withMessage('Por favor ingrese su email').bail().isEmail().withMessage('Por favor ingrese un email válido'),
     body('password').notEmpty().withMessage('Por favor ingrese su contraseña').bail().isLength({ min: 8} ).withMessage('La contraseña debe tener al menos 8 caracteres'),    
 ];
+
+exports.store = [
+
+];

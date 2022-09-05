@@ -13,7 +13,7 @@
                             <div class="form-group">
                                 <label class="form-label " for="name">Nombre</label>
                                 <input type="text" class="form-control" autocorrect="off" autocapitalize="off"
-                                    name="firstName" placeholder="ej: Pablo">
+                                    name="firstName" placeholder="ej: Pablo" value="<%= locals.oldData ? oldData.firstName : null %>">
                                 <div class="errors-msg">
                                     <% if(locals.errors && errors.firstName) { %>
                                         <p><%= errors.firstName.msg %> </p>
@@ -23,7 +23,7 @@
                             <div class="form-group">
                                 <label class="form-label " for="lastName">Apellido</label>
                                 <input type="text" class="form-control" autocorrect="off" autocapitalize="off"
-                                    name="lastName" placeholder="ej: Pérez">
+                                    name="lastName" placeholder="ej: Pérez" value="<%= locals.oldData ? oldData.lastName : null %>">
                                     <div class="errors-msg">
                                         <% if(locals.errors && errors.lastName) { %>
                                             <p><%= errors.lastName.msg %> </p>
@@ -33,7 +33,7 @@
                             <div class="form-group">
                                 <label class="form-label " for="email">Email</label>
                                 <input type="text" class="form-control" autocorrect="off" autocapitalize="off"
-                                    name="email" placeholder="ej: name@email.com">
+                                    name="email" placeholder="ej: name@email.com" value="<%= locals.oldData ? oldData.email : null %>">
                                     <div class="errors-msg">
                                         <% if(locals.errors && errors.email) { %>
                                             <p><%= errors.email.msg %> </p>

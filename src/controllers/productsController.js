@@ -3,29 +3,48 @@ const fs = require('fs');
 const db = require('../database/models')
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
+const { validationResult } = require('express-validator');
 
 const productsController = {
     products: (req,res) => {
-        res.render('products', {products: products});
+        const products = db.Product.findAll()
+        const regions = db.Region.findAll()
+        Promise.all([products, regions])
+        .then(([products, regions]) => {
+            res.render('products', {products: products, regions: regions});
+        })
+        .catch((error) => {
+            console.log("Error", error.original.sqlMessage);
+                res.send('Error');
+        })
     },
     detail: (req,res) => {
-        let product = products.find(product => product.id == req.params.id);
+        
         res.render('detail', {product: product});
     },
     create: (req,res) => {
-        res.render('productCreateForm');
+        db.Region.findAll()
+        .then((regions) => {
+            res.render('productCreate', {regions: regions});
+        })
     },
     store: (req,res) => {
-        let newProduct = req.body;
-		newProduct.id = (products.length + 1);
-		newProduct.image = req.file.filename;
-		products.push(newProduct);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-        res.redirect('/');
+        db.Product.create({
+            name: req.body.name,
+            price: req.body.price,
+            discount: req.body.discount,
+            regions_id: req.body.region_id,
+            descriptionShort: req.body.descriptionShort,
+            descriptionLong: req.body.descriptionLong,
+            image: req.body.image,
+        })
+        .then((product) => {
+            res.redirect('/')
+        });
     },
     edit: (req,res) => {
         let productToEdit = products.find(product => product.id == req.params.id);
-        res.render('productEditForm', {productToEdit: productToEdit});
+        res.render('productEdit', {productToEdit: productToEdit});
     },
     update: (req,res) => {
         const productToUpdate = products.find(product => product.id == req.params.id);

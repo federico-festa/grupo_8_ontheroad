@@ -14,7 +14,7 @@
                             <div class="form-group">
                                 <label class="form-label " for="email">Email</label>
                                 <input type="text" class="form-control" autocorrect="off" autocapitalize="off"
-                                    name="email">
+                                    name="email" value="<%= locals.oldData ? oldData.email : null %>">
                                     <div class="errors-msg">
                                         <% if(locals.errors && errors.email) { %>
                                             <p><%= errors.email.msg %> </p>

@@ -6,16 +6,34 @@
     <body>
         <%- include('./partials/header') %>
             <main>
-                <section>
-                    <h2>Hola, <%= user.firstName %></h2>
+                <section class="profile-cont-1">
                     <div class="profile-image">
                         <img src="./img/users/<%= user.image %>">
+                    </div>
+                    <h2><%= user.firstName %> <%= user.lastName %></h2>
+                </section>
+                <section class="profile-cont-2">
+                    <div class="buttons">
+                        <button>Editar perfil</button>
+                        <button>Eliminar usuario</button>
                     </div>
                     <div class="profile-info">
                         <ul>
                             <li>Email: <%= user.email %></li>
+                            <li>País: <%= user.country %></li>
+                            <li>Cumpleaños: <%= user.birthday %></li>
                         </ul>
-                        <p>Queremos saber mas sobre vos:</p>
+                    </div>
+                    <div class="profile-checkbox">
+                        <form class="form" action="" method="post">
+                            <p>¿Qué team sos?</p>
+                                <input type="radio" name="team" value="beach">
+                                <label for="playa">Playa</label><br>
+                                <input type="radio" name="team" value="mountain">
+                                <label for="mountain">Montaña</label><br>
+                                <input type="radio" name="team" value="city">
+                                <label for="city">Ciudad</label>
+                        </form>
                     </div>
                 </section>
             </main>
@@ -23,12 +41,3 @@
     <%- include('./partials/footer') %>
 
 </html>
-
-
-
-    <form id="login-form" action="/user/register" method="POST" class="form" enctype="multipart/form-data">
-        <div class="form-group">
-            <label class="form-label" for="image">Imagen de perfil</label>
-            <input type="file" class="form-control" name="image">
-        </div>
-    </form>

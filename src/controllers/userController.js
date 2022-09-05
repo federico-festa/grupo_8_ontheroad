@@ -10,12 +10,15 @@ const userController = {
     register: (req, res) => {
         res.render('register');
     },
-    create: (req, res) => {
+    create: async (req, res) => {
+        let emailUsed = await db.User.findOne({where: {email: req.body.email}});
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            res.render('register', { errors: errors.mapped() });
-        };
-        db.User.create({
+            res.render('register', { errors: errors.mapped(), oldData: req.body });
+        } else if (emailUsed) {
+            res.render('register', {errors: {email: {msg: 'El email ya está en uso'}}});
+        } else {
+        await db.User.create({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
@@ -23,12 +26,12 @@ const userController = {
             category_id: 2
         })
             .then((user) => {
-                res.redirect('/');
+                res.redirect('/login');
             })
-            .catch((error) => {
-                console.log('Error', error.original.sqlMessage);
-                res.send('Error');
+            .catch((error)=>{
+                console.log(error);
             });
+        }
     },
     login: (req, res) => {
         res.render('login');
@@ -36,10 +39,10 @@ const userController = {
     log: async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            res.render('login', { errors: errors.mapped() });
+            res.render('login', { errors: errors.mapped(), oldData: req.body });
         };
-        let userFound = await db.User.findOne({ where: {email: {[Op.like]: req.body.email} }});
-        if(!userFound) {
+        let userFound = await db.User.findOne({ where: { email: { [Op.like]: req.body.email } } });
+        if (!userFound) {
             res.render('login', {
                 errors: {
                     email: {
@@ -48,7 +51,7 @@ const userController = {
                 }
             })
         };
-        if(userFound && !(req.body.password==userFound.password)) {
+        if (userFound && !(req.body.password == userFound.password)) {
             res.render('login', {
                 errors: {
                     password: {
@@ -57,22 +60,22 @@ const userController = {
                 }
             })
         };
-        if(userFound && (req.body.password==userFound.password)) {
+        if (userFound && (req.body.password == userFound.password)) {
             delete userFound.password;
             req.session.userLog = userFound;
-            if(req.body.rememberUser) {
-                res.cookie('userEmail', req.body.email, { maxAge: 86400000});
+            if (req.body.rememberUser) {
+                res.cookie('userEmail', req.body.email, { maxAge: 86400000 });
             };
             res.redirect('/');
         };
     },
-    logout: (req,res) => {
+    logout: (req, res) => {
         res.clearCookie('userEmail');
         req.session.destroy();
         res.redirect('/');
     },
     profile: (req, res) => {
-        res.render('profile', {user: req.session.userLog});
+        res.render('profile', { user: req.session.userLog });
     },
     edit: (req, res) => {
 

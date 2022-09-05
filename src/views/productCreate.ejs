@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <base href="/" />
-<%- include('partials/head', {title: 'Formulario de creación' , css: 'productCreateForm.css' }) %>
+<%- include('partials/head', {title: 'Formulario de creación' , css: 'productCreate.css' }) %>
 
     <body>
         <%- include('partials/header') %>
@@ -25,16 +25,16 @@
                                             class="input">
                                     </div>
                                     <div class="input-container">
-                                        <label for="shortDescription" class="label-container">Descipción breve:</label>
+                                        <label for="descriptionShort" class="label-container">Descipción breve:</label>
                                         <br>
-                                        <textarea name="shortDescription" id="shortDescription"
+                                        <textarea name="descriptionShort" id="descriptionShort"
                                             class="input"></textarea>
                                     </div>
                                     <div class="input-container">
-                                        <label for="longDescription" class="label-container">Descripción
+                                        <label for="descriptionLong" class="label-container">Descripción
                                             completa:</label>
                                         <br>
-                                        <textarea name="longDescription" id="longDescription" class="input-desc"></textarea>
+                                        <textarea name="descriptionLong" id="descriptionLong" class="input-desc"></textarea>
                                     </div>
                                 </div>
                                 <div class="c-2">
@@ -44,13 +44,14 @@
                                         <input type="text" id="price" name="price" placeholder="Ej: 1500" class="input">
                                     </div>
                                     <div class="input-container">
-                                        <label for="category" class="label-container">Categoría:</label>
+                                        <label for="regions_id" class="label-container">Región:</label>
                                         <br>
-                                        <select name="category" id="category" class="category">
-                                            <option value="">Elegí</option>
-                                            <option value="urbano">Urbano</option>
-                                            <option value="naturaleza">Naturaleza</option>
-                                            <option value="aventura">Aventura</option>
+                                        <select name="regions_id" id="regions_id" class="region">
+                                            <% for(let i=0; i < regions.length; i++) { %>
+                                            <option value="<%= regions[i].id%>">
+                                                <%= regions[i].name %>
+                                            </option>
+                                                <% } %>
                                         </select>
                                     </div>
                                     <div class="input-container">
@@ -60,7 +61,7 @@
                                 </div>
                             </div>
                             <div class="button-container">
-                                <button type="submit" class="submit-button">Guardar producto</button>
+                                <button type="submit" class="submit-button">Crear producto</button>
                             </div>
                     </div>
                     </form>
