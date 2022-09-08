@@ -19,8 +19,14 @@ const productsController = {
         })
     },
     detail: (req,res) => {
-        
-        res.render('detail', {product: product});
+        const regions = db.Region.findAll()
+        const product = db.Product.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        Promise.all([product, regions])
+        res.render('detail', {product: product, regions: regions});
     },
     create: (req,res) => {
         db.Region.findAll()
@@ -29,6 +35,10 @@ const productsController = {
         })
     },
     store: (req,res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            res.render('productCreate', { errors: errors.mapped(), oldData: req.body });
+        };
         db.Product.create({
             name: req.body.name,
             price: req.body.price,
@@ -36,10 +46,11 @@ const productsController = {
             regions_id: req.body.region_id,
             descriptionShort: req.body.descriptionShort,
             descriptionLong: req.body.descriptionLong,
-            image: req.body.image,
+            //image: req.body.image,//
         })
         .then((product) => {
-            res.redirect('/')
+            const regions = db.Region.findAll();
+            res.redirect('/', {regions})
         });
     },
     edit: (req,res) => {

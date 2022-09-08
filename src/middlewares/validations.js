@@ -13,5 +13,10 @@ exports.log = [
 ];
 
 exports.store = [
-
+    body('name').notEmpty().withMessage('Por favor ingrese el lugar'),
+    body('discount').notEmpty().withMessage('Por favor ingrese el descuento, si no tiene ingrese 0').bail().isInt().withMessage('Por favor ingrese un número'),
+    body('descriptionShort').notEmpty().withMessage('Por favor ingrese la descripción resumida').bail().isLength({max: 500}).withMessage('La descripción resumida debe contener menos de 500 caracteres'),
+    body('descriptionLong').notEmpty().withMessage('Por favor ingrese la descripción completa').bail().isLength({max: 1000}).withMessage('La descripción completa debe contener menos de 1000 caracteres'),
+    body('price').notEmpty().withMessage('Por favor ingrese el precio').bail().isInt().withMessage('Por favor ingrese un número'),
+    body('regions_id').notEmpty().withMessage('Por favor seleccione una región'),
 ];
