@@ -16,7 +16,7 @@
                                         <label for="name" class="label-container">Lugar:</label>
                                         <br>
                                         <input type="text" id="name" name="name" placeholder="Ej: Buenos Aires"
-                                            class="input">
+                                            class="input" value="<%= locals.oldData ? oldData.name : null %>">
                                             <div class="errors-msg">
                                                 <% if(locals.errors && errors.name) { %>
                                                     <p><%= errors.name.msg %> </p>
@@ -27,7 +27,7 @@
                                         <label for="discount" class="label-container">Descuento:</label>
                                         <br>
                                         <input type="text" id="discount" name="discount" placeholder="Ej: 15"
-                                            class="input">
+                                            class="input" value="<%= locals.oldData ? oldData.discount : null %>">
                                             <div class="errors-msg">
                                                 <% if(locals.errors && errors.discount) { %>
                                                     <p><%= errors.discount.msg %> </p>
@@ -38,7 +38,7 @@
                                         <label for="descriptionShort" class="label-container">Descipción breve:</label>
                                         <br>
                                         <textarea name="descriptionShort" id="descriptionShort"
-                                            class="input"></textarea>
+                                            class="input" value="<%= locals.oldData ? oldData.descriptionShort : null %>"></textarea>
                                             <div class="errors-msg">
                                                 <% if(locals.errors && errors.descriptionShort) { %>
                                                     <p><%= errors.descriptionShort.msg %> </p>
@@ -49,7 +49,7 @@
                                         <label for="descriptionLong" class="label-container">Descripción
                                             completa:</label>
                                         <br>
-                                        <textarea name="descriptionLong" id="descriptionLong" class="input-desc"></textarea>
+                                        <textarea name="descriptionLong" id="descriptionLong" class="input-desc" value="<%= locals.oldData ? oldData.descriptionLong : null %>"></textarea>
                                         <div class="errors-msg">
                                             <% if(locals.errors && errors.descriptionLong) { %>
                                                 <p><%= errors.descriptionLong.msg %> </p>
@@ -62,7 +62,7 @@
                                         <label for="price" class="label-container">Precio:</label>
                                         <br>
                                         <input type="text" id="price" name="price" placeholder="Ej: 1500" class="input">
-                                        <div class="errors-msg">
+                                        <div class="errors-msg" value="<%= locals.oldData ? oldData.price : null %>">
                                             <% if(locals.errors && errors.price) { %>
                                                 <p><%= errors.price.msg %> </p>
                                                     <% } %>
@@ -71,7 +71,7 @@
                                     <div class="input-container">
                                         <label for="regions_id" class="label-container">Región:</label>
                                         <br>
-                                        <select name="regions_id" id="regions_id" class="region">
+                                        <select name="regions_id" id="regions_id" class="region" value="<%= locals.oldData ? oldData.regions_id : null %>">
                                             <% for(let i=0; i < regions.length; i++) { %>
                                             <option value="<%= regions[i].id%>">
                                                 <%= regions[i].name %>
@@ -87,6 +87,11 @@
                                     <div class="input-container">
                                         <label for="image" class="label-container">Imagen:</label><br>
                                         <input type="file" name="image" id="image" class="img-input"></input>
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.image) { %>
+                                                <p><%= errors.image.msg %> </p>
+                                                    <% } %>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

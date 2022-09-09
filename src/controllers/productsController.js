@@ -34,24 +34,28 @@ const productsController = {
             res.render('productCreate', {regions: regions});
         })
     },
-    store: (req,res) => {
+    store: async (req,res) => {
+        const regions = await db.Region.findAll();
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            res.render('productCreate', { errors: errors.mapped(), oldData: req.body });
-        };
-        db.Product.create({
-            name: req.body.name,
-            price: req.body.price,
-            discount: req.body.discount,
-            regions_id: req.body.region_id,
-            descriptionShort: req.body.descriptionShort,
-            descriptionLong: req.body.descriptionLong,
-            //image: req.body.image,//
-        })
-        .then((product) => {
-            const regions = db.Region.findAll();
-            res.redirect('/', {regions})
-        });
+            res.render('productCreate', { errors: errors.mapped(), oldData: req.body, regions: regions });
+        } else {
+            await db.Product.create({
+                name: req.body.name,
+                price: req.body.price,
+                discount: req.body.discount,
+                regions_id: req.body.regions_id,
+                descriptionShort: req.body.descriptionShort,
+                descriptionLong: req.body.descriptionLong,
+                image: req.file.filename,
+            })
+            .then((product) => {
+                res.redirect('/');
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+        }
     },
     edit: (req,res) => {
         let productToEdit = products.find(product => product.id == req.params.id);
