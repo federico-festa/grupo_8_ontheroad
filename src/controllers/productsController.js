@@ -6,19 +6,19 @@ const { Op } = require("sequelize");
 const { validationResult } = require('express-validator');
 
 const productsController = {
-    products: (req,res) => {
+    products: (req, res) => {
         const products = db.Product.findAll()
         const regions = db.Region.findAll()
         Promise.all([products, regions])
-        .then(([products, regions]) => {
-            res.render('products', {products: products, regions: regions});
-        })
-        .catch((error) => {
-            console.log("Error", error.original.sqlMessage);
+            .then(([products, regions]) => {
+                res.render('products', { products: products, regions: regions });
+            })
+            .catch((error) => {
+                console.log("Error", error.original.sqlMessage);
                 res.send('Error');
-        })
+            })
     },
-    detail: (req,res) => {
+    detail: (req, res) => {
         const regions = db.Region.findAll()
         const product = db.Product.findOne({
             where: {
@@ -26,15 +26,15 @@ const productsController = {
             }
         })
         Promise.all([product, regions])
-        res.render('detail', {product: product, regions: regions});
+        res.render('detail', { product: product, regions: regions });
     },
-    create: (req,res) => {
+    create: (req, res) => {
         db.Region.findAll()
-        .then((regions) => {
-            res.render('productCreate', {regions: regions});
-        })
+            .then((regions) => {
+                res.render('productCreate', { regions: regions });
+            })
     },
-    store: async (req,res) => {
+    store: async (req, res) => {
         const regions = await db.Region.findAll();
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -49,37 +49,54 @@ const productsController = {
                 descriptionLong: req.body.descriptionLong,
                 image: req.file.filename,
             })
-            .then((product) => {
-                res.redirect('/');
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+                .then((product) => {
+                    res.redirect('/');
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
         }
     },
-    edit: (req,res) => {
-        let productToEdit = products.find(product => product.id == req.params.id);
-        res.render('productEdit', {productToEdit: productToEdit});
+    edit: async (req, res) => {
+        const regions = await db.Region.findAll();
+        const productToEdit = await db.Product.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.render('productEdit', { productToEdit: productToEdit, regions: regions });
     },
-    update: (req,res) => {
-        const productToUpdate = products.find(product => product.id == req.params.id);
-		const productToEdit = req.body;
-		productToUpdate.name = productToEdit.name;
-		productToUpdate.price = productToEdit.price;
-		productToUpdate.discount = productToEdit.discount;
-		productToUpdate.category = productToEdit.category;
-		productToUpdate.shortDescription = productToEdit.shortDescription;
-        productToUpdate.longDescription = productToEdit.longDescription;
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-        res.redirect('/');
+    update: (req, res) => {
+        db.Product.update({
+            name: req.body.name,
+            price: req.body.price,
+            discount: req.body.discount,
+            regions_id: req.body.regions_id,
+            descriptionShort: req.body.descriptionShort,
+            descriptionLong: req.body.descriptionLong,
+        },{
+            where: {id: req.params.id}
+        })
+        .then((product)=>{
+            res.redirect('/products')
+        });
     },
-    destroy: (req,res) => {
-        let productsFilter = products.filter(product => product.id != req.params.id);
-		fs.writeFileSync(productsFilePath, JSON.stringify(productsFilter, null, ' '));
+    delete: async (req, res) => {
+        const product = await db.Product.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.render('productDelete', {product: product});
+    },
+    destroy: (req, res) => {
+        db.Product.destroy({
+            where: {id: req.params.id}
+        });
         res.redirect('/');
     },
     cart: (req, res) => {
-        res.render('cart');    
+        res.render('cart');
     }
 };
 

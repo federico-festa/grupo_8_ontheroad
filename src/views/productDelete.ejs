@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="/" />
+<%- include('partials/head', {title: 'Eliminar producto' , css: 'productDelete.css' }) %>
+
+    <body>
+        <%- include('./partials/header') %>
+            <main>
+                <h1>¿Está seguro que desea eliminar el producto <%= product.name %> - <%= product.descriptionShort %>?</h1>
+                <form>
+                    <button>Si</button>
+                    <button>No</button>
+                </form>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
+
+</html>

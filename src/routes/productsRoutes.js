@@ -9,6 +9,7 @@ router.get('/', productsController.products);
 router.get('/detail/:id', productsController.detail);
 router.get('/create', productsController.create);
 router.get('/edit/:id', productsController.edit);
+router.get('/delete/:id', productsController.delete)
 router.get('/cart', productsController.cart);
 
 router.post('/create', validations.store, upload.single('image'), productsController.store);

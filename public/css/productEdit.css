@@ -50,7 +50,7 @@ main {
     width: 100%;
 }
 
-.category {
+.regions_id {
     border-radius: 5px;
     border: solid 1px gray;
     height: 40px;
@@ -72,6 +72,7 @@ main {
 
 .button-container {
     display: flex;
+    justify-content: center;
 }
 
 .submit-button {
@@ -169,7 +170,7 @@ main {
         padding: 0px 15px;
     }
 
-    .category {
+    .regions_id {
         border-radius: 5px;
         border: solid 1px gray;
         height: 45px;
@@ -192,6 +193,11 @@ main {
     .input-desc {
         width: 180%;
         height: 80px;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
     }
 
     .submit-button {
