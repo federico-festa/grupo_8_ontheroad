@@ -9,6 +9,8 @@ create table `regions` (
     primary key(`id`)
 );
 
+insert into `regions` values (1, 'caba');
+
 drop table if exists `category`;
 create table `category`(
 	`id` int not null auto_increment,
@@ -36,8 +38,10 @@ create table `products` (
     `discount` int not null,
     `descriptionShort` varchar(500) not null,
     `descriptionLong` varchar(1000) not null,
-    `image` varchar(100) not null,
+    `image` varchar(100),
     `regions_id` int not null,
     primary key(`id`),
     foreign key (regions_id) references regions(id)
 );
+
+insert into `products` values (1, 'jujuy', 200, 10, 'asdjkl', 'asdasdasdasd', null, 1);
