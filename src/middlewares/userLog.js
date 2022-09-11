@@ -5,7 +5,7 @@ const { Op } = require('sequelize');
 const userLog = async (req, res, next) => {
     res.locals.log = false;
     const cookieEmail = req.cookies.userEmail;
-    const userCookie = await db.User.findOne({ where: {email: {[Op.like]: cookieEmail} }})
+    const userCookie = await db.Client.findOne({ where: {email: {[Op.like]: cookieEmail} }})
     if(userCookie) {
         req.session.userLog = userCookie;
     };

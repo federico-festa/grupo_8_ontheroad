@@ -26,7 +26,7 @@ module.exports = (sequelize, datatype)=>{
     Region.associate = (models) => {
         Region.hasMany(models.Product, {
             as: 'region',
-            foreignKey: 'regions_id'
+            foreignKey: 'id_region'
         })
     };
     return Region;

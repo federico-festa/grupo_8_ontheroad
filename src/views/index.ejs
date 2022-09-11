@@ -15,25 +15,22 @@
                 <section>
                     <h2 class="destacadas">Experiencias destacadas</h2>
                     <div class="product-showcase">
-                        <% products.forEach((product)=> { %>
-                            <% if(product.id <=4) { %>
-                                <article class="product">
-                                    <a href="/products/detail/<%= product.id %>">
-                                        <img src="./img/products/<%= product.image %>" alt="product image">
-                                        <div class="product-description">
-                                            <h5 class="name">
-                                                <%= product.name %>
-                                            </h5>
-                                            <p class="descriptionShort">
-                                                <%= product.descriptionShort %>
-                                            </p>
-                                            <p class="price">$<%= product.price %>
-                                            </p>
-                                        </div>
-                                    </a>
-                                </article>
-                                <% }; %>
-                                    <% }); %>
+                        <% for(let i=0; i<=3; i++){ %>
+                            <article class="product">
+                                <a href="/products/detail/<%= product.id %>">
+                                    <img src="./img/products/<%= product.img %>" alt="product image">
+                                    <div class="product-description">
+                                        <h5 class="name">
+                                            <%= product.name %>
+                                        </h5>
+                                        <p class="descriptionShort">
+                                            <%= product.descriptionShort %>
+                                        </p>
+                                        <p class="price">$<%= product.price %></p>
+                                    </div>
+                                </a>
+                            </article>
+                        <% } %>
                     </div>
                 </section>
                 <section class="bottom-banner">

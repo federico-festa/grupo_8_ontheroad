@@ -50,8 +50,8 @@
                                     <div class="input-container">
                                         <label for="regions_id" class="label-container">Región:</label>
                                         <br>
-                                        <select name="regions_id" id="regions_id" class="regions_id"
-                                            value="<%= productToEdit.regions_id%>">
+                                        <select name="id_region" id="id_region" class="regions_id"
+                                            value="<%= productToEdit.id_region%>">
                                             <% for(let i=0; i < regions.length; i++) { %>
                                                 <option value="<%= regions[i].id%>">
                                                     <%= regions[i].name %>
@@ -60,8 +60,8 @@
                                         </select>
                                     </div>
                                     <div class="input-container">
-                                        <label for="image" class="label-container">Imagen:</label><br>
-                                        <input type="file" name="image" id="image" class="img-input"></input>
+                                        <label for="img" class="label-container">Imagen:</label><br>
+                                        <input type="file" name="img" id="image" class="img-input"></input>
                                     </div>
                                 </div>
                             </div>

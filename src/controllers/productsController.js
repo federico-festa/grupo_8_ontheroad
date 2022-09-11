@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const db = require('../database/models')
 const sequelize = db.sequelize;
-const { Op } = require("sequelize");
+const { Op } = require('sequelize');
 const { validationResult } = require('express-validator');
 
 const productsController = {
@@ -16,7 +16,7 @@ const productsController = {
             .catch((error) => {
                 console.log("Error", error.original.sqlMessage);
                 res.send('Error');
-            })
+            });
     },
     detail: (req, res) => {
         const regions = db.Region.findAll()
@@ -44,10 +44,10 @@ const productsController = {
                 name: req.body.name,
                 price: req.body.price,
                 discount: req.body.discount,
-                regions_id: req.body.regions_id,
                 descriptionShort: req.body.descriptionShort,
                 descriptionLong: req.body.descriptionLong,
                 image: req.file.filename,
+                id_region: req.body.id_region
             })
                 .then((product) => {
                     res.redirect('/');
@@ -71,7 +71,7 @@ const productsController = {
             name: req.body.name,
             price: req.body.price,
             discount: req.body.discount,
-            regions_id: req.body.regions_id,
+            id_region: req.body.id_region,
             descriptionShort: req.body.descriptionShort,
             descriptionLong: req.body.descriptionLong,
         },{

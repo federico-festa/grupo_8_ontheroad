@@ -11,19 +11,18 @@ const userController = {
         res.render('register');
     },
     create: async (req, res) => {
-        let emailUsed = await db.User.findOne({where: {email: req.body.email}});
+        let emailUsed = await db.Client.findOne({where: {email: req.body.email}});
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             res.render('register', { errors: errors.mapped(), oldData: req.body });
         } else if (emailUsed) {
             res.render('register', {errors: {email: {msg: 'El email ya está en uso'}}});
         } else {
-        await db.User.create({
+        await db.Client.create({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
             password: req.body.password,
-            category_id: 2
         })
             .then((user) => {
                 res.redirect('/login');
@@ -31,7 +30,7 @@ const userController = {
             .catch((error)=>{
                 console.log(error);
             });
-        }
+        };
     },
     login: (req, res) => {
         res.render('login');
@@ -41,7 +40,7 @@ const userController = {
         if (!errors.isEmpty()) {
             res.render('login', { errors: errors.mapped(), oldData: req.body });
         };
-        let userFound = await db.User.findOne({ where: { email: { [Op.like]: req.body.email } } });
+        let userFound = await db.Client.findOne({ where: { email: { [Op.like]: req.body.email } } });
         if (!userFound) {
             res.render('login', {
                 errors: {

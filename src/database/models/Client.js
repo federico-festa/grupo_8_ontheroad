@@ -47,7 +47,7 @@ module.exports = (sequelize, datatype)=>{
     };
     const Client = sequelize.define(alias, columns, config);
     Client.associate = (models) => {
-        Client.belongsTo(models.Type_user, {
+        Client.belongsTo(models.Type, {
             as: 'type',
             foreignKey: 'id_type'
         })

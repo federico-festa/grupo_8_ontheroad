@@ -17,43 +17,52 @@
                                         <br>
                                         <input type="text" id="name" name="name" placeholder="Ej: Buenos Aires"
                                             class="input" value="<%= locals.oldData ? oldData.name : null %>">
-                                            <div class="errors-msg">
-                                                <% if(locals.errors && errors.name) { %>
-                                                    <p><%= errors.name.msg %> </p>
-                                                        <% } %>
-                                            </div>
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.name) { %>
+                                                <p>
+                                                    <%= errors.name.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
                                     </div>
                                     <div class="input-container">
                                         <label for="discount" class="label-container">Descuento:</label>
                                         <br>
                                         <input type="text" id="discount" name="discount" placeholder="Ej: 15"
                                             class="input" value="<%= locals.oldData ? oldData.discount : null %>">
-                                            <div class="errors-msg">
-                                                <% if(locals.errors && errors.discount) { %>
-                                                    <p><%= errors.discount.msg %> </p>
-                                                        <% } %>
-                                            </div>
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.discount) { %>
+                                                <p>
+                                                    <%= errors.discount.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
                                     </div>
                                     <div class="input-container">
                                         <label for="descriptionShort" class="label-container">Descipción breve:</label>
                                         <br>
-                                        <textarea name="descriptionShort" id="descriptionShort"
-                                            class="input" value="<%= locals.oldData ? oldData.descriptionShort : null %>"></textarea>
-                                            <div class="errors-msg">
-                                                <% if(locals.errors && errors.descriptionShort) { %>
-                                                    <p><%= errors.descriptionShort.msg %> </p>
-                                                        <% } %>
-                                            </div>
+                                        <textarea name="descriptionShort" id="descriptionShort" class="input"
+                                            value="<%= locals.oldData ? oldData.descriptionShort : null %>"></textarea>
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.descriptionShort) { %>
+                                                <p>
+                                                    <%= errors.descriptionShort.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
                                     </div>
                                     <div class="input-container">
                                         <label for="descriptionLong" class="label-container">Descripción
                                             completa:</label>
                                         <br>
-                                        <textarea name="descriptionLong" id="descriptionLong" class="input-desc" value="<%= locals.oldData ? oldData.descriptionLong : null %>"></textarea>
+                                        <textarea name="descriptionLong" id="descriptionLong" class="input-desc"
+                                            value="<%= locals.oldData ? oldData.descriptionLong : null %>"></textarea>
                                         <div class="errors-msg">
                                             <% if(locals.errors && errors.descriptionLong) { %>
-                                                <p><%= errors.descriptionLong.msg %> </p>
-                                                    <% } %>
+                                                <p>
+                                                    <%= errors.descriptionLong.msg %>
+                                                </p>
+                                                <% } %>
                                         </div>
                                     </div>
                                 </div>
@@ -64,33 +73,40 @@
                                         <input type="text" id="price" name="price" placeholder="Ej: 1500" class="input">
                                         <div class="errors-msg" value="<%= locals.oldData ? oldData.price : null %>">
                                             <% if(locals.errors && errors.price) { %>
-                                                <p><%= errors.price.msg %> </p>
-                                                    <% } %>
+                                                <p>
+                                                    <%= errors.price.msg %>
+                                                </p>
+                                                <% } %>
                                         </div>
                                     </div>
                                     <div class="input-container">
-                                        <label for="regions_id" class="label-container">Región:</label>
+                                        <label for="id_region" class="label-container">Región:</label>
                                         <br>
-                                        <select name="regions_id" id="regions_id" class="region" value="<%= locals.oldData ? oldData.regions_id : null %>">
+                                        <select name="id_region" id="id_region" class="region"
+                                            value="<%= locals.oldData ? oldData.id_region : null %>">
                                             <% for(let i=0; i < regions.length; i++) { %>
-                                            <option value="<%= regions[i].id%>">
-                                                <%= regions[i].name %>
-                                            </option>
+                                                <option value="<%= regions[i].id%>">
+                                                    <%= regions[i].name %>
+                                                </option>
                                                 <% } %>
                                         </select>
                                         <div class="errors-msg">
-                                            <% if(locals.errors && errors.regions_id) { %>
-                                                <p><%= errors.regions_id.msg %> </p>
-                                                    <% } %>
+                                            <% if(locals.errors && errors.id_region) { %>
+                                                <p>
+                                                    <%= errors.id_region.msg %>
+                                                </p>
+                                                <% } %>
                                         </div>
                                     </div>
                                     <div class="input-container">
                                         <label for="image" class="label-container">Imagen:</label><br>
-                                        <input type="file" name="image" id="image" class="img-input"></input>
+                                        <input type="file" name="img" id="img" class="img-input"></input>
                                         <div class="errors-msg">
-                                            <% if(locals.errors && errors.image) { %>
-                                                <p><%= errors.image.msg %> </p>
-                                                    <% } %>
+                                            <% if(locals.errors && errors.img) { %>
+                                                <p>
+                                                    <%= errors.img.msg %>
+                                                </p>
+                                                <% } %>
                                         </div>
                                     </div>
                                 </div>
