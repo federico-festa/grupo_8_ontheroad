@@ -7,7 +7,7 @@ module.exports = (sequelize, datatype) => {
             autoIncrement: true,
         },
         name:{
-            type: datatype.STRING(100)
+            type: datatype.STRING(50)
         },
         price:{
             type: datatype.DECIMAL
@@ -16,30 +16,28 @@ module.exports = (sequelize, datatype) => {
             type: datatype.INTEGER
         },
         descriptionShort:{
-            type: datatype.STRING(500)
-        },
-        descriptionLong:{
-            type: datatype.STRING(1000)
-        },
-        image:{
             type: datatype.STRING(100)
         },
-        regions_id:{
+        descriptionLong:{
+            type: datatype.STRING(500)
+        },
+        img:{
+            type: datatype.STRING(255)
+        },
+        id_region:{
             type: datatype.INTEGER
         }
     };
     const config = {
         tableName: "products",
         timestamps: false,
-    }
+    };
     const Product = sequelize.define(alias, columns, config);
-
     Product.associate = (models) => {
         Product.belongsTo(models.Region, {
             as: 'product',
             foreignKey: 'regions_id'
         })
-    }
-
+    };
     return Product;
-}
+};
