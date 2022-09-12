@@ -67,19 +67,34 @@ const productsController = {
         res.render('productEdit', { productToEdit: productToEdit, regions: regions });
     },
     update: (req, res) => {
-        db.Product.update({
-            name: req.body.name,
-            price: req.body.price,
-            discount: req.body.discount,
-            id_region: req.body.id_region,
-            descriptionShort: req.body.descriptionShort,
-            descriptionLong: req.body.descriptionLong,
-        },{
-            where: {id: req.params.id}
-        })
-        .then((product)=>{
-            res.redirect('/products')
-        });
+        if(req.file) {
+            db.Product.update({
+                name: req.body.name,
+                price: req.body.price,
+                discount: req.body.discount,
+                id_region: req.body.id_region,
+                descriptionShort: req.body.descriptionShort,
+                descriptionLong: req.body.descriptionLong,
+                img: req.file.filename
+            },{
+                where: {id: req.params.id}
+            }).then((product)=>{
+                res.redirect('/products')
+            });
+        } else {
+            db.Product.update({
+                name: req.body.name,
+                price: req.body.price,
+                discount: req.body.discount,
+                id_region: req.body.id_region,
+                descriptionShort: req.body.descriptionShort,
+                descriptionLong: req.body.descriptionLong,
+            },{
+                where: {id: req.params.id}
+            }).then((product)=>{
+                res.redirect('/products')
+            });
+        };
     },
     delete: async (req, res) => {
         const product = await db.Product.findOne({
