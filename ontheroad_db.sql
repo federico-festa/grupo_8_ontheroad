@@ -7,16 +7,21 @@ CREATE TABLE regions (
 	id int NOT NULL AUTO_INCREMENT,
     name varchar(100) NOT NULL,
     clima varchar(100) NOT NULL,
-    date datetime NOT NULL,
+    date date NOT NULL,
     PRIMARY KEY (id)
 );
+
+INSERT INTO regions VALUES (1, 'Jujuy', 'Soleado', 20220114), (2, 'Córdoba', 'Nublado', 20221010), (3, 'Buenos Aires', 'Despejado', 20220416);
 
 DROP TABLE IF EXISTS payment_type;
 CREATE TABLE payment_type (
 	id int NOT NULL AUTO_INCREMENT,
     nombre varchar(100) NOT NULL,
+    tipo varchar(50),
     PRIMARY KEY (id)
 );
+
+INSERT INTO payment_type VALUES (1, 'PayPal', null), (2, 'MasterCard', 'Debito'), (3, 'Visa', 'Credito'), (4, 'Visa', 'Debito');
 
 DROP TABLE IF EXISTS type_user;
 CREATE TABLE type_user (
@@ -24,6 +29,8 @@ CREATE TABLE type_user (
     rango varchar(100) NOT NULL,
     PRIMARY KEY (id)
 );
+
+INSERT INTO type_user VALUES (1, 'Administrador'), (2, 'Cliente');
 
 DROP TABLE IF EXISTS admin;
 CREATE TABLE admin (
@@ -36,6 +43,8 @@ CREATE TABLE admin (
     PRIMARY KEY (id),
     FOREIGN KEY (id_type) REFERENCES type_user (id)
 );
+
+INSERT INTO admin VALUES (1, 'Carlos', 'Mendez', 11111111, 'carlos.mendez@ontheroad.org', 1), (2, 'Noelia', 'Ramos', 22222222, 'r.noe@ontheroad.org', 1);
 
 DROP TABLE IF EXISTS clients;
 CREATE TABLE clients (
@@ -55,6 +64,8 @@ CREATE TABLE clients (
     FOREIGN KEY (id_type) REFERENCES type_user (id)
 );
 
+INSERT INTO clients VALUES (1, 'Juan', 'Mendoza', 11111111, 'Masculino', 'juan.m@ontheroad.org', 'juandoza11', 'Calle Falsa - 123', 1592092288, 1820, 'Argentina', 2), (2, 'Maria', 'Chavez', 22222222, 'Femenino', 'mariavz@ontheroad.org', 'mriaz', '9 de Julio - 2133', 1549882228, 3020, 'Argentina', 2);
+
 DROP TABLE IF EXISTS products;
 CREATE TABLE products (
 	id int NOT NULL AUTO_INCREMENT,
@@ -69,10 +80,12 @@ CREATE TABLE products (
     FOREIGN KEY (id_region) REFERENCES regions (id)
 );
 
+INSERT INTO products VALUES (1, 'Jujuy', 10000, null, 'DESCRIPCION CORTA', 'DESCRIPCION LARGA', null, 1), (2, 'Buenos Aires', 6000, 10, 'DESCRIPCION CORTA', 'DESCRIPCION LARGA', null, 2);
+
 DROP TABLE IF EXISTS cart;
 CREATE TABLE cart (
 	id int NOT NULL AUTO_INCREMENT,
-    cantProduct int NOT NULL,
+    cantProduct int NOT NULL DEFAULT 1,
     id_client int NOT NULL,
     id_product int NOT NULL,
     PRIMARY KEY (id),
