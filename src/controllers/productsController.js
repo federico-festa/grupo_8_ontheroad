@@ -6,7 +6,7 @@ const { Op } = require('sequelize');
 const { validationResult } = require('express-validator');
 
 const productsController = {
-    products: (req, res) => {
+    list: (req, res) => {
         const products = db.Product.findAll()
         const regions = db.Region.findAll()
         Promise.all([products, regions])
@@ -40,13 +40,13 @@ const productsController = {
         if (!errors.isEmpty()) {
             res.render('productCreate', { errors: errors.mapped(), oldData: req.body, regions: regions });
         } else {
-            await db.Product.create({
+            db.Product.create({
                 name: req.body.name,
                 price: req.body.price,
                 discount: req.body.discount,
                 descriptionShort: req.body.descriptionShort,
                 descriptionLong: req.body.descriptionLong,
-                image: req.file.filename,
+                img: req.file.filename,
                 id_region: req.body.id_region
             })
                 .then((product) => {
@@ -55,7 +55,7 @@ const productsController = {
                 .catch((error) => {
                     console.log(error);
                 })
-        }
+        };
     },
     edit: async (req, res) => {
         const regions = await db.Region.findAll();
@@ -63,11 +63,20 @@ const productsController = {
             where: {
                 id: req.params.id
             }
-        })
+        });
         res.render('productEdit', { productToEdit: productToEdit, regions: regions });
     },
-    update: (req, res) => {
-        if(req.file) {
+    update: async (req, res) => {
+        const regions = await db.Region.findAll();
+        const productToEdit = await db.Product.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            res.render('productEdit', { errors: errors.mapped(), oldData: req.body, regions: regions, productToEdit: productToEdit });
+        } else if (req.file) {
             db.Product.update({
                 name: req.body.name,
                 price: req.body.price,
@@ -76,10 +85,10 @@ const productsController = {
                 descriptionShort: req.body.descriptionShort,
                 descriptionLong: req.body.descriptionLong,
                 img: req.file.filename
-            },{
-                where: {id: req.params.id}
-            }).then((product)=>{
-                res.redirect('/products')
+            }, {
+                where: { id: req.params.id }
+            }).then((product) => {
+                res.redirect('/')
             });
         } else {
             db.Product.update({
@@ -89,10 +98,10 @@ const productsController = {
                 id_region: req.body.id_region,
                 descriptionShort: req.body.descriptionShort,
                 descriptionLong: req.body.descriptionLong,
-            },{
-                where: {id: req.params.id}
-            }).then((product)=>{
-                res.redirect('/products')
+            }, {
+                where: { id: req.params.id }
+            }).then((product) => {
+                res.redirect('/')
             });
         };
     },
@@ -102,11 +111,11 @@ const productsController = {
                 id: req.params.id
             }
         })
-        res.render('productDelete', {product: product});
+        res.render('productDelete', { product: product });
     },
     destroy: (req, res) => {
         db.Product.destroy({
-            where: {id: req.params.id}
+            where: { id: req.params.id }
         });
         res.redirect('/');
     },

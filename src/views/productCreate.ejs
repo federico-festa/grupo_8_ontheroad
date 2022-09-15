@@ -100,7 +100,7 @@
                                     </div>
                                     <div class="input-container">
                                         <label for="image" class="label-container">Imagen:</label><br>
-                                        <input type="file" name="img" id="img" class="img-input"></input>
+                                        <input type="file" name="img" id="img" class="img-input"  value="<%= locals.oldData ? oldData.img : null %>">
                                         <div class="errors-msg">
                                             <% if(locals.errors && errors.img) { %>
                                                 <p>
