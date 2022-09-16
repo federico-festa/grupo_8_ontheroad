@@ -64,8 +64,7 @@ exports.update = [
         .notEmpty().withMessage('Por favor ingrese la descripción completa').bail()
         .isLength({ max: 1000 }).withMessage('La descripción completa debe contener menos de 1000 caracteres'),
     body('price')
-        .notEmpty().withMessage('Por favor ingrese el precio').bail()
-        .isInt().withMessage('Por favor ingrese un número'),
+        .notEmpty().withMessage('Por favor ingrese el precio').bail(),
     body('img')
         .custom((value, {req}) => {
             if(!req.file) {

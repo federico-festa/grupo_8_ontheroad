@@ -7,7 +7,7 @@ const { validationResult } = require('express-validator');
 
 const productsController = {
     list: (req, res) => {
-        const products = db.Product.findAll()
+        const products = db.Product.findAll({include: 'product_region'})
         const regions = db.Region.findAll()
         Promise.all([products, regions])
             .then(([products, regions]) => {
@@ -23,7 +23,8 @@ const productsController = {
         const product = db.Product.findOne({
             where: {
                 id: req.params.id
-            }
+            },
+            include: ['product_region']
         })
         Promise.all([product, regions])
         res.render('detail', { product: product, regions: regions });

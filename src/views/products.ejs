@@ -13,10 +13,11 @@
                     <% products.forEach((product)=> { %>
                         <article class="product">
                             <a href="/products/detail/<%= product.id %>">
-                                <img src="./img/products/<%= product.image %>" alt="product image">
+                                <img src="./img/products/<%= product.img %>" alt="product image">
                                 <div class="product-description">
                                     <h5 class="name">
                                         <%= product.name %>
+                                        <%= product.product_region %>
                                     </h5>
                                     <p class="shortDescription">
                                         <%= product.shortDescription %>
