@@ -10,6 +10,26 @@
                 <section class="c1">
                 <% if(locals.products.length == 0) { %>
                     <h2 class="todas">No encontramos resultados para tu busqueda: <%= search %></h2>    
+                    <div class="product-showcase">
+                        <h2>¿Ya viste nuestras promociones?</h2>
+                        <% promotions.forEach((product)=> { %>
+                            <article class="product">
+                                <a href="/products/detail/<%= product.id %>">
+                                    <img src="./img/products/<%= product.img %>" alt="product image">
+                                    <div class="product-description">
+                                        <h5 class="name">
+                                            <%= product.name %>
+                                        </h5>
+                                        <p class="descriptionShort">
+                                            <%= product.descriptionShort %>
+                                        </p>
+                                        <p class="price">$<%= product.price %>
+                                        </p>
+                                    </div>
+                                </a>
+                            </article>
+                            <% }); %>
+                    </div>
                 <% }else{ %> 
                 <h2 class="todas">Encontramos estas experiencias para vos</h2>
                 <div class="product-showcase">

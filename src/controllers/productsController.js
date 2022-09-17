@@ -7,7 +7,7 @@ const { validationResult } = require('express-validator');
 
 const productsController = {
     list: (req, res) => {
-        const products = db.Product.findAll({include: 'product_region'})
+        const products = db.Product.findAll({ include: 'product_region' })
         const regions = db.Region.findAll()
         Promise.all([products, regions])
             .then(([products, regions]) => {
@@ -18,20 +18,31 @@ const productsController = {
                 res.send('Error');
             });
     },
-    search: (req, res) => {
-        db.Product.findAll({
+    search: async (req, res) => {
+        const promotions = await db.Product.findAll({
             where: {
-                name: {[Op.like]: '%' + req.query.search + '%'}
+                discount: 10
             }
-        })
-        .then((products) => {
-            res.render('search', {products: products, search: req.query.search});
-        })
+        });
+        const searchResults = await db.Product.findAll({
+            where: {
+                name: { [Op.like]: '%' + req.query.search + '%' }
+            }
+        });
+        res.render('search', { products: searchResults, promotions: promotions, search: req.query.search });
     },
-    promotions: (req, res) => {
-
+    promotions: async (req, res) => {
+        const promotions = await db.Product.findAll({
+            where: {
+                discount: 10
+            }
+        });
+        res.render('promotions', {promotions: promotions});
     },
     regions: (req, res) => {
+
+    },
+    regionDetail: (req, res) => {
 
     },
     detail: (req, res) => {
@@ -40,9 +51,9 @@ const productsController = {
             where: {
                 id: req.params.id
             },
-            include: [{association: 'product_region'}]
+            include: [{ association: 'product_region' }]
         })
-        Promise.all([product, regions]) 
+        Promise.all([product, regions])
         res.render('detail', { product: product, regions: regions });
     },
     create: (req, res) => {
