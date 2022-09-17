@@ -18,15 +18,31 @@ const productsController = {
                 res.send('Error');
             });
     },
+    search: (req, res) => {
+        db.Product.findAll({
+            where: {
+                name: {[Op.like]: '%' + req.query.search + '%'}
+            }
+        })
+        .then((products) => {
+            res.render('search', {products: products, search: req.query.search});
+        })
+    },
+    promotions: (req, res) => {
+
+    },
+    regions: (req, res) => {
+
+    },
     detail: (req, res) => {
         const regions = db.Region.findAll()
         const product = db.Product.findOne({
             where: {
                 id: req.params.id
             },
-            include: ['product_region']
+            include: [{association: 'product_region'}]
         })
-        Promise.all([product, regions])
+        Promise.all([product, regions]) 
         res.render('detail', { product: product, regions: regions });
     },
     create: (req, res) => {

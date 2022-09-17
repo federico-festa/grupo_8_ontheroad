@@ -6,6 +6,9 @@ const validations = require('../middlewares/validations');
 const upload = require('../middlewares/multerProduct');
 
 router.get('/', productsController.list);
+router.get('/search', productsController.search);
+router.get('/promotions', productsController.promotions);
+router.get('/regions', productsController.regions);
 router.get('/detail/:id', productsController.detail);
 router.get('/create', productsController.create);
 router.get('/edit/:id', productsController.edit);

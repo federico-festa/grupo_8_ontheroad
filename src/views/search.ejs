@@ -2,13 +2,16 @@
 <html lang="en">
 <base href="/" />
 
-<%- include('partials/head', {title: 'Todas las experiencias' , css: 'products.css' }) %>
+<%- include('partials/head', {title: 'Tu busqueda' , css: 'search.css' }) %>
 
     <body>
         <%- include('./partials/header') %>
             <main>
-                <section>
-                <h2 class="todas">Todas nuestras experiencias</h2>
+                <section class="c1">
+                <% if(locals.products.length == 0) { %>
+                    <h2 class="todas">No encontramos resultados para tu busqueda: <%= search %></h2>    
+                <% }else{ %> 
+                <h2 class="todas">Encontramos estas experiencias para vos</h2>
                 <div class="product-showcase">
                     <% products.forEach((product)=> { %>
                         <article class="product">
@@ -28,6 +31,7 @@
                         </article>
                         <% }); %>
                 </div>
+                <% } %>
                 </section>
             </main>
     </body>
