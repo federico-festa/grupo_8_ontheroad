@@ -74,3 +74,33 @@ exports.update = [
             }
         })
 ];
+
+exports.regionStore = [
+    body('name')
+        .notEmpty().withMessage('Por favor ingrese la región'),
+    body('clima')
+        .notEmpty().withMessage('Por favor ingrese el clima '),
+    body('img')
+        .custom((value, {req}) => {
+            if(!req.file) {
+                throw new Error('Por favor suba una imagen');
+            } else {
+                return true;
+            }
+        })
+];
+
+exports.regionUpdate = [
+    body('name')
+        .notEmpty().withMessage('Por favor ingrese la región'),
+    body('clima')
+        .notEmpty().withMessage('Por favor ingrese el clima '),
+    body('img')
+        .custom((value, {req}) => {
+            if(!req.file) {
+                throw new Error('Por favor suba una imagen');
+            } else {
+                return true;
+            }
+        })
+];

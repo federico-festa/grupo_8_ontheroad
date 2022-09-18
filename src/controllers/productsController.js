@@ -40,10 +40,89 @@ const productsController = {
         res.render('promotions', {promotions: promotions});
     },
     regions: (req, res) => {
-
+        db.Region.findAll()
+        .then((regions) => {
+            res.render('regions', {regions: regions});
+        });
     },
     regionDetail: (req, res) => {
-
+        db.Region.findByPk(req.params.id)
+        .then((region) => {
+            res.render('regionDetail', {region: region});
+        });
+    },
+    regionCreate: (req, res) => {
+        res.render('regionCreate');
+    },
+    regionStore: (req, res) => {
+        const errors = validationResult(req);
+        if(!errors.isEmpty()){
+            res.render('regionCreate', {errors: errors.mapped(), oldData: req.body});
+        } else {
+            db.Region.create({
+                name: req.body.name,
+                clima: req.body.clima,
+                img: req.file.filename
+            })
+            .then((region) => {
+                res.redirect('/');
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+        };
+    },
+    regionEdit: async (req, res) => {
+        const regionToEdit = await db.Region.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.render('regionEdit', { regionToEdit: regionToEdit})
+    },
+    regionUpdate: async (req, res) => {
+        const regionToEdit = await db.Region.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+        const errors = validationResult(req);
+        if(!errors.isEmpty()) {
+            res.render('regionEdit', { errors: errors.mapped(), oldData: req.body, regionToEdit: regionToEdit });
+        } else if(req.file) {
+            db.Region.update({
+                name: req.body.name,
+                clima: req.body.clima,
+                img: req.file.filename
+            }, {
+                where: { id: req.params.id }
+            }).then((region) => {
+                res.redirect('/')
+            });
+        } else {
+            db.Region.update({
+                name: req.body.name,
+                clima: req.body.clima
+            }, {
+                where: { id: req.params.id }
+            }).then((region) => {
+                res.redirect('/')
+            });
+        };
+    },
+    regionDelete: async (req, res) => {
+        const region = await db.Region.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.render('regionDelete', { region: region });
+    },
+    regionDestroy: (req, res) => {
+        db.Region.destroy({
+            where: { id: req.params.id }
+        });
+        res.redirect('/');
     },
     detail: (req, res) => {
         const regions = db.Region.findAll()
@@ -65,7 +144,7 @@ const productsController = {
     store: async (req, res) => {
         const regions = await db.Region.findAll();
         const errors = validationResult(req);
-        if (!errors.isEmpty()) {
+        if(!errors.isEmpty()) {
             res.render('productCreate', { errors: errors.mapped(), oldData: req.body, regions: regions });
         } else {
             db.Product.create({
@@ -102,9 +181,9 @@ const productsController = {
             }
         });
         const errors = validationResult(req);
-        if (!errors.isEmpty()) {
+        if(!errors.isEmpty()) {
             res.render('productEdit', { errors: errors.mapped(), oldData: req.body, regions: regions, productToEdit: productToEdit });
-        } else if (req.file) {
+        } else if(req.file) {
             db.Product.update({
                 name: req.body.name,
                 price: req.body.price,
