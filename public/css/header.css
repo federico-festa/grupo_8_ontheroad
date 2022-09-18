@@ -149,7 +149,7 @@ header {
     }
 
     button.login {
-        background-color: black;
+        background-color: rgb(35, 35, 37);
         height: 40px;
         width: 130px;
         border: 1px solid black;
@@ -171,7 +171,7 @@ header {
     }
 
     .register {
-        background-color: black;
+        background-color: rgb(35, 35, 37);
         height: 40px;
         width: 130px;
         border: 1px;
@@ -201,14 +201,14 @@ header {
     }
 
     .top-nav {
-       background-color: white;
+        background-color: white;
         width: 100%;
         display: flex;
         justify-content: center;
         gap: 100px;
         padding-left: 25px;
-        border-top: 1px solid #ebebeb;
-        border-bottom: 1px solid #ebebeb;
+        border-top: 1px solid rgba(35, 35, 37, 0.2);
+        border-bottom: 0px solid #ebebeb;
         padding: 5px;
     }
     
@@ -220,6 +220,13 @@ header {
     
     .top-nav a:hover {
         font-weight: bold;
-    }   
+    }
+    
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgb(35, 35, 37); 
+    }
 
 }

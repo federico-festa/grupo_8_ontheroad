@@ -262,4 +262,8 @@ section.bottom-banner {
         margin: 10px;
         padding: 10px;
     }
+
+    .scroll {
+        padding-top: 102px;
+    }
 }
