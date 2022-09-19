@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="/" />
+<%- include('partials/head', {title: 'Eliminar región' , css: 'regionDelete.css' }) %>
+
+    <body>
+        <%- include('./partials/header') %>
+            <main>
+                <h1>¿Está seguro que desea eliminar la región <%= region.name %>?</h1>
+                <form class="form" action="/products/regions/delete/<%= region.id %>?_method=DELETE" method="POST">
+                    <button type="submit">Si</button>
+                    <a href="/products/regions"><button>No</button></a>
+                </form>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
+
+</html>

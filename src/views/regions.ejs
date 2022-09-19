@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="/" />
+
+<%- include('partials/head', {title: 'Regiones' , css: 'regions.css' }) %>
+
+    <body>
+        <%- include('./partials/header') %>
+            <main>
+                <section>
+                <h2 class="todas">Regiones Argentinas</h2>
+                <div class="product-showcase">
+                    <% regions.forEach((region)=> { %>
+                        <article class="product">
+                            <a href="/products/detail/<%= region.id %>">
+                                <img src="./img/products/<%= region.img %>" alt="region image">
+                                <div class="product-description">
+                                    <h5 class="name">
+                                        <%= region.name %>
+                                    </h5>
+                                    <p class="descriptionShort">
+                                        <%= region.descriptionShort %>
+                                    </p>
+                                    <p class="price">$<%= region.price %>
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                        <% }); %>
+                </div>
+                </section>
+            </main>
+    </body>
+    <%- include('./partials/footer') %>
+
+</html>

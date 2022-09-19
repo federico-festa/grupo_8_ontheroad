@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="/" />
+<%- include('partials/head', {title: 'Formulario de edición de región' , css: 'regionEdit.css' }) %>
+
+    <body>
+        <%- include('./partials/header') %>
+            <main>
+                <h2 class="edit-title">Formulario de edición de región: <%= regionToEdit.name %>
+                </h2>
+                <div class="container">
+                    <div class="form-container">
+                        <form action="/products/edit/<%= regionToEdit.id %>?_method=PUT" method="POST"
+                            enctype="multipart/form-data">
+                            <div class="row-1">
+                                <div class="c-1">
+                                    <div class="input-container">
+                                        <label for="name" class="label-container">Región:</label>
+                                        <br>
+                                        <input type="text" id="name" name="name" class="input" value="<%= regionToEdit.name%>">
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.name) { %>
+                                                <p>
+                                                    <%= errors.name.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="clima" class="label-container">Clima:</label>
+                                        <br>
+                                        <input type="text" id="clima" name="clima" placeholder="Ej: Árido"
+                                            class="input" value="<%= regionToEdit.discount%>">
+                                            <div class="errors-msg">
+                                                <% if(locals.errors && errors.regionToEdit) { %>
+                                                    <p>
+                                                        <%= errors.regionToEdit.msg %>
+                                                    </p>
+                                                    <% } %>
+                                            </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="img" class="label-container">Imagen:</label><br>
+                                        <input type="file" name="img" id="image" class="img-input"
+                                            value="<%= regionToEdit.img %>">
+                                            <div class="errors-msg">
+                                                <% if(locals.errors && errors.img) { %>
+                                                    <p>
+                                                        <%= errors.img.msg %>
+                                                    </p>
+                                                    <% } %>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <button type="submit" class="submit-button">Guardar región</button>
+                                <a href="/products/regions/delete/<%= regionToEdit.id %>"><button type="button"
+                                        class="submit-button">Eliminar región</button></a>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
+
+</html>
