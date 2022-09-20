@@ -42,8 +42,8 @@ exports.store = [
         .notEmpty().withMessage('Por favor ingrese el precio').bail()
         .isInt().withMessage('Por favor ingrese un número'),
     body('img')
-        .custom((value, {req}) => {
-            if(!req.file) {
+        .custom((value, { req }) => {
+            if (!req.file) {
                 throw new Error('Por favor suba una imagen');
             } else {
                 return true;
@@ -65,9 +65,12 @@ exports.update = [
         .isLength({ max: 1000 }).withMessage('La descripción completa debe contener menos de 1000 caracteres'),
     body('price')
         .notEmpty().withMessage('Por favor ingrese el precio').bail(),
+];
+
+exports.imgUpdate = [
     body('img')
-        .custom((value, {req}) => {
-            if(!req.file) {
+        .custom((value, { req }) => {
+            if (!req.file) {
                 throw new Error('Por favor suba una imagen');
             } else {
                 return true;
@@ -81,8 +84,8 @@ exports.regionStore = [
     body('clima')
         .notEmpty().withMessage('Por favor ingrese el clima '),
     body('img')
-        .custom((value, {req}) => {
-            if(!req.file) {
+        .custom((value, { req }) => {
+            if (!req.file) {
                 throw new Error('Por favor suba una imagen');
             } else {
                 return true;
@@ -95,9 +98,12 @@ exports.regionUpdate = [
         .notEmpty().withMessage('Por favor ingrese la región'),
     body('clima')
         .notEmpty().withMessage('Por favor ingrese el clima '),
+];
+
+exports.regionImgUpdate = [
     body('img')
-        .custom((value, {req}) => {
-            if(!req.file) {
+        .custom((value, { req }) => {
+            if (!req.file) {
                 throw new Error('Por favor suba una imagen');
             } else {
                 return true;

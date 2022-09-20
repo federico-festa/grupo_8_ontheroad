@@ -209,7 +209,7 @@ header {
         gap: 100px;
         padding-left: 25px;
         border-top: 1px solid rgba(35, 35, 37, 0.2);
-        border-bottom: 0px solid #ebebeb;
+        border-bottom: 1px solid rgba(35, 35, 37, 0.2);
         padding: 5px;
     }
     

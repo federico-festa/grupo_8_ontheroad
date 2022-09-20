@@ -37,39 +37,39 @@ const productsController = {
                 discount: 10
             }
         });
-        res.render('promotions', {promotions: promotions});
+        res.render('promotions', { promotions: promotions });
     },
     regions: (req, res) => {
         db.Region.findAll()
-        .then((regions) => {
-            res.render('regions', {regions: regions});
-        });
+            .then((regions) => {
+                res.render('regions', { regions: regions });
+            });
     },
     regionDetail: (req, res) => {
         db.Region.findByPk(req.params.id)
-        .then((region) => {
-            res.render('regionDetail', {region: region});
-        });
+            .then((region) => {
+                res.render('regionDetail', { region: region });
+            });
     },
     regionCreate: (req, res) => {
         res.render('regionCreate');
     },
     regionStore: (req, res) => {
         const errors = validationResult(req);
-        if(!errors.isEmpty()){
-            res.render('regionCreate', {errors: errors.mapped(), oldData: req.body});
+        if (!errors.isEmpty()) {
+            res.render('regionCreate', { errors: errors.mapped(), oldData: req.body });
         } else {
             db.Region.create({
                 name: req.body.name,
                 clima: req.body.clima,
                 img: req.file.filename
             })
-            .then((region) => {
-                res.redirect('/');
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+                .then((region) => {
+                    res.redirect('/');
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
         };
     },
     regionEdit: async (req, res) => {
@@ -78,7 +78,7 @@ const productsController = {
                 id: req.params.id
             }
         });
-        res.render('regionEdit', { regionToEdit: regionToEdit})
+        res.render('regionEdit', { regionToEdit: regionToEdit })
     },
     regionUpdate: async (req, res) => {
         const regionToEdit = await db.Region.findOne({
@@ -87,9 +87,9 @@ const productsController = {
             }
         });
         const errors = validationResult(req);
-        if(!errors.isEmpty()) {
+        if (!errors.isEmpty()) {
             res.render('regionEdit', { errors: errors.mapped(), oldData: req.body, regionToEdit: regionToEdit });
-        } else if(req.file) {
+        } else if (req.file) {
             db.Region.update({
                 name: req.body.name,
                 clima: req.body.clima,
@@ -124,6 +124,33 @@ const productsController = {
         });
         res.redirect('/');
     },
+    regionImgEdit: async (req, res) => {
+        const regionToEdit = await db.Region.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.render('regionImgEdit', {regionToEdit: regionToEdit});
+    },
+    regionImgUpdate: async (req, res) => {
+        const regionToEdit = await db.Region.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            res.render('regionImgEdit', { errors: errors.mapped(), oldData: req.body, regionToEdit: regionToEdit });
+        } else {
+            db.Region.update({
+                img: req.file.filename
+            }, {
+                where: { id: req.params.id }
+            }).then((product) => {
+                res.redirect('/');
+            });
+        };
+    },
     detail: (req, res) => {
         const regions = db.Region.findAll()
         const product = db.Product.findOne({
@@ -144,7 +171,7 @@ const productsController = {
     store: async (req, res) => {
         const regions = await db.Region.findAll();
         const errors = validationResult(req);
-        if(!errors.isEmpty()) {
+        if (!errors.isEmpty()) {
             res.render('productCreate', { errors: errors.mapped(), oldData: req.body, regions: regions });
         } else {
             db.Product.create({
@@ -181,22 +208,8 @@ const productsController = {
             }
         });
         const errors = validationResult(req);
-        if(!errors.isEmpty()) {
+        if (!errors.isEmpty()) {
             res.render('productEdit', { errors: errors.mapped(), oldData: req.body, regions: regions, productToEdit: productToEdit });
-        } else if(req.file) {
-            db.Product.update({
-                name: req.body.name,
-                price: req.body.price,
-                discount: req.body.discount,
-                id_region: req.body.id_region,
-                descriptionShort: req.body.descriptionShort,
-                descriptionLong: req.body.descriptionLong,
-                img: req.file.filename
-            }, {
-                where: { id: req.params.id }
-            }).then((product) => {
-                res.redirect('/')
-            });
         } else {
             db.Product.update({
                 name: req.body.name,
@@ -225,6 +238,33 @@ const productsController = {
             where: { id: req.params.id }
         });
         res.redirect('/');
+    },
+    imgEdit: async (req, res) => {
+        const productToEdit = await db.Product.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.render('imgEdit', { productToEdit: productToEdit });
+    },
+    imgUpdate: async (req, res) => {
+        const productToEdit = await db.Product.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            res.render('imgEdit', { errors: errors.mapped(), oldData: req.body, productToEdit: productToEdit });
+        } else {
+            db.Product.update({
+                img: req.file.filename
+            }, {
+                where: { id: req.params.id }
+            }).then((product) => {
+                res.redirect('/');
+            });
+        };
     },
     cart: (req, res) => {
         res.render('cart');
