@@ -151,15 +151,17 @@ const productsController = {
             });
         };
     },
-    detail: (req, res) => {
-        const regions = db.Region.findAll()
-        const product = db.Product.findOne({
+    detail: async (req, res) => {
+        const regions = await db.Region.findAll()
+        const product = await db.Product.findOne({
             where: {
                 id: req.params.id
             },
             include: [{ association: 'product_region' }]
         })
-        Promise.all([product, regions])
+        console.log('----')
+        console.log(product)
+        console.log('----')
         res.render('detail', { product: product, regions: regions });
     },
     create: (req, res) => {
