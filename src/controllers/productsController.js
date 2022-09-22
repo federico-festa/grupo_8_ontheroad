@@ -159,9 +159,6 @@ const productsController = {
             },
             include: [{ association: 'product_region' }]
         })
-        console.log('----')
-        console.log(product)
-        console.log('----')
         res.render('detail', { product: product, regions: regions });
     },
     create: (req, res) => {
