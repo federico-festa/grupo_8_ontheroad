@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="/" />
+<%- include('partials/head', {title: 'Eliminar mi cuenta' , css: 'userDelete.css' }) %>
+
+    <body>
+        <%- include('./partials/header') %>
+            <main>
+                <h1>¿Está seguro que desea eliminar su cuenta?</h1>
+                <form class="form" action="/user/delete/<%= user.id %>?_method=DELETE" method="POST">
+                    <button type="submit">Si</button>
+                    <a href="/user/profile"><button>No</button></a>
+                </form>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
+
+</html>

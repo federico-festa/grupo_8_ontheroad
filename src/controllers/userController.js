@@ -11,25 +11,26 @@ const userController = {
         res.render('register');
     },
     create: async (req, res) => {
-        let emailUsed = await db.Client.findOne({where: {email: req.body.email}});
+        let emailUsed = await db.Client.findOne({ where: { email: req.body.email } });
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             res.render('register', { errors: errors.mapped(), oldData: req.body });
         } else if (emailUsed) {
-            res.render('register', {errors: {email: {msg: 'El email ya está en uso'}}});
+            res.render('register', { errors: { email: { msg: 'El email ya está en uso' } } });
         } else {
-        await db.Client.create({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            password: req.body.password,
-        })
-            .then((user) => {
-                res.redirect('/login');
+            await db.Client.create({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                password: req.body.password,
+                id_type: 2
             })
-            .catch((error)=>{
-                console.log(error);
-            });
+                .then((user) => {
+                    res.redirect('/user/login');
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         };
     },
     login: (req, res) => {
@@ -76,17 +77,88 @@ const userController = {
     profile: (req, res) => {
         res.render('profile', { user: req.session.userLog });
     },
-    edit: (req, res) => {
-
+    edit: async (req, res) => {
+        const userToEdit = await db.Client.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.render('userEdit', { userToEdit: userToEdit });
     },
-    update: (req, res) => {
-
+    update: async (req, res) => {
+        const userToEdit = await db.Client.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            res.render('userEdit', { errors: errors.mapped(), oldData: req.body, userToEdit: userToEdit });
+        } else {
+            db.Client.update({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                dni: req.body.dni,
+                genero: req.body.genero,
+                email: req.body.email,
+                password: req.body.password,
+                domicilio: req.body.domicilio,
+                telefono: req.body.telefono,
+                codigoPostal: req.body.codigoPostal,
+                pais: req.body.pais,
+            }, {
+                where: { id: req.params.id }
+            }).then((user) => {
+                res.redirect('/user/profile');
+            });
+        };
     },
-    delete: (req, res) => {
-
+    delete: async (req, res) => {
+        const user = await db.Client.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.render('userDelete', { user: user });
     },
     destroy: (req, res) => {
-
+        db.Client.destroy({
+            where: { id: req.params.id }
+        });
+        res.redirect('/');
+    },
+    imgUpdate: async (req, res) => {
+        const userToEdit = await db.Client.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            res.render('userEdit', { errors: errors.mapped(), oldData: req.body, userToEdit: userToEdit });
+        } else {
+            db.Client.update({
+                img: req.file.filename
+            }, {
+                where: { id: req.params.id }
+            }).then((user) => {
+                res.redirect('/');
+            });
+        };
+    },
+    imgDestroy: async (req, res) => {
+        const userToEdit = await db.Client.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+        db.Client.update({
+            img: ''
+        }, {
+            where: { id: req.params.id }
+        }).then((user) => {
+            res.redirect('/user/profile');
+        });
     }
 };
 

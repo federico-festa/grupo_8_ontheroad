@@ -26,6 +26,38 @@ exports.log = [
         .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
 ];
 
+// exports.userUpdate = [
+//     body('firstName')
+//         .notEmpty().withMessage('Por favor ingrese su nombre').bail()
+//         .isLength({ min: 3 }).withMessage('El nombre debe tener al menos 3 caracteres').bail()
+//         .isLength({ max: 20 }).withMessage('El nombre debe tener maximo 20 caracteres'),
+//     body('lastName')
+//         .notEmpty().withMessage('Por favor ingrese su apellido').bail()
+//         .isLength({ min: 3 }).withMessage('El apellido debe tener al menos 3 caracteres').bail()
+//         .isLength({ max: 20 }).withMessage('El apellido debe tener maximo 20 caracteres'),
+//     body('dni')
+//         .isNumeric().withMessage('Ingrese un DNI válido'),
+//     body('genero')
+//         .
+//     body('email'),
+//     body('password'),
+//     body('domicilio'),
+//     body('telefono'),
+//     body('codigoPostal'),
+//     body('pais')
+// ];
+
+exports.userImgUpdate = [
+    body('img')
+        .custom((value, { req }) => {
+            if (!req.file) {
+                throw new Error('Por favor suba una imagen');
+            } else {
+                return true;
+            }
+        })
+];
+
 exports.store = [
     body('name')
         .notEmpty().withMessage('Por favor ingrese el lugar'),

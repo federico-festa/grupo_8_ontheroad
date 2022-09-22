@@ -1,8 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="/" />
+<%- include('partials/head', {title: 'Formulario de edición de usuario' , css: 'userEdit.css' }) %>
 
+    <body>
+        <%- include('./partials/header') %>
+            <main>
+                <h2 class="edit-title">Formulario de edición de usuario: <%= userToEdit.firstName %>
+                        <%= userToEdit.lastName %>
+                </h2>
+                <div class="container">
+                    <div class="form-container">
+                        <form action="/user/edit/<%= userToEdit.id %>?_method=PUT" method="POST">
+                            <div class="row-1">
+                                <div class="c-1">
+                                    <div class="input-container">
+                                        <label for="firstName" class="label-container">Nombre:</label>
+                                        <br>
+                                        <input type="text" id="firstName" name="firstName" class="input"
+                                            value="<%= userToEdit.firstName %>">
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.firstName) { %>
+                                                <p>
+                                                    <%= errors.firstName.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="lastName" class="label-container">Apellido:</label>
+                                        <br>
+                                        <input type="text" id="lastName" name="lastName" class="input"
+                                            value="<%= userToEdit.lastName %>">
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.lastName) { %>
+                                                <p>
+                                                    <%= errors.lastName.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="dni" class="label-container">DNI:</label>
+                                        <br>
+                                        <input type="number" id="dni" name="dni" class="input"
+                                            value="<%= userToEdit.dni %>">
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.dni) { %>
+                                                <p>
+                                                    <%= errors.dni.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="genero" class="label-container">Género:</label>
+                                        <br>
+                                        <select name="genero" id="genero" class="input"
+                                            value="<%= userToEdit.genero %>">
+                                            <option value="masculino">Masculino</option>
+                                            <option value="femenino">Femenino</option>
+                                            <option value="otro">Otro</option>
+                                        </select>
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.genero) { %>
+                                                <p>
+                                                    <%= errors.genero.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-2">
+                                    <div class="input-container">
+                                        <label for="email" class="label-container">Email:</label>
+                                        <br>
+                                        <input type="email" id="email" name="email" class="input"
+                                            value="<%= userToEdit.email %>">
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.email) { %>
+                                                <p>
+                                                    <%= errors.email.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="password" class="label-container">Contraseña:</label>
+                                        <br>
+                                        <input type="password" id="password" name="password" class="input"
+                                            value="<%= userToEdit.password %>">
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.password) { %>
+                                                <p>
+                                                    <%= errors.password.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="domicilio" class="label-container">Domicilio:</label>
+                                        <br>
+                                        <input type="text" id="domicilio" name="domicilio" class="input"
+                                            value="<%= userToEdit.domicilio %>">
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.domicilio) { %>
+                                                <p>
+                                                    <%= errors.domicilio.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="telefono" class="label-container">Teléfono:</label>
+                                        <br>
+                                        <input type="tel" id="telefono" name="telefono" class="input"
+                                            value="<%= userToEdit.telefono %>">
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.telefono) { %>
+                                                <p>
+                                                    <%= errors.telefono.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="codigoPostal" class="label-container">Código postal:</label>
+                                        <br>
+                                        <input type="text" id="codigoPostal" name="codigoPostal" class="input"
+                                            value="<%= userToEdit.codigoPostal %>">
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.codigoPostal) { %>
+                                                <p>
+                                                    <%= errors.codigoPostal.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="pais" class="label-container">País:</label>
+                                        <br>
+                                        <input type="text" id="pais" name="pais" class="input"
+                                            value="<%= userToEdit.pais %>">
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.pais) { %>
+                                                <p>
+                                                    <%= errors.pais.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="button-container">
+                                    <button type="submit" class="submit-button">Guardar información</button>
+                                    <a href="/user/delete/<%= userToEdit.id %>"><button type="button"
+                                            class="submit-button">Eliminar mi cuenta</button></a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="img-form-container">
+                        <form id="img-form" action="/user/edit/img/<%= userToEdit.id %>" method="POST" class="form"
+                            enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label class="form-label" for="img">Imagen de perfil</label>
+                                <input type="file" class="form-control" name="img">
+                            </div>
+                            <div class="errors-msg">
+                                <% if(locals.errors && errors.img) { %>
+                                    <p>
+                                        <%= errors.img.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <button type="submit" class="submit-button">Guardar imagen de perfil</button>
+                        </form>
+                        <form action="/user/delete/img/<%= userToEdit.img %>" method="POST">
+                            <button type="submit">Eliminar imagen de perfil</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
 
- <form id="login-form" action="/user/register" method="POST" class="form" enctype="multipart/form-data">
-    <div class="form-group">
-        <label class="form-label" for="image">Imagen de perfil</label>
-        <input type="file" class="form-control" name="image">
-    </div>
-</form>
+</html>
