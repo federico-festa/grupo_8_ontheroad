@@ -127,6 +127,14 @@ const userController = {
         });
         res.redirect('/');
     },
+    imgEdit: async (req, res) => {
+        const userToEdit = await db.Client.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.render('userImgEdit', {userToEdit: userToEdit});
+    },
     imgUpdate: async (req, res) => {
         const userToEdit = await db.Client.findOne({
             where: {
@@ -135,14 +143,14 @@ const userController = {
         });
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            res.render('userEdit', { errors: errors.mapped(), oldData: req.body, userToEdit: userToEdit });
+            res.render('userImgEdit', { errors: errors.mapped(), oldData: req.body, userToEdit: userToEdit });
         } else {
             db.Client.update({
                 img: req.file.filename
             }, {
                 where: { id: req.params.id }
             }).then((user) => {
-                res.redirect('/');
+                res.redirect('/user/profile');
             });
         };
     },

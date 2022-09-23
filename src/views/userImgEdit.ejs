@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="/" />
+<%- include('partials/head', {title: 'Imagen de perfil' , css: 'userImgEdit.css' }) %>
+
+    <body>
+        <%- include('./partials/header') %>
+            <main>
+                <h2 class="edit-title">Imagen de perfil de: <%= userToEdit.firstName %>
+                </h2>
+                <div class="container">
+                    <div class="form-container">
+                        <div class="row-1">
+                            <div class="c-1">
+                                <div class="user-img">
+                                    <figure>
+                                        <img src="./img/products/<%= userToEdit.img %>" alt="user image">
+                                    </figure>
+                                </div>
+                                <form action="/user/edit/img/<%= userToEdit.id %>?_method=PUT" method="POST"
+                                    enctype="multipart/form-data">
+                                    <div class="input-container">
+                                        <label for="img" class="label-container">Elegir imagen de perfil:</label><br>
+                                        <input type="file" name="img" id="image" class="img-input"
+                                            value="<%= userToEdit.img %>">
+                                        <div class="errors-msg">
+                                            <% if(locals.errors && errors.img) { %>
+                                                <p>
+                                                    <%= errors.img.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <button type="submit" class="submit-button">Guardar imagen</button>
+                        </div>
+                    </div>
+                    </form>
+                    <form action="/user/delete/img/<%= userToEdit.id %>?_method=PUT" method="POST">
+                        <button type="submit" class="submit-button">Eliminar imagen</button>
+                    </form>
+                </div>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
+
+</html>
