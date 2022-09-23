@@ -22,7 +22,7 @@ const userController = {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 email: req.body.email,
-                password: req.body.password,
+                password: bcryptjs.hashSync(req.body.password, 10),
                 id_type: 2
             })
                 .then((user) => {
@@ -42,6 +42,7 @@ const userController = {
             res.render('login', { errors: errors.mapped(), oldData: req.body });
         };
         let userFound = await db.Client.findOne({ where: { email: { [Op.like]: req.body.email } } });
+        let passOk = bcryptjs.compareSync(req.body.password, userFound.password);
         if (!userFound) {
             res.render('login', {
                 errors: {
@@ -51,7 +52,7 @@ const userController = {
                 }
             })
         };
-        if (userFound && !(req.body.password == userFound.password)) {
+        if (userFound && !passOk) {
             res.render('login', {
                 errors: {
                     password: {
@@ -60,7 +61,7 @@ const userController = {
                 }
             })
         };
-        if (userFound && (req.body.password == userFound.password)) {
+        if (userFound && passOk) {
             delete userFound.password;
             req.session.userLog = userFound;
             if (req.body.rememberUser) {
@@ -74,8 +75,13 @@ const userController = {
         req.session.destroy();
         res.redirect('/');
     },
-    profile: (req, res) => {
-        res.render('profile', { user: req.session.userLog });
+    profile: async (req, res) => {
+        const user = await db.Client.findOne({
+            where: {
+                id: req.session.userLog.id
+            }
+        })
+        res.render('profile', { user: user });
     },
     edit: async (req, res) => {
         const userToEdit = await db.Client.findOne({
@@ -101,7 +107,7 @@ const userController = {
                 dni: req.body.dni,
                 genero: req.body.genero,
                 email: req.body.email,
-                password: req.body.password,
+                password: bcryptjs.hashSync(req.body.password, 10),
                 domicilio: req.body.domicilio,
                 telefono: req.body.telefono,
                 codigoPostal: req.body.codigoPostal,

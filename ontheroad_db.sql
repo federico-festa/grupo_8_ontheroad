@@ -7,8 +7,8 @@ CREATE TABLE regions (
 	id int NOT NULL AUTO_INCREMENT,
     name varchar(100) NOT NULL,
     clima varchar(100) NOT NULL,
-    img varchar(255) NOT NULL,
     date date NOT NULL,
+    img varchar(255),
     PRIMARY KEY (id)
 );
 
@@ -38,7 +38,7 @@ CREATE TABLE admin (
 	id int NOT NULL AUTO_INCREMENT,
     firstName varchar(50) NOT NULL,
     lastName varchar(50) NOT NULL,
-    dni int UNIQUE,
+    dni int NOT NULL UNIQUE,
     email varchar(50) NOT NULL UNIQUE,
     id_type int NOT NULL,
     PRIMARY KEY (id),
@@ -53,15 +53,15 @@ CREATE TABLE clients (
     firstName varchar(50) NOT NULL,
     lastName varchar(50) NOT NULL,
     dni int UNIQUE,
-    genero varchar(50),
+    genero varchar(50) NOT NULL,
     email varchar(50) NOT NULL UNIQUE,
     password varchar(500) NOT NULL UNIQUE,
-    domicilio varchar(50),
+    domicilio varchar(50) NOT NULL,
     telefono int,
     codigoPostal int,
     pais varchar(100),
-    img varchar(255),
     id_type int NOT NULL,
+    img varchar(255),
     PRIMARY KEY (id),
     FOREIGN KEY (id_type) REFERENCES type_user (id)
 );

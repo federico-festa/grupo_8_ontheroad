@@ -38,6 +38,9 @@ module.exports = (sequelize, datatype)=>{
         },
         id_type:{
             type: datatype.INTEGER
+        },
+        img:{
+            type: datatype.STRING(255)
         }
     };
     const config = {
