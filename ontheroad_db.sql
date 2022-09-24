@@ -44,7 +44,7 @@ CREATE TABLE admin (
     FOREIGN KEY (id_type) REFERENCES type_user (id)
 );
 
-INSERT INTO admin VALUES (1, 'Carlos', 'Mendez', 11111111, 'carlos.mendez@ontheroad.org', 1), (2, 'Noelia', 'Ramos', 22222222, 'r.noe@ontheroad.org', 1);
+INSERT INTO admin VALUES (1, 'Federico', 'Festa', 11111111, 'fede.festa@gmail.com', 1), (2, 'Juan', 'Cruz', 22222222, 'juan.c@gmail.com', 1);
 
 DROP TABLE IF EXISTS clients;
 CREATE TABLE clients (
@@ -64,13 +64,13 @@ CREATE TABLE clients (
     FOREIGN KEY (id_type) REFERENCES type_user (id)
 );
 
-INSERT INTO clients VALUES (1, 'Juan', 'Mendoza', 11111111, 'Masculino', 'juan.m@ontheroad.org', 'juandoza11', 'Calle Falsa - 123', 1592092288, 1820, 'Argentina', 2), (2, 'Maria', 'Chavez', 22222222, 'Femenino', 'mariavz@ontheroad.org', 'mriaz', '9 de Julio - 2133', 1549882228, 3020, 'Argentina', 2);
+INSERT INTO clients VALUES (1, 'Juan', 'Mendoza', 11111111, 'Masculino', 'juan.m@ontheroad.org', 'juandoza11', 'Calle Falsa - 123', 1592092288, 1820, 'Argentina', 2), (2, 'Maria', 'Chavez', 22222222, 'Femenino', 'mariavz@ontheroad.org', 'mriaz', '9 de Julio - 2133', 1549882228, 3020, 'Argentina', 2), (3, 'Brandon', 'Lopez', 33333333, 'Masculino', 'lopez@gmail.com', 'lolopez', 'Av. La Plata - 3310', 1521423354, 1824, 'Argentina', 2);
 
 DROP TABLE IF EXISTS products;
 CREATE TABLE products (
 	id int NOT NULL AUTO_INCREMENT,
     name varchar(50) NOT NULL,
-    price decimal(5, 2) NOT NULL,
+    price decimal(10, 2) NOT NULL,
     discount int,
     descriptionShort varchar(100),
     descriptionLong varchar(500),
@@ -115,3 +115,10 @@ CREATE TABLE order_detail (
     FOREIGN KEY (id_order) REFERENCES order_step (id),
     FOREIGN KEY (id_product) REFERENCES products (id)
 );
+
+UPDATE products
+SET descriptionShort = 'El pueblo de Humahuaca se encuentra cerca de los 3.000 metros de altura, rodeado de cordones montañosos de gran belleza. El pueblo es la entrada a La Puna jujeña y es la última localidad importante de la Quebrada de Humahuaca, en el camino hacia el norte (La Quiaca). El pueblo al igual que la quebrada toma el nombre de los antiguos pobladores de la zona que fueron los omaguacas.'
+WHERE id = 1
+
+UPDATE products
+SET img = 'partials'
