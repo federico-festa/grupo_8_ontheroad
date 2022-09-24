@@ -13,12 +13,14 @@ router.get('/logout', userController.logout);
 router.get('/profile', auth, userController.profile);
 router.get('/edit/:id', auth, userController.edit);
 router.get('/delete/:id', auth, userController.delete);
+router.get('/edit/password/:id', auth, userController.passwordEdit);
 router.get('/edit/img/:id', auth, userController.imgEdit);
 
 router.post('/register', validations.reg, userController.create);
 router.post('/login', validations.log, userController.log);
 
 router.put('/edit/:id', auth, validations.userUpdate, userController.update);
+router.put('/edit/password/:id', auth, validations.passwordUpdate, userController.passwordUpdate);
 router.put('/edit/img/:id', auth, upload.single('img'), validations.userImgUpdate, userController.imgUpdate);
 router.put('/delete/img/:id', auth, userController.imgDestroy);
 

@@ -107,7 +107,6 @@ const userController = {
                 dni: req.body.dni,
                 genero: req.body.genero,
                 email: req.body.email,
-                password: bcryptjs.hashSync(req.body.password, 10),
                 domicilio: req.body.domicilio,
                 telefono: req.body.telefono,
                 codigoPostal: req.body.codigoPostal,
@@ -115,7 +114,7 @@ const userController = {
             }, {
                 where: { id: req.params.id }
             }).then((user) => {
-                res.redirect('/user/profile');
+                res.redirect('/');
             });
         };
     },
@@ -132,6 +131,35 @@ const userController = {
             where: { id: req.params.id }
         });
         res.redirect('/');
+    },
+    passwordEdit: async (req, res) => {
+        const userToEdit = await db.Client.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.render('userPasswordEdit', {userToEdit: userToEdit});
+    },
+    passwordUpdate: async (req, res) => {
+        const userToEdit = await db.Client.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            res.render('userPasswordEdit', { errors: errors.mapped(), oldData: req.body, userToEdit: userToEdit });
+        } else if(req.body.password != req.body.password2) {
+            res.render('userPasswordEdit', { errors: errors.mapped(), errors: { password2: {msg: 'Las contraseñas no coinciden'}}, oldData: req.body, userToEdit: userToEdit });
+        } else {
+            db.Client.update({
+                password: bcryptjs.hashSync(req.body.password, 10),
+            }, {
+                where: { id: req.params.id }
+            }).then((user) => {
+                res.redirect('/');
+            });
+        }; 
     },
     imgEdit: async (req, res) => {
         const userToEdit = await db.Client.findOne({

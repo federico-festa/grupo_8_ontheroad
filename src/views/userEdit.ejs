@@ -59,9 +59,9 @@
                                         <select name="genero" id="genero" class="input"
                                             value="<%= userToEdit.genero %>">
                                             <option></option>
-                                            <option value="masculino">Masculino</option>
-                                            <option value="femenino">Femenino</option>
-                                            <option value="otro">Otro</option>
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Femenino">Femenino</option>
+                                            <option value="Otro">Otro</option>
                                         </select>
                                         <div class="errors-msg">
                                             <% if(locals.errors && errors.genero) { %>
@@ -82,19 +82,6 @@
                                             <% if(locals.errors && errors.email) { %>
                                                 <p>
                                                     <%= errors.email.msg %>
-                                                </p>
-                                                <% } %>
-                                        </div>
-                                    </div>
-                                    <div class="input-container">
-                                        <label for="password" class="label-container">Contraseña:</label>
-                                        <br>
-                                        <input type="password" id="password" name="password" class="input"
-                                            value="<%= userToEdit.password %>">
-                                        <div class="errors-msg">
-                                            <% if(locals.errors && errors.password) { %>
-                                                <p>
-                                                    <%= errors.password.msg %>
                                                 </p>
                                                 <% } %>
                                         </div>
@@ -412,6 +399,8 @@
                                     </div>
                                 </div>
                                 <div class="button-container">
+                                    <a href="/user/edit/password/<%= userToEdit.id %>"><button type="button"
+                                        class="submit-button">Cambiar contraseña</button></a>
                                     <button type="submit" class="submit-button">Guardar información</button>
                                     <a href="/user/delete/<%= userToEdit.id %>"><button type="button"
                                             class="submit-button">Eliminar mi cuenta</button></a>
