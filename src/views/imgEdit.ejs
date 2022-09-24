@@ -6,7 +6,7 @@
     <body>
         <%- include('./partials/header') %>
             <main>
-                <h2 class="edit-title">Cambio de imagen de: <%= productToEdit.name %>
+                <h2 class="edit-title">Edición de imagen de: <%= productToEdit.name %>
                 </h2>
                 <div class="container">
                     <div class="form-container">
@@ -14,9 +14,12 @@
                             <div class="c-1">
                                 <div class="product-img">
                                     <figure>
+                                        <p class="img-title">Imagen actual:</p>
                                         <img src="./img/products/<%= productToEdit.img %>" alt="product image">
                                     </figure>
                                 </div>
+                            </div>
+                            <div class="c-2">
                                 <form action="/products/edit/img/<%= productToEdit.id %>?_method=PUT" method="POST"
                                     enctype="multipart/form-data">
                                     <div class="input-container">
@@ -33,8 +36,10 @@
                                     </div>
                             </div>
                         </div>
-                        <div class="button-container">
-                            <button type="submit" class="submit-button">Guardar imagen</button>
+                        <div class="row-2">
+                            <div class="button-container">
+                                <button type="submit" class="submit-button">Guardar imagen</button>
+                            </div>
                         </div>
                     </div>
                     </form>
