@@ -6,11 +6,16 @@
     <body>
         <%- include('./partials/header') %>
             <main>
-                <h1>¿Está seguro que desea eliminar el producto <%= product.name %> - <%= product.descriptionShort %>?</h1>
-                <form class="form" action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                    <button type="submit">Si</button>
-                    <a href="/products"><button>No</button></a>
-                </form>
+                <div class="form-container">
+                    <h1>¿Está seguro que desea eliminar el producto <%= product.name %> - <%= product.descriptionShort %>?
+                    </h1>
+                    <form class="form" action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                        <div class="button-container">
+                            <button type="submit">Si</button>
+                            <a href="/products"><button type="button">No</button></a>
+                        </div>
+                    </form>
+                </div>
             </main>
             <%- include('./partials/footer') %>
     </body>
