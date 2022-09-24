@@ -14,21 +14,32 @@
     <div class="headerRight">
         <button id="btnOrange"><i class="fas fa-bars"></i></button>
         <% if(locals.log) { %>
-            <p>Hola, <%= locals.userLog.firstName %></p>
+            <div class="usercont">
+                <p class="user">Hola, <%= locals.userLog.firstName %>
+                </p>
+                <div class="dropcont">
+                    <button><i class="fa-solid fa-user"></i></button>
+                    <div class="droplist">
+                        <a href="/user/profile">Perfil</a>
+                        <a href="#favoritos">Favoritos</a>
+                        <a href="/user/logout">Cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
             <a href="/products/cart"><button class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></button></a>
             <% } else { %>
-        <div>
-            <a href="/user/login"><button class="login">Iniciar sesión</button></a>
-            <a href="/user/register"><button class="register">Registrarse</button></a>
-        </div>
-        <% } %>
+                <div class="guest">
+                    <a href="/user/login"><button class="login">Iniciar sesión</button></a>
+                    <a href="/user/register"><button class="register">Registrarse</button></a>
+                </div>
+                <% } %>
     </div>
 
     <nav class="top-nav">
-        <a href="/">inicio</a>
-        <a href="/products">experiencias</a>
-        <a href="/products/promotions">promociones</a>
-        <a href="#contacto">contacto</a>
+        <a href="/">Inicio</a>
+        <a href="/products">Experiencias</a>
+        <a href="/products/promotions">Promociones</a>
+        <a href="#contacto">Contacto</a>
     </nav>
 </header>
 

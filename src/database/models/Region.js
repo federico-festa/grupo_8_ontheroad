@@ -14,8 +14,10 @@ module.exports = (sequelize, datatype)=>{
         },
         date:{
             type: datatype.DATE
+        },
+        img:{
+            type: datatype.STRING(255)
         }
-
     };
     const config = {
         tableName: "regions",

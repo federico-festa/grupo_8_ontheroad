@@ -6,17 +6,10 @@ const { Op } = require('sequelize');
 const { validationResult } = require('express-validator');
 
 const productsController = {
-    list: (req, res) => {
-        const products = db.Product.findAll({ include: 'product_region' })
-        const regions = db.Region.findAll()
-        Promise.all([products, regions])
-            .then(([products, regions]) => {
-                res.render('products', { products: products, regions: regions });
-            })
-            .catch((error) => {
-                console.log("Error", error.original.sqlMessage);
-                res.send('Error');
-            });
+    list: async (req, res) => {
+        const products = await db.Product.findAll({ association: 'product_region' })
+        const regions = await db.Region.findAll()
+        res.render('products', { products: products, regions: regions });
     },
     search: async (req, res) => {
         const promotions = await db.Product.findAll({
@@ -130,7 +123,7 @@ const productsController = {
                 id: req.params.id
             }
         });
-        res.render('regionImgEdit', {regionToEdit: regionToEdit});
+        res.render('regionImgEdit', { regionToEdit: regionToEdit });
     },
     regionImgUpdate: async (req, res) => {
         const regionToEdit = await db.Region.findOne({
@@ -151,15 +144,14 @@ const productsController = {
             });
         };
     },
-    detail: (req, res) => {
-        const regions = db.Region.findAll()
-        const product = db.Product.findOne({
+    detail: async (req, res) => {
+        const regions = await db.Region.findAll()
+        const product = await db.Product.findOne({
             where: {
                 id: req.params.id
             },
             include: [{ association: 'product_region' }]
         })
-        Promise.all([product, regions])
         res.render('detail', { product: product, regions: regions });
     },
     create: (req, res) => {

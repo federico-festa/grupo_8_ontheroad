@@ -42,7 +42,7 @@ header {
     width: 10%;
 }
 
-.headerRight div {
+.headerRight .usercont {
     display: none;
 }
 
@@ -86,6 +86,7 @@ header {
         width: 30%;
         height: 30%;
         align-self: center;
+        cursor: pointer;
     }
 
     .brand {
@@ -105,7 +106,7 @@ header {
 
     .headerCenter {
         width: 33%;
-        display: flex   ;
+        display: flex;
         justify-content: center;
         align-items: start;
     }
@@ -125,27 +126,16 @@ header {
         margin: 0px;
     }
 
-    .headerRight div {
+    .guest {
+        display: flex;
+    }
+
+    .headerRight .usercont {
         display: flex;
     }
 
     .headerRight button {
         border: none;
-    }
-
-    .headerRight i {
-        color: black;
-        background-color: white;
-        font-size: 32px;
-        padding: 25px;
-        padding-left: 0px;
-        padding-right: 3px;
-        transition: all 450ms;
-        cursor: pointer;
-    }
-    
-    .headerRight i:hover {
-        color: rgba(0, 0, 0, 0.651);
     }
 
     button.login {
@@ -154,7 +144,6 @@ header {
         width: 130px;
         border: 1px solid black;
         border-radius: 50px;
-        margin-top: 20px;
         cursor: pointer;
         transition: all 0.4s;
     }
@@ -178,7 +167,6 @@ header {
         border-radius: 50px;
         cursor: pointer;
         transition: all 0.4s;
-        margin-top: 20px;
     }
 
     .register:hover {
@@ -200,6 +188,80 @@ header {
         display: none;
     }
 
+    .usercont {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .user {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    .fa-user {
+        color: black;
+        background-color: white;
+        font-size: 32px;
+        transition: all 450ms;
+        cursor: pointer;
+    }
+
+    .fa-user:hover,
+    .fa-user:focus {
+        color: rgba(0, 0, 0, 0.651);
+        background-color: white;
+    }
+
+    .dropcont {
+        position: relative;
+        display: inline-block;
+    }
+
+    .droplist {
+        display: none;
+        position: absolute;
+        background-color: rgb(35, 35, 37);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 10px;
+    }
+
+    .droplist a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .droplist a:hover {
+        background-color: black;
+        border-radius: 10px;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .cart-icon {
+        color: black;
+        background-color: white;
+        font-size: 32px;
+        padding: 25px;
+        padding-left: 30px;
+        padding-right: 3px;
+        transition: all 450ms;
+        cursor: pointer;
+    }
+
+    .cart-icon:hover {
+        color: rgba(0, 0, 0, 0.651);
+    }
+
+    /* Top Nav */
+
     .top-nav {
         background-color: white;
         width: 100%;
@@ -212,23 +274,22 @@ header {
         border-bottom: 1px solid rgba(35, 35, 37, 0.2);
         padding: 5px;
     }
-    
+
     .top-nav a {
         color: black;
         text-decoration: none;
         transition: all 200ms;
     }
-    
+
     .top-nav a:hover {
         font-weight: bold;
     }
-    
+
     .sticky {
         position: fixed;
         top: 0;
         width: 100%;
         height: 50px;
-        background-color: rgb(35, 35, 37); 
+        background-color: rgb(35, 35, 37);
     }
-
-}
+};

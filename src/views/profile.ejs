@@ -8,19 +8,19 @@
             <main>
                 <section class="profile-cont-1">
                     <div class="profile-image">
-                        <img src="./img/users/<%= user.image %>">
+                        <img src="./img/users/<%= user.img %>">
                     </div>
                     <h2><%= user.firstName %> <%= user.lastName %></h2>
                 </section>
                 <section class="profile-cont-2">
                     <div class="buttons">
                         <a href="/user/edit/<%= user.id %>"><button>Editar perfil</button></a>
+                        <a href="/user/edit/img/<%= user.id %>"><button>Editar imagen de perfil</button></a>
                     </div>
                     <div class="profile-info">
                         <ul>
                             <li>Email: <%= user.email %></li>
-                            <li>País: <%= user.country %></li>
-                            <li>Cumpleaños: <%= user.birthday %></li>
+                            <li>País: <%= user.pais %></li>
                         </ul>
                     </div>  
                     <div class="profile-checkbox">

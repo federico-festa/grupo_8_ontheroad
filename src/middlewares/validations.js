@@ -26,26 +26,26 @@ exports.log = [
         .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
 ];
 
-// exports.userUpdate = [
-//     body('firstName')
-//         .notEmpty().withMessage('Por favor ingrese su nombre').bail()
-//         .isLength({ min: 3 }).withMessage('El nombre debe tener al menos 3 caracteres').bail()
-//         .isLength({ max: 20 }).withMessage('El nombre debe tener maximo 20 caracteres'),
-//     body('lastName')
-//         .notEmpty().withMessage('Por favor ingrese su apellido').bail()
-//         .isLength({ min: 3 }).withMessage('El apellido debe tener al menos 3 caracteres').bail()
-//         .isLength({ max: 20 }).withMessage('El apellido debe tener maximo 20 caracteres'),
-//     body('dni')
-//         .isNumeric().withMessage('Ingrese un DNI válido'),
-//     body('genero')
-//         .
-//     body('email'),
-//     body('password'),
-//     body('domicilio'),
-//     body('telefono'),
-//     body('codigoPostal'),
-//     body('pais')
-// ];
+exports.userUpdate = [
+    body('firstName')
+        .notEmpty().withMessage('Por favor ingrese su nombre').bail()
+        .isLength({ min: 3 }).withMessage('El nombre debe tener al menos 3 caracteres').bail()
+        .isLength({ max: 20 }).withMessage('El nombre debe tener maximo 20 caracteres'),
+    body('lastName')
+        .notEmpty().withMessage('Por favor ingrese su apellido').bail()
+        .isLength({ min: 3 }).withMessage('El apellido debe tener al menos 3 caracteres').bail()
+        .isLength({ max: 20 }).withMessage('El apellido debe tener maximo 20 caracteres'),
+    body('dni')
+        .isNumeric().withMessage('Ingrese un DNI válido'),
+    body('email')
+        .notEmpty().withMessage('Por favor ingrese su email').bail()
+        .isEmail().withMessage('Por favor ingrese un email válido'),
+    body('password')
+        .notEmpty().withMessage('Por favor ingrese la contraseña nueva').bail()
+        .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
+    body('telefono')
+        .isNumeric().withMessage('Por favor ingrese un número de teléfono válido'),
+];
 
 exports.userImgUpdate = [
     body('img')
