@@ -10,29 +10,38 @@
                     <div class="profile-image">
                         <img src="./img/users/<%= user.img %>">
                     </div>
-                    <h2><%= user.firstName %> <%= user.lastName %></h2>
+                    <a href="/user/edit/img/<%= user.id %>"><button type="button" class="edit-img">Editar imagen de perfil</button></a>
+                    <div class="profile-checkbox">
+                        <form class="form" action="" method="">
+                            <p class="team">¿Qué team sos?</p>
+                            <input type="radio" name="team" value="beach" class="input">
+                            <label for="playa" class="label">Playa</label><br>
+                            <input type="radio" name="team" value="mountain" class="input">
+                            <label for="mountain" class="label">Montaña</label><br>
+                            <input type="radio" name="team" value="city" class="input">
+                            <label for="city" class="label">Ciudad</label>
+                        </form>
+                    </div>
                 </section>
                 <section class="profile-cont-2">
-                    <div class="buttons">
-                        <a href="/user/edit/<%= user.id %>"><button>Editar perfil</button></a>
-                        <a href="/user/edit/img/<%= user.id %>"><button>Editar imagen de perfil</button></a>
-                    </div>
+                    <h2 class="name">
+                        <%= user.firstName %>
+                            <%= user.lastName %>
+                    </h2>
                     <div class="profile-info">
                         <ul>
-                            <li>Email: <%= user.email %></li>
-                            <li>País: <%= user.pais %></li>
+                            <li>Email: <%= user.email %>
+                            </li>
+                            <li>País: <%= user.pais %>
+                            </li>
                         </ul>
-                    </div>  
-                    <div class="profile-checkbox">
-                        <form class="form" action="" method="post">
-                            <p>¿Qué team sos?</p>
-                                <input type="radio" name="team" value="beach">
-                                <label for="playa">Playa</label><br>
-                                <input type="radio" name="team" value="mountain">
-                                <label for="mountain">Montaña</label><br>
-                                <input type="radio" name="team" value="city">
-                                <label for="city">Ciudad</label>
-                        </form>
+                    </div>
+                    <div class="buttons">
+                        <a href="/user/edit/<%= user.id %>"><button class="submit-button" type="button">Editar perfil</button></a>
+                        <a href="/user/edit/password/<%= user.id %>"><button type="button" class="submit-button">Cambiar
+                                contraseña</button></a>
+                        <a href="/user/delete/<%= user.id %>"><button type="button" class="submit-button">Eliminar
+                                mi cuenta</button></a>
                     </div>
                 </section>
             </main>

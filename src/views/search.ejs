@@ -11,7 +11,7 @@
                 <% if(locals.products.length == 0) { %>
                     <h2 class="todas">No encontramos resultados para tu busqueda: <%= search %></h2>    
                     <div class="product-showcase">
-                        <h2>¿Ya viste nuestras promociones?</h2>
+                        <h2 class="not-found">¿Ya viste nuestras promociones?</h2>
                         <% promotions.forEach((product)=> { %>
                             <article class="product">
                                 <a href="/products/detail/<%= product.id %>">
