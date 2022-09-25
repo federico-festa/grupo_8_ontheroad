@@ -57,7 +57,7 @@
     .account-page {
         width: 100%;
         height: 500px;
-        background-image: url("/img/banner.jpg");
+        background-image: url("/img/system/banner.jpg");
         background-size: cover;
     }
     

@@ -149,16 +149,44 @@
 
     /*Banner*/
 
-    .banner {
+    .slideshow-container {
         width: 100%;
-        height: 500px;
-        background-image: url("/img/banner.jpg");
-        background-size: cover;
+        position: relative;
+        margin: auto;
+    }
+    
+
+    .banner {
+        display: none;
+    }
+
+    .banner img {
+        width: 100%;
+    }
+
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+
+    .number {
+        color: white;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
     }
 
     .banner-text {
-        padding-top: 200px;
         text-align: center;
+        position: absolute;
+        bottom: 250px;
+        width: 100%;
     }
 
     .banner-text h3 {

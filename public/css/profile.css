@@ -147,14 +147,14 @@
     }
 
     .beach {
-        background-image: url('/img/beach.jpg');
+        background-image: url('/img/system/beach.jpg');
     }
 
     .mountain {
-        background-image: url('/img/mountain.jpg');
+        background-image: url('/img/system/mountain.jpg');
     }
 
     .city {
-        background-image: url('/img/city2.jpeg');
+        background-image: url('/img/system/city2.jpeg');
     }
 }
