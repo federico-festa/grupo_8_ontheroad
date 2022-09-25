@@ -12,7 +12,7 @@
                         <p class="number">1 / 4</p>
                         <img src="/img/system/banner.jpg">
                         <div class="banner-text">
-                            <h3>¡Explorá tu mundo!</h3>
+                            <h3>¡Viví experiencias increíbles!</h3>
                             <h4>Mucho más que unas vacaciones</h4>
                         </div>
                     </div>
@@ -42,49 +42,51 @@
                         <p class="number">4 / 4</p>
                         <img src="/img/system/banner4.jpg">
                         <div class="banner-text">
-                            <h3>¡Explorá tu mundo!</h3>
+                            <h3>¡Viví experiencias increíbles!</h3>
                             <h4>Mucho más que unas vacaciones</h4>
                         </div>
                     </div>
                     </div>
                 </section>
 
+                <h2 class="destacadas">Experiencias destacadas</h2>
+                <div class="product-showcase">
+                    <% products.forEach((product)=> { %>
+                        <article class="product">
+                            <a href="/products/detail/<%= product.id %>">
+                                <img src="/img/products/<%= product.img %>" alt="product image">
+                                <div class="product-description">
+                                    <h5 class="name">
+                                        <%= product.name %>
+                                    </h5>
+                                    <p class="shortDescription">
+                                        <%= product.descriptionShort %>
+                                    </p>
+                                    <p class="price">$<%= product.price %>
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                        <% }); %>
+                </div>
 
-
-                <section>
-                    <h2 class="destacadas">Experiencias destacadas</h2>
-                    <div class="product-showcase">
-                        <% products.forEach((product)=> { %>
-                            <article class="product">
-                                <a href="/products/detail/<%= product.id %>">
-                                    <img src="/img/products/<%= product.img %>" alt="product image">
-                                    <div class="product-description">
-                                        <h5 class="name">
-                                            <%= product.name %>
-                                        </h5>
-                                        <p class="shortDescription">
-                                            <%= product.descriptionShort %>
-                                        </p>
-                                        <p class="price">$<%= product.price %>
-                                        </p>
-                                    </div>
-                                </a>
-                            </article>
-                            <% }); %>
-                    </div>
-                </section>
                 <section class="bottom-banner">
-                    <img src="/img/system/bottom-banner1.jpg" alt="bottom-banner">
+                    <a
+                        href="https://www.traveler.es/viajeros/articulos/que-significa-exactamente-el-espiritu-wanderlust/7716">
+                        <img src="/img/system/bottom-banner1.jpg" alt="bottom-banner">
+                    </a>
                     <div class="bottom-text">
-                        <h3>Lorem ipsum</h3>
+                        <h3>Wanderlust</h3>
                         <br>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident exercitationem
-                            officia,
-                            distinctio
-                            illo, fugit aspernatur ad, cumque atque eaque tenetur similique laboriosam voluptatem
-                            nesciunt
-                            hic
-                            fugiat. Quo, nihil accusamus! Sit.</p>
+                        <p>(del alemán wandern: caminar y lust: pasión) hace referencia a la pasión por caminar, pero el
+                            término fue evolucionando hasta la expresión pasión por vagar o deambular.</p>
+                        <br>
+                        <p>En el mundo moderno, el término ha derivado en pasión por viajar, por eso, el concepto
+                            Wanderlust hace referencia al deseo que tienen algunas personas por viajar o descubrir el
+                            mundo. Quienes se identifican como viajeros suelen compartir características que se repiten:
+                            la ausencia de
+                            equipaje excesivo, la búsqueda constante de aventuras, la huida de la vida rutinaria y, en
+                            general, la improvisación en sus viajes.</p>
                     </div>
                 </section>
                 <br>

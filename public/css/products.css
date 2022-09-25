@@ -79,7 +79,6 @@
     }
 }
 
-
 /*Breakpoints*/
 
 /*Desktop*/
@@ -106,9 +105,10 @@
 
     .product-showcase {
         display: flex;
-        justify-content: flex-start;
+        flex-direction: row;
+        justify-content: space-evenly;
         align-items: center;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         margin-bottom: 20px;
         margin-top: 0px;
         border-top: 1px solid #ebebeb;
@@ -124,7 +124,7 @@
         padding: 10px;
         transition: all 450ms;
         border-radius: 4px;
-        width: 320px;
+        width: 23%;
     }
 
     article.product:hover {
@@ -132,8 +132,8 @@
     }
 
     article.product img {
-        width: 300px;
-        height: 300px;
+        width: 270px;
+        height: 270px;
         margin-bottom: 10px;
         border-radius: 4px;
     }
@@ -141,6 +141,10 @@
     article.product:hover img {
         transition: all 1s;
         transform: scale(1.05);
+    }
+
+    article.product:hover .name {
+        color: #666;
     }
 
     .product a {
