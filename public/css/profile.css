@@ -42,11 +42,11 @@
     }
 
     .edit-img {
-        background-color: black;
+        background-color: rgb(35, 35, 37);
         color: white;
         height: 45px;
         width: 200px;
-        border: 1px solid black;
+        border: 1px solid rgb(35, 35, 37);
         border-radius: 50px;
         margin: 20px 0px 20px 0px;
         cursor: pointer;
@@ -63,7 +63,7 @@
     .profile-cont-2 {
         border-radius: 10px;
         background-color: white;
-        width: 50%;
+        width: 70%;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -94,19 +94,45 @@
     }
 
     .profile-info {
+        border: 1px solid #666;
+        border-radius: 10px;
+        width: 80%;
+        padding: 10px;
+    }
 
+    .name {
+        color: rgb(35, 35, 37);
+    }
+
+    .info-title {
+        font-size: 20px;
+        margin: 10px 0px 20px 10px;
+        width: 90%;
+        border-bottom: 1px solid #666;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 5px;
+        text-decoration: none;
     }
 
     .buttons {
-
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
     }
 
     .submit-button {
-        background-color: black;
+        background-color: rgb(35, 35, 37);
         color: white;
         height: 45px;
         width: 200px;
-        border: 1px solid black;
+        border: 1px solid rgb(35, 35, 37);
         border-radius: 50px;
         margin-top: 20px;
         cursor: pointer;
@@ -118,5 +144,17 @@
     .submit-button:hover {
         background-color: rgba(0, 0, 0, 0.651);
         border-color: rgba(0, 0, 0, 0.651);
+    }
+
+    .beach {
+        background-image: url('/img/beach.jpg');
+    }
+
+    .mountain {
+        background-image: url('/img/mountain.jpg');
+    }
+
+    .city {
+        background-image: url('/img/city2.jpeg');
     }
 }

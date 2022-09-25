@@ -13,12 +13,12 @@
                     <% products.forEach((product)=> { %>
                         <article class="product">
                             <a href="/products/detail/<%= product.id %>">
-                                <img src="./img/products/<%= product.img %>" alt="product image">
+                                <img src="/img/products/<%= product.img %>" alt="product image">
                                 <div class="product-description">
                                     <h5 class="name">
                                         <%= product.name %>
                                     </h5>
-                                    <p class="descriptionShort">
+                                    <p class="shortDescription">
                                         <%= product.descriptionShort %>
                                     </p>
                                     <p class="price">$<%= product.price %>
@@ -30,7 +30,8 @@
                 </div>
                 </section>
             </main>
+            <script src="js/header.js"></script>
+            <%- include('./partials/footer') %>
     </body>
-    <%- include('./partials/footer') %>
 
 </html>

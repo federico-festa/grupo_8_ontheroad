@@ -124,7 +124,7 @@
         padding: 10px;
         transition: all 450ms;
         border-radius: 4px;
-        width: 100%;
+        width: 320px;
     }
 
     article.product:hover {
@@ -132,7 +132,8 @@
     }
 
     article.product img {
-        width: 100%;
+        width: 300px;
+        height: 300px;
         margin-bottom: 10px;
         border-radius: 4px;
     }

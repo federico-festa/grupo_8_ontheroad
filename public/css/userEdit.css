@@ -1,8 +1,6 @@
 /* Mobile first */
 
-@media (max-width: 480px) {}
-
-/* Breakpoints */
+/*Breakpoints*/
 
 /*Desktop*/
 
@@ -32,12 +30,12 @@
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
 
-    .form-container {
+    .form-containter {
         background-color: white;
-        border: 10px;
         margin: 10px;
+        border: 10px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
         padding: 10px;
@@ -49,41 +47,20 @@
         flex-wrap: nowrap;
         align-items: flex-start;
         justify-content: center;
-        width: 100%;
-    }
-
-    .row-2 {
-        width: 100%;
     }
 
     .c-1 {
-        width: 100%;
+        width: 50%;
         height: 100%;
     }
 
     .c-2 {
-        width: 100%;
+        width: 50%;
         height: 100%;
     }
 
-    .product-img {
-        width: 100%;
-    }
-
-    .img-title {
-        font-size: 1.2em;
-        margin-bottom: 10px;
-    }
-
-    img {
-        border-radius: 45px;
-        width: 400px;
-        height: 400px;
-    }
-
     .input-container {
-        margin-top: 5px;
-        margin-bottom: 10px;
+        margin: 5px;
         width: 100%;
     }
 
@@ -92,14 +69,14 @@
         font-size: 1.2em;
     }
 
-    .img-input {
+    .input {
         width: 80%;
         border-radius: 5px;
         border: solid 1px gray;
         height: 45px;
         font-size: 1.2em;
         margin-bottom: 5px;
-        padding: 10px;
+        padding: 0px 15px;
     }
 
     .errors-msg {
@@ -111,7 +88,7 @@
 
     .button-container {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
     }
 
     .submit-button {
@@ -119,13 +96,13 @@
         color: white;
         height: 45px;
         width: 200px;
-        border: 1px solid black;
+        border: 1px solid rgb(35, 35, 37);
         border-radius: 50px;
         margin-top: 20px;
         cursor: pointer;
         transition: all 0.4s;
         text-align: center;
-        font-size: 1em; 
+        font-size: 1em;
     }
 
     .submit-button:hover {

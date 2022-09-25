@@ -10,15 +10,16 @@
                     <div class="profile-image">
                         <img src="./img/users/<%= user.img %>">
                     </div>
-                    <a href="/user/edit/img/<%= user.id %>"><button type="button" class="edit-img">Editar imagen de perfil</button></a>
+                    <a href="/user/edit/img/<%= user.id %>"><button type="button" class="edit-img">Editar imagen de
+                            perfil</button></a>
                     <div class="profile-checkbox">
                         <form class="form" action="" method="">
                             <p class="team">¿Qué team sos?</p>
-                            <input type="radio" name="team" value="beach" class="input">
-                            <label for="playa" class="label">Playa</label><br>
-                            <input type="radio" name="team" value="mountain" class="input">
+                            <input type="radio" name="team" value="beach" class="input" id="beach">
+                            <label for="beach" class="label">Playa</label><br>
+                            <input type="radio" name="team" value="mountain" class="input" id="mountain">
                             <label for="mountain" class="label">Montaña</label><br>
-                            <input type="radio" name="team" value="city" class="input">
+                            <input type="radio" name="team" value="city" class="input" id="city">
                             <label for="city" class="label">Ciudad</label>
                         </form>
                     </div>
@@ -30,14 +31,38 @@
                     </h2>
                     <div class="profile-info">
                         <ul>
+                            <p class="info-title">Información personal</p>
                             <li>Email: <%= user.email %>
                             </li>
-                            <li>País: <%= user.pais %>
-                            </li>
+                            <% if(user.dni !=null) { %>
+                                <li>DNI: <%= user.dni %>
+                                </li>
+                                <% } %>
+                                    <% if(user.genero !=null) { %>
+                                        <li>Género: <%= user.genero %>
+                                        </li>
+                                        <% } %>
+                                            <% if(user.pais !=null) { %>
+                                                <li>País: <%= user.pais %>
+                                                </li>
+                                                <% } %>
+                                                    <% if(user.domicilio !=null) { %>
+                                                        <li>Domicilio: <%= user.domicilio %>
+                                                        </li>
+                                                        <% } %>
+                                                            <% if(user.codigoPostal !=null) { %>
+                                                                <li>Código Postal: <%= user.codigoPostal %>
+                                                                </li>
+                                                                <% } %>
+                                                                    <% if(user.telefono !=null) { %>
+                                                                        <li>Teléfono: <%= user.telefono %>
+                                                                        </li>
+                                                                        <% } %>
                         </ul>
                     </div>
                     <div class="buttons">
-                        <a href="/user/edit/<%= user.id %>"><button class="submit-button" type="button">Editar perfil</button></a>
+                        <a href="/user/edit/<%= user.id %>"><button class="submit-button" type="button">Editar
+                                Información</button></a>
                         <a href="/user/edit/password/<%= user.id %>"><button type="button" class="submit-button">Cambiar
                                 contraseña</button></a>
                         <a href="/user/delete/<%= user.id %>"><button type="button" class="submit-button">Eliminar
@@ -45,7 +70,9 @@
                     </div>
                 </section>
             </main>
+            <script src="/js/profile.js"></script>
+            <script src="js/header.js"></script>
+            <%- include('./partials/footer') %>
     </body>
-    <%- include('./partials/footer') %>
 
 </html>
