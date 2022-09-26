@@ -6,8 +6,13 @@ const { Op } = require('sequelize');
 
 const mainController = {
     index: async (req, res) => {
-        const products = await db.Product.findAll({limit: 4});
-        res.render('index', { products: products })
+        try {
+            const products = await db.Product.findAll({ limit: 4 });
+            res.render('index', { products: products })
+        } catch (error) {
+            console.log(error);
+            res.render('error');
+        };
     },
 };
 
