@@ -107,7 +107,7 @@ main {
 @media (min-width: 1024px) {
 
     main {
-        background-image: url('/img/cart-back.webp');
+        background-image: url('/img/system/cart-back.webp');
         background-size: contain;
         background-color: #f2f1ec;
     }
