@@ -175,14 +175,6 @@
         to {opacity: 1}
     }
 
-    .number {
-        color: white;
-        font-size: 12px;
-        padding: 8px 12px;
-        position: absolute;
-        top: 0;
-    }
-
     .banner-text {
         text-align: center;
         position: absolute;

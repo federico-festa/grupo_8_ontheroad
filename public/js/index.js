@@ -1,8 +1,9 @@
 let slideIndex = 0;
+
 showSlides();
 
 function showSlides() {
-    let slides = document.getElementsByClassName("banner");
+    let slides = document.querySelectorAll(".banner");
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
