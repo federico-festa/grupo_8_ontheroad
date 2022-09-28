@@ -193,7 +193,7 @@ const productsController = {
                 },
                 include: [{ association: 'product_region' }]
             })
-            res.render('detail', { product: product, regions: regions });
+            res.render('detailB', { product: product, regions: regions });
         } catch (error) {
             console.log(error);
             res.render('error');
@@ -332,9 +332,6 @@ const productsController = {
             console.log(error);
             res.render('error');
         };
-    },
-    cart: (req, res) => {
-        res.render('cart');
     }
 };
 

@@ -14,6 +14,15 @@ const mainController = {
             res.render('error');
         };
     },
+    cart: async (req, res) => {
+        try {
+            const products = await db.Product.findAll();
+            res.render('cart', { products: products });
+        } catch (error) {
+            console.log(error);
+            res.render('error');
+        };
+    }
 };
 
 module.exports = mainController;

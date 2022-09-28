@@ -19,7 +19,6 @@ router.get('/create', productsController.create);
 router.get('/edit/:id', productsController.edit);
 router.get('/delete/:id', productsController.delete);
 router.get('/edit/img/:id', productsController.imgEdit);
-router.get('/cart', productsController.cart);
 
 router.post('/create', upload.single('img'), validations.store, productsController.store);
 router.post('/regions/create', upload.single('img'), validations.regionStore, productsController.regionStore);

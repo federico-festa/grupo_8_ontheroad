@@ -15,7 +15,7 @@ window.onscroll = () => {
         });
         droplist.classList.remove('show');
     };
-};
+}
 
 window.onload = () => {
     const logo = document.querySelector('img');
@@ -29,11 +29,11 @@ window.onload = () => {
     userIcon.addEventListener('click', () => {
         droplist.classList.toggle('show');
     });
-};
+}
 
 window.onclick = (e) => {
     const droplist = document.querySelector('.droplist');
     if (!e.target.matches('.fa-user')){
         droplist.classList.remove('show');
     };
-};
+}
