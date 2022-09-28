@@ -9,7 +9,7 @@ const upload = require('../middlewares/multerUser');
 
 router.get('/register', guest, userController.register);
 router.get('/login', guest, userController.login);
-router.get('/logout', userController.logout);
+router.get('/logout', auth, userController.logout);
 router.get('/profile', auth, userController.profile);
 router.get('/edit/:id', auth, userController.edit);
 router.get('/delete/:id', auth, userController.delete);

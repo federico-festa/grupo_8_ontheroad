@@ -97,6 +97,5 @@ window.onload = () => {
     if (product1 == '' && product2 == '' && product3 == '') {
         checkout.style.display = 'none';
         empty.style.display = 'block';
-
     };
 }
