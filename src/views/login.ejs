@@ -13,9 +13,10 @@
                         <form id="login-form" action="/user/login" method="POST" class="form">
                             <div class="form-group">
                                 <label class="form-label " for="email">Email</label>
-                                <input type="text" class="form-control" autocorrect="off" autocapitalize="off"
+                                <input type="text" class="form-control" id="email" autocorrect="off" autocapitalize="off"
                                     name="email" value="<%= locals.oldData ? oldData.email : null %>">
                                 <div class="errors-msg">
+                                    <div class="errors"></div>
                                     <% if(locals.errors && errors.email) { %>
                                         <p>
                                             <%= errors.email.msg %>
@@ -25,9 +26,10 @@
                             </div>
                             <div class="form-group ">
                                 <label class="form-label" for="password">Contraseña</label>
-                                <input type="password" class="form-control" autocorrect="off" autocapitalize="off"
+                                <input type="password" class="form-control" id="password" autocorrect="off" autocapitalize="off"
                                     autocomplete="off" name="password">
                                 <div class="errors-msg">
+                                    <div class="errors2"></div>
                                     <% if(locals.errors && errors.password) { %>
                                         <p>
                                             <%= errors.password.msg %>
@@ -48,6 +50,7 @@
                 </section>
             </main>
             <script src="js/header.js"></script>
+            <script src="js/login.js"></script>
             <%- include('./partials/footer') %>
     </body>
 
