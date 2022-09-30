@@ -11,7 +11,7 @@
                     <div class="container">
                         <form id="register-form" action="/user/register" method="POST" class="form">
                             <div class="form-group">
-                                <label class="form-label " for="firstName">Nombre</label>
+                                <label class="form-label" for="firstName">Nombre</label>
                                 <input type="text" class="form-control" id="firstName" autocorrect="off" autocapitalize="off"
                                     name="firstName" placeholder="ej: Pablo" value="<%= locals.oldData ? oldData.firstName : null %>">
                                 <div class="errors-msg">

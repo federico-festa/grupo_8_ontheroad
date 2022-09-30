@@ -19,7 +19,7 @@ const userController = {
             } else if (emailUsed) {
                 res.render('register', { errors: { email: { msg: 'El email ya está en uso' } } });
             } else {
-                await db.Client.create({
+                db.Client.create({
                     firstName: req.body.firstName,
                     lastName: req.body.lastName,
                     email: req.body.email,
