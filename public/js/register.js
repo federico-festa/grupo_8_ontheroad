@@ -1,5 +1,6 @@
 window.onload = () => {
     const form = document.querySelector('#register-form');
+    const reset = document.querySelector('.reset-button');
     const firstName = document.querySelector('#firstName');
     const lastName = document.querySelector('#lastName');
     const email = document.querySelector('#email');
@@ -14,32 +15,6 @@ window.onload = () => {
     firstName.focus();
 
     firstName.addEventListener('blur', () => {
-        if (firstName.value.trim() == '') {
-            firstName.placeholder = 'Por favor ingrese su nombre';
-        };
-    });
-
-    lastName.addEventListener('blur', () => {
-        if (lastName.value.trim() == '') {
-            lastName.placeholder = 'Por favor ingrese su apellido';
-        };
-    });
-
-    email.addEventListener('blur', () => {
-        if (email.value.trim() == '') {
-            email.placeholder = 'Por favor ingrese su email';
-        };
-    });
-
-    password.addEventListener('blur', () => {
-        if (password.value.trim() == '') {
-            password.placeholder = 'Por favor ingrese su contraseña';
-        };
-    });
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
         if (firstName.value.length == 0) {
             errors.push('Por favor ingrese su nombre');
             let err = errors.indexOf('Por favor ingrese su nombre');
@@ -53,6 +28,7 @@ window.onload = () => {
             let err = errors.indexOf('El nombre debe tener maximo 20 caracteres');
             error.innerHTML = '<p>' + errors[err] + '</p>';
         } else {
+            error.innerHTML = '';
             let err1 = errors.indexOf('Por favor ingrese su nombre');
             let err2 = errors.indexOf('El nombre debe tener al menos 3 caracteres');
             let err3 = errors.indexOf('El nombre debe tener maximo 20 caracteres');
@@ -60,7 +36,9 @@ window.onload = () => {
             errors.splice(err2, 1);
             errors.splice(err3, 1);
         };
+    });
 
+    lastName.addEventListener('blur', () => {
         if (lastName.value.length == 0) {
             errors.push('Por favor ingrese su apellido');
             let err = errors.indexOf('Por favor ingrese su apellido');
@@ -74,6 +52,7 @@ window.onload = () => {
             let err = errors.indexOf('El apellido debe tener maximo 20 caracteres');
             error2.innerHTML = '<p>' + errors[err] + '</p>';
         } else {
+            error2.innerHTML = '';
             let err1 = errors.indexOf('Por favor ingrese su apellido');
             let err2 = errors.indexOf('El apellido debe tener al menos 3 caracteres');
             let err3 = errors.indexOf('El apellido debe tener maximo 20 caracteres');
@@ -81,7 +60,9 @@ window.onload = () => {
             errors.splice(err2, 1);
             errors.splice(err3, 1);
         };
+    });
 
+    email.addEventListener('blur', () => {
         if (email.value.trim() == '') {
             errors.push('Por favor ingrese su email');
             let err = errors.indexOf('Por favor ingrese su email');
@@ -91,12 +72,15 @@ window.onload = () => {
             let err = errors.indexOf('Por favor ingrese un email válido');
             error3.innerHTML = '<p>' + errors[err] + '</p>';
         } else {
+            error3.innerHTML = '';
             let err1 = errors.indexOf('Por favor ingrese su email');
             let err2 = errors.indexOf('Por favor ingrese un email válido');
             errors.splice(err1, 1);
             errors.splice(err2, 1);
         };
+    });
 
+    password.addEventListener('blur', () => {
         if (password.value.trim() == '') {
             errors.push('Por favor ingrese su contraseña');
             let err = errors.indexOf('Por favor ingrese su contraseña');
@@ -106,14 +90,40 @@ window.onload = () => {
             let err = errors.indexOf('La contraseña debe tener al menos 8 caracteres');
             error4.innerHTML = '<p>' + errors[err] + '</p>';
         } else {
+            error4.innerHTML = '';
             let err1 = errors.indexOf('Por favor ingrese su contraseña');
             let err2 = errors.indexOf('La contraseña debe tener al menos 8 caracteres');
             errors.splice(err1, 1);
             errors.splice(err2, 1);
         };
+    });
 
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (lastName.value.length == 0) {
+            errors.push('Por favor ingrese su apellido');
+            let err = errors.indexOf('Por favor ingrese su apellido');
+            error2.innerHTML = '<p>' + errors[err] + '</p>';
+        };
+        if (email.value.length == 0) {
+            errors.push('Por favor ingrese su email');
+            let err = errors.indexOf('Por favor ingrese su email');
+            error3.innerHTML = '<p>' + errors[err] + '</p>';
+        };
+        if (password.value.length == 0) {
+            errors.push('Por favor ingrese su contraseña');
+            let err = errors.indexOf('Por favor ingrese su contraseña');
+            error4.innerHTML = '<p>' + errors[err] + '</p>';
+        };
         if (errors.length == 0) {
             form.submit();
-        };
+        };    
+    });
+
+    reset.addEventListener('click', (e) => {
+        error.innerHTML = '';
+        error2.innerHTML = '';
+        error3.innerHTML = '';
+        error4.innerHTML = '';    
     });
 }
