@@ -25,9 +25,10 @@
                                     <div class="input-container">
                                         <label for="img" class="label-container">Elegir imagen de
                                             perfil:</label><br>
-                                        <input type="file" name="img" id="image" class="img-input"
+                                        <input type="file" name="img" id="img" class="img-input"
                                             value="<%= userToEdit.img %>">
                                         <div class="errors-msg">
+                                            <div class="error"></div>
                                             <% if(locals.errors && errors.img) { %>
                                                 <p>
                                                     <%= errors.img.msg %>
@@ -50,6 +51,7 @@
                 </div>
             </main>
             <script src="js/header.js"></script>
+            <script src="js/userImgEdit.js"></script>
             <%- include('./partials/footer') %>
     </body>
 

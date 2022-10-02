@@ -11,7 +11,7 @@
                 </h2>
                 <div class="container">
                     <div class="form-container">
-                        <form action="/user/edit/<%= userToEdit.id %>?_method=PUT" method="POST">
+                        <form action="/user/edit/<%= userToEdit.id %>?_method=PUT" method="POST" class="form-edit">
                             <div class="row-1">
                                 <div class="c-1">
                                     <div class="input-container">
@@ -20,6 +20,7 @@
                                         <input type="text" id="firstName" name="firstName" class="input"
                                             value="<%= userToEdit.firstName %>">
                                         <div class="errors-msg">
+                                            <div class="error"></div>
                                             <% if(locals.errors && errors.firstName) { %>
                                                 <p>
                                                     <%= errors.firstName.msg %>
@@ -33,6 +34,7 @@
                                         <input type="text" id="lastName" name="lastName" class="input"
                                             value="<%= userToEdit.lastName %>">
                                         <div class="errors-msg">
+                                            <div class="error2"></div>
                                             <% if(locals.errors && errors.lastName) { %>
                                                 <p>
                                                     <%= errors.lastName.msg %>
@@ -46,6 +48,7 @@
                                         <input type="email" id="email" name="email" class="input"
                                             value="<%= userToEdit.email %>">
                                         <div class="errors-msg">
+                                            <div class="error3"></div>
                                             <% if(locals.errors && errors.email) { %>
                                                 <p>
                                                     <%= errors.email.msg %>
@@ -411,6 +414,7 @@
                 </div>
             </main>
             <script src="js/header.js"></script>
+            <script src="js/userEdit.js"></script>
             <%- include('./partials/footer') %>
     </body>
 

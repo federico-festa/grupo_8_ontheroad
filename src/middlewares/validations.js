@@ -45,7 +45,7 @@ exports.passwordUpdate = [
         .notEmpty().withMessage('Por favor ingrese la contraseña nueva').bail()
         .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
     body('password2')
-        .notEmpty().withMessage('Por favor ingrese la contraseña nueva').bail()
+        .notEmpty().withMessage('Por favor confirme la contraseña nueva').bail()
         .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
 ];
 

@@ -21,12 +21,13 @@
                             </div>
                             <div class="c-2">
                                 <form action="/products/edit/img/<%= productToEdit.id %>?_method=PUT" method="POST"
-                                    enctype="multipart/form-data">
+                                    enctype="multipart/form-data" class="img-form">
                                     <div class="input-container">
                                         <label for="img" class="label-container">Elegir nueva imagen:</label><br>
-                                        <input type="file" name="img" id="image" class="img-input"
+                                        <input type="file" name="img" id="img" class="img-input"
                                             value="<%= productToEdit.img %>">
                                         <div class="errors-msg">
+                                            <div class="error"></div>
                                             <% if(locals.errors && errors.img) { %>
                                                 <p>
                                                     <%= errors.img.msg %>
@@ -47,6 +48,7 @@
             </main>
             <%- include('./partials/footer') %>
             <script src="js/header.js"></script>
+            <script src="js/imgEdit.js"></script>
         </body>
 
 </html>
