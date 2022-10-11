@@ -43,7 +43,7 @@ DROP TABLE IF EXISTS products;
 CREATE TABLE products (
 	id int NOT NULL AUTO_INCREMENT,
     name varchar(50) NOT NULL,
-    price decimal(5, 2) NOT NULL,
+    price decimal(10, 2) NOT NULL,
     discount int,
     shortDescription varchar(100),
     longDescription varchar(500),

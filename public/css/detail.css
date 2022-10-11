@@ -5,6 +5,11 @@ main {
     align-items: center;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 img {
     width: 100%;
 }
@@ -14,9 +19,11 @@ img {
 .bannerShow {
     display: flex;
     justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-#img1 {
+.img1, .img-show img {
     border-radius: 5px;
 }
 
@@ -35,7 +42,8 @@ img {
     line-height: normal;
 }
 
-.descripcion, .informacion {
+.descripcion,
+.informacion {
     width: 95%;
     line-height: 27px;
 }
@@ -49,7 +57,6 @@ img {
 
 #multiTab button {
     border-style: none;
-    background-color: white;
     border: solid 1px black;
     border-radius: 5px;
     width: 25%;
@@ -58,9 +65,21 @@ img {
     transition: all 0.3s;
 }
 
-#multiTab button:hover {
-    background-color: rgba(87, 184, 255, 0.745);
-    border-color: rgba(87, 184, 255, 0.745);;
+.enableTab {
+    background-color: black;
+    color: white;
+}
+
+.disableTab {
+    background-color: white;
+    color: black;
+}
+
+#tabMain {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #showMaps {
@@ -92,7 +111,7 @@ article.product {
     padding: 0 15px;
     border-bottom: 1px solid black;
     margin-top: 15px;
-    
+
 }
 
 article.product img {
@@ -135,29 +154,87 @@ article .product-description {
 
 /* calendarSection */
 
-#calendario table {
-    border-spacing: 5px;
-    font-size: 16px;
-    border-radius: 25px;
+#tabCalendar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#calendario {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.calendar {
+    border-radius: 10px;
     border: 1px solid black;
+    width: 80%;
+    max-width: 600px;
+    margin: 1em auto;
+    padding: .5em 0;
 }
 
-#calendario tr td {
+.calendar__info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 2em;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.calendar__prev,
+.calendar__next {
+    cursor: pointer;
+    font-size: 1.3em;
+}
+
+.calendar__prev {
+    margin-right: auto;
+}
+
+.calendar__next {
+    margin-left: auto;
+}
+
+.calendar__week,
+.calendar__dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+}
+
+.calendar__month,
+.calendar__year {
+    padding: .5em 1em;
+}
+
+.calendar__item {
     text-align: center;
-    border-radius: 100%;
-    border: 1px solid grey;
-    width: 50px;
-    height: 50px;
+    line-height: 2;
 }
 
-#calendario tr td:hover {
-    background-color: #666;
+.calendar__last-days {
+    opacity: .3;
+}
+
+.day:hover {
+    background-color: grey;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .product-detail-info {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 .priceProducts {
@@ -165,19 +242,23 @@ article .product-description {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
-.priceProducts .product-detail-price {
-    width: 30%;
+.product-detail-price {
     text-align: center;
     font-size: 1.5em;
 }
 
-.priceProducts .small {
-    width: 65%;
+.small {
+    width: 50%;
     text-align: center;
     color: green;
     font-size: 2em;
+}
+
+#discount {
+    font-size: 0.65em;
 }
 
 .actions-list {
@@ -186,6 +267,7 @@ article .product-description {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
 }
 
 .actions-list i {
@@ -211,14 +293,102 @@ article .product-description {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
-.buyProduct, .addProduct {
+.actionProduct a {
+    height: 50px;
+    border-radius: 5px;
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buyProduct {
+    background-color: black;
+    color: white;
+}
+
+.addProduct {
+    background-color: rgb(94, 94, 94);
+    color: white;
+    border: 1px solid rgb(94, 94, 94);;
+}
+
+.buyProduct,
+.addProduct {
     text-align: center;
     width: 45%;
     text-decoration: none;
-    color: black;
     margin: 10px 0;
+}
+
+#pop-up {
+    background: rgba(0, 0, 0, .9);
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#pop-up i {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 25px;
+    color: white;
+}
+
+.pop-up-info {
+    background-color: white;
+    margin: 50px auto;
+    width: 75%;
+    overflow-y: scroll;
+}
+
+#cuotaSin, #tarjetaDebito, #pagoUnico {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5% 0;
+}
+
+.pop-up-info .title {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#cuotaSin div, #pagoUnico div, #tarjetaDebito div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    width: 45%;
+}
+
+.pop-up-info #cuotaSin p {
+    text-align: center;
+    width: 100%;
+    color: #00a650;
+}
+
+.pop-up-info #cuotaSin div span {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.pop-up-info img {
+    width: 75px;
+    height: 55px;
 }
 
 /* reviewSection */
@@ -244,4 +414,112 @@ article .product-description {
 #opiniones .imgPerfil {
     width: 40%;
     border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+
+    .img1 {
+        width: 100%;
+        height: 400px;
+    }
+
+    #tabMain {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #showMaps {
+        width: 100%;
+        height: 350px;
+        margin: 0 5%;
+    }
+
+    #cuotaSin div, #pagoUnico div, #tarjetaDebito div{
+        width: 20%;
+    }
+
+    section.product-showcase {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .product-showcase article {
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .bannerShow {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .primary-img {
+        width: 100%;
+        height: 450px;
+        padding: 0 20%;
+    }
+
+    .second-img {
+        width: 20%;
+        padding: 5px 5px;
+    }
+
+    #tabMain {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #showMaps {
+        width: 100%;
+        height: 400px;
+        margin: 0 5%;
+    }
+
+    .titleProducts {
+        width: 100%;
+    }
+
+    section.product-showcase {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .product-showcase article {
+        width: 33%;
+    }
+
+    #tabCalendar {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #calendario {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .pop-up-info {
+        background-color: white;
+        margin: 50px 30%;
+        width: 75%;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    main {
+        margin: 0 15%;
+    }
 }
