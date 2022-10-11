@@ -42,30 +42,30 @@
                                         </div>
                                     </div>
                                     <div class="input-container">
-                                        <label for="descriptionShort" class="label-container">Descipción breve:</label>
+                                        <label for="shortDescription" class="label-container">Descipción breve:</label>
                                         <br>
-                                        <textarea name="descriptionShort" id="descriptionShort" class="input-desc"><%= productToEdit.descriptionShort%>
+                                        <textarea name="shortDescription" id="shortDescription" class="input-desc"><%= productToEdit.shortDescription%>
                                         </textarea>
                                         <div class="errors-msg">
                                             <div class="error3"></div>
-                                            <% if(locals.errors && errors.descriptionShort) { %>
+                                            <% if(locals.errors && errors.shortDescription) { %>
                                                 <p>
-                                                    <%= errors.descriptionShort.msg %>
+                                                    <%= errors.shortDescription.msg %>
                                                 </p>
                                                 <% } %>
                                         </div>
                                     </div>
                                     <div class="input-container">
-                                        <label for="descriptionLong" class="label-container">Descripción
+                                        <label for="longDescription" class="label-container">Descripción
                                             completa:</label>
                                         <br>
-                                        <textarea name="descriptionLong" id="descriptionLong" class="input-desc"><%= productToEdit.descriptionLong%>
+                                        <textarea name="longDescription" id="longDescription" class="input-desc"><%= productToEdit.longDescription%>
                                         </textarea>
                                         <div class="errors-msg">
                                             <div class="error4"></div>
-                                            <% if(locals.errors && errors.descriptionLong) { %>
+                                            <% if(locals.errors && errors.longDescription) { %>
                                                 <p>
-                                                    <%= errors.descriptionLong.msg %>
+                                                    <%= errors.longDescription.msg %>
                                                 </p>
                                                 <% } %>
                                         </div>

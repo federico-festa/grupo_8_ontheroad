@@ -70,19 +70,19 @@
                                         </div>
                                     </div>
                                     <div class="input-container">
-                                        <label for="genero" class="label-container">Género:</label>
+                                        <label for="gender" class="label-container">Género:</label>
                                         <br>
-                                        <select name="genero" id="genero" class="input"
-                                            value="<%= userToEdit.genero %>">
+                                        <select name="gender" id="gender" class="input"
+                                            value="<%= userToEdit.gender %>">
                                             <option></option>
                                             <option value="Masculino">Masculino</option>
                                             <option value="Femenino">Femenino</option>
                                             <option value="Otro">Otro</option>
                                         </select>
                                         <div class="errors-msg">
-                                            <% if(locals.errors && errors.genero) { %>
+                                            <% if(locals.errors && errors.gender) { %>
                                                 <p>
-                                                    <%= errors.genero.msg %>
+                                                    <%= errors.gender.msg %>
                                                 </p>
                                                 <% } %>
                                         </div>
@@ -90,9 +90,9 @@
                                 </div>
                                 <div class="c-2">
                                     <div class="input-container">
-                                        <label for="pais" class="label-container">País:</label>
+                                        <label for="country" class="label-container">País:</label>
                                         <br>
-                                        <select id="pais" name="pais" class="input" value="<%= userToEdit.pais %>">
+                                        <select id="country" name="country" class="input" value="<%= userToEdit.country %>">
                                             <option value="Argentina">Argentina</option>
                                             <option value="Afghanistan">Afghanistan</option>
                                             <option value="Åland Islands">Åland Islands</option>
@@ -354,48 +354,48 @@
                                             <option value="Zimbabwe">Zimbabwe</option>
                                         </select>
                                         <div class="errors-msg">
-                                            <% if(locals.errors && errors.pais) { %>
+                                            <% if(locals.errors && errors.country) { %>
                                                 <p>
-                                                    <%= errors.pais.msg %>
+                                                    <%= errors.country.msg %>
                                                 </p>
                                                 <% } %>
                                         </div>
                                     </div>
                                     <div class="input-container">
-                                        <label for="domicilio" class="label-container">Domicilio:</label>
+                                        <label for="address" class="label-container">Domicilio:</label>
                                         <br>
-                                        <input type="text" id="domicilio" name="domicilio" class="input"
-                                            value="<%= userToEdit.domicilio %>">
+                                        <input type="text" id="address" name="address" class="input"
+                                            value="<%= userToEdit.address %>">
                                         <div class="errors-msg">
-                                            <% if(locals.errors && errors.domicilio) { %>
+                                            <% if(locals.errors && errors.address) { %>
                                                 <p>
-                                                    <%= errors.domicilio.msg %>
+                                                    <%= errors.address.msg %>
                                                 </p>
                                                 <% } %>
                                         </div>
                                     </div>
                                     <div class="input-container">
-                                        <label for="telefono" class="label-container">Teléfono:</label>
+                                        <label for="telephone" class="label-container">Teléfono:</label>
                                         <br>
-                                        <input type="tel" id="telefono" name="telefono" class="input"
-                                            value="<%= userToEdit.telefono %>">
+                                        <input type="tel" id="telephone" name="telephone" class="input"
+                                            value="<%= userToEdit.telephone %>">
                                         <div class="errors-msg">
-                                            <% if(locals.errors && errors.telefono) { %>
+                                            <% if(locals.errors && errors.telephone) { %>
                                                 <p>
-                                                    <%= errors.telefono.msg %>
+                                                    <%= errors.telephone.msg %>
                                                 </p>
                                                 <% } %>
                                         </div>
                                     </div>
                                     <div class="input-container">
-                                        <label for="codigoPostal" class="label-container">Código postal:</label>
+                                        <label for="postalCode" class="label-container">Código postal:</label>
                                         <br>
-                                        <input type="text" id="codigoPostal" name="codigoPostal" class="input"
-                                            value="<%= userToEdit.codigoPostal %>">
+                                        <input type="text" id="postalCode" name="postalCode" class="input"
+                                            value="<%= userToEdit.postalCode %>">
                                         <div class="errors-msg">
-                                            <% if(locals.errors && errors.codigoPostal) { %>
+                                            <% if(locals.errors && errors.postalCode) { %>
                                                 <p>
-                                                    <%= errors.codigoPostal.msg %>
+                                                    <%= errors.postalCode.msg %>
                                                 </p>
                                                 <% } %>
                                         </div>

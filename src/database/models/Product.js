@@ -15,10 +15,10 @@ module.exports = (sequelize, datatype) => {
         discount:{
             type: datatype.INTEGER
         },
-        descriptionShort:{
+        shortDescription:{
             type: datatype.STRING(100)
         },
-        descriptionLong:{
+        longDescription:{
             type: datatype.STRING(500)
         },
         img:{

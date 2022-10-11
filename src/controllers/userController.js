@@ -1,5 +1,3 @@
-const path = require('path');
-const fs = require('fs');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
@@ -12,14 +10,14 @@ const userController = {
     },
     create: async (req, res) => {
         try {
-            let emailUsed = await db.Client.findOne({ where: { email: req.body.email } });
+            let emailUsed = await db.User.findOne({ where: { email: req.body.email } });
             const errors = validationResult(req);
             if (!errors.isEmpty()) {
                 res.render('register', { errors: errors.mapped(), oldData: req.body });
             } else if (emailUsed) {
                 res.render('register', { errors: { email: { msg: 'El email ya está en uso' } } });
             } else {
-                db.Client.create({
+                db.User.create({
                     firstName: req.body.firstName,
                     lastName: req.body.lastName,
                     email: req.body.email,
@@ -47,7 +45,7 @@ const userController = {
             if (!errors.isEmpty()) {
                 res.render('login', { errors: errors.mapped(), oldData: req.body });
             };
-            let userFound = await db.Client.findOne({ where: { email: { [Op.like]: req.body.email } } });
+            let userFound = await db.User.findOne({ where: { email: { [Op.like]: req.body.email } } });
             let passOk = bcryptjs.compareSync(req.body.password, userFound.password);
             if (!userFound) {
                 res.render('login', {
@@ -89,7 +87,7 @@ const userController = {
     profile: async (req, res) => {
         try {
 
-            const user = await db.Client.findOne({
+            const user = await db.User.findOne({
                 where: {
                     id: req.session.userLog.id
                 }
@@ -103,7 +101,7 @@ const userController = {
     edit: async (req, res) => {
         try {
 
-            const userToEdit = await db.Client.findOne({
+            const userToEdit = await db.User.findOne({
                 where: {
                     id: req.params.id
                 }
@@ -117,7 +115,7 @@ const userController = {
     update: async (req, res) => {
         try {
 
-            const userToEdit = await db.Client.findOne({
+            const userToEdit = await db.User.findOne({
                 where: {
                     id: req.params.id
                 }
@@ -126,16 +124,16 @@ const userController = {
             if (!errors.isEmpty()) {
                 res.render('userEdit', { errors: errors.mapped(), oldData: req.body, userToEdit: userToEdit });
             } else {
-                db.Client.update({
+                db.User.update({
                     firstName: req.body.firstName,
                     lastName: req.body.lastName,
                     dni: req.body.dni,
-                    genero: req.body.genero,
+                    gender: req.body.gender,
                     email: req.body.email,
-                    domicilio: req.body.domicilio,
-                    telefono: req.body.telefono,
-                    codigoPostal: req.body.codigoPostal,
-                    pais: req.body.pais,
+                    address: req.body.address,
+                    telephone: req.body.telephone,
+                    postalCode: req.body.postalCode,
+                    country: req.body.country,
                 }, {
                     where: { id: req.params.id }
                 }).then((user) => {
@@ -149,7 +147,7 @@ const userController = {
     },
     delete: async (req, res) => {
         try {
-            const user = await db.Client.findOne({
+            const user = await db.User.findOne({
                 where: {
                     id: req.params.id
                 }
@@ -161,14 +159,14 @@ const userController = {
         };
     },
     destroy: (req, res) => {
-        db.Client.destroy({
+        db.User.destroy({
             where: { id: req.params.id }
         });
         res.redirect('/');
     },
     passwordEdit: async (req, res) => {
         try {
-            const userToEdit = await db.Client.findOne({
+            const userToEdit = await db.User.findOne({
                 where: {
                     id: req.params.id
                 }
@@ -181,7 +179,7 @@ const userController = {
     },
     passwordUpdate: async (req, res) => {
         try {
-            const userToEdit = await db.Client.findOne({
+            const userToEdit = await db.User.findOne({
                 where: {
                     id: req.params.id
                 }
@@ -192,7 +190,7 @@ const userController = {
             } else if (req.body.password != req.body.password2) {
                 res.render('userPasswordEdit', { errors: errors.mapped(), errors: { password2: { msg: 'Las contraseñas no coinciden' } }, oldData: req.body, userToEdit: userToEdit });
             } else {
-                db.Client.update({
+                db.User.update({
                     password: bcryptjs.hashSync(req.body.password, 10),
                 }, {
                     where: { id: req.params.id }
@@ -207,7 +205,7 @@ const userController = {
     },
     imgEdit: async (req, res) => {
         try {
-            const userToEdit = await db.Client.findOne({
+            const userToEdit = await db.User.findOne({
                 where: {
                     id: req.params.id
                 }
@@ -220,7 +218,7 @@ const userController = {
     },
     imgUpdate: async (req, res) => {
         try {
-            const userToEdit = await db.Client.findOne({
+            const userToEdit = await db.User.findOne({
                 where: {
                     id: req.params.id
                 }
@@ -229,7 +227,7 @@ const userController = {
             if (!errors.isEmpty()) {
                 res.render('userImgEdit', { errors: errors.mapped(), oldData: req.body, userToEdit: userToEdit });
             } else {
-                db.Client.update({
+                db.User.update({
                     img: req.file.filename
                 }, {
                     where: { id: req.params.id }
@@ -244,12 +242,12 @@ const userController = {
     },
     imgDestroy: async (req, res) => {
         try {
-            const userToEdit = await db.Client.findOne({
+            const userToEdit = await db.User.findOne({
                 where: {
                     id: req.params.id
                 }
             });
-            db.Client.update({
+            db.User.update({
                 img: ''
             }, {
                 where: { id: req.params.id }

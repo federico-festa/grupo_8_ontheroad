@@ -3,7 +3,8 @@ const router = express.Router();
 
 const productsController = require('../controllers/productsController');
 const validations = require('../middlewares/validations');
-const upload = require('../middlewares/multerProduct');
+const productUpload = require('../middlewares/multerProduct');
+const regionUpload = require('../middlewares/multerRegion');
 
 router.get('/', productsController.list);
 router.get('/search', productsController.search);
@@ -20,13 +21,13 @@ router.get('/edit/:id', productsController.edit);
 router.get('/delete/:id', productsController.delete);
 router.get('/edit/img/:id', productsController.imgEdit);
 
-router.post('/create', upload.single('img'), validations.store, productsController.store);
-router.post('/regions/create', upload.single('img'), validations.regionStore, productsController.regionStore);
+router.post('/create', productUpload.single('img'), validations.store, productsController.store);
+router.post('/regions/create', regionUpload.single('img'), validations.regionStore, productsController.regionStore);
 
-router.put('/edit/:id', upload.single('img'), validations.update, productsController.update);
-router.put('/regions/edit/:id', upload.single('img'), validations.regionUpdate, productsController.regionUpdate);
-router.put('/edit/img/:id', upload.single('img'), validations.imgUpdate, productsController.imgUpdate);
-router.put('/regions/edit/img/:id', upload.single('img'), validations.regionImgUpdate, productsController.regionImgUpdate);
+router.put('/edit/:id', productUpload.single('img'), validations.update, productsController.update);
+router.put('/regions/edit/:id', regionUpload.single('img'), validations.regionUpdate, productsController.regionUpdate);
+router.put('/edit/img/:id', productUpload.single('img'), validations.imgUpdate, productsController.imgUpdate);
+router.put('/regions/edit/img/:id', regionUpload.single('img'), validations.regionImgUpdate, productsController.regionImgUpdate);
 
 router.delete('/delete/:id', productsController.destroy);
 router.delete('/regions/delete/:id', productsController.regionDestroy);

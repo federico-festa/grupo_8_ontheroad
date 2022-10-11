@@ -9,11 +9,8 @@ module.exports = (sequelize, datatype)=>{
         name:{
             type: datatype.STRING(100)
         },
-        clima:{
+        weather:{
             type: datatype.STRING(100)
-        },
-        date:{
-            type: datatype.DATE
         },
         img:{
             type: datatype.STRING(255)
@@ -22,12 +19,11 @@ module.exports = (sequelize, datatype)=>{
     const config = {
         tableName: "regions",
         timestamps: false,
-
     };
     const Region = sequelize.define(alias, columns, config);
     Region.associate = (models) => {
         Region.hasMany(models.Product, {
-            as: 'region',
+            as: 'region_product',
             foreignKey: 'id_region'
         })
     };
