@@ -9,9 +9,11 @@
             <main>
                 <section class="c1">
                 <% if(locals.products.length == 0) { %>
-                    <h2 class="todas">No encontramos resultados para tu busqueda: <%= search %></h2>    
+                    <h2 class="todas">No encontramos resultados para tu busqueda: <%= search %></h2>   
+                    <br> 
+                    <h3 class="not-found">¿Ya viste nuestras promociones?</h3>
                     <div class="product-showcase">
-                        <h2>¿Ya viste nuestras promociones?</h2>
+                        
                         <% promotions.forEach((product)=> { %>
                             <article class="product">
                                 <a href="/products/detail/<%= product.id %>">
@@ -20,7 +22,7 @@
                                         <h5 class="name">
                                             <%= product.name %>
                                         </h5>
-                                        <p class="descriptionShort">
+                                        <p class="shortDescription">
                                             <%= product.descriptionShort %>
                                         </p>
                                         <p class="price">$<%= product.price %>
@@ -41,7 +43,7 @@
                                     <h5 class="name">
                                         <%= product.name %>
                                     </h5>
-                                    <p class="descriptionShort">
+                                    <p class="shortDescription">
                                         <%= product.descriptionShort %>
                                     </p>
                                     <p class="price">$<%= product.price %>
@@ -54,7 +56,8 @@
                 <% } %>
                 </section>
             </main>
+            <script src="/js/header.js"></script>
+            <%- include('./partials/footer') %>
     </body>
-    <%- include('./partials/footer') %>
 
 </html>

@@ -9,12 +9,13 @@
                 <section class="account-page">
                     <h3>¡Creá tu cuenta!</h3>
                     <div class="container">
-                        <form id="login-form" action="/user/register" method="POST" class="form">
+                        <form id="register-form" action="/user/register" method="POST" class="form">
                             <div class="form-group">
-                                <label class="form-label " for="name">Nombre</label>
-                                <input type="text" class="form-control" autocorrect="off" autocapitalize="off"
+                                <label class="form-label" for="firstName">Nombre</label>
+                                <input type="text" class="form-control" id="firstName" autocorrect="off" autocapitalize="off"
                                     name="firstName" placeholder="ej: Pablo" value="<%= locals.oldData ? oldData.firstName : null %>">
                                 <div class="errors-msg">
+                                    <div class="errors"></div>
                                     <% if(locals.errors && errors.firstName) { %>
                                         <p><%= errors.firstName.msg %> </p>
                                             <% } %>
@@ -22,9 +23,10 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label " for="lastName">Apellido</label>
-                                <input type="text" class="form-control" autocorrect="off" autocapitalize="off"
+                                <input type="text" class="form-control" id="lastName" autocorrect="off" autocapitalize="off"
                                     name="lastName" placeholder="ej: Pérez" value="<%= locals.oldData ? oldData.lastName : null %>">
                                     <div class="errors-msg">
+                                        <div class="errors2"></div>
                                         <% if(locals.errors && errors.lastName) { %>
                                             <p><%= errors.lastName.msg %> </p>
                                                 <% } %>
@@ -32,9 +34,10 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label " for="email">Email</label>
-                                <input type="text" class="form-control" autocorrect="off" autocapitalize="off"
+                                <input type="text" class="form-control" id="email" autocorrect="off" autocapitalize="off"
                                     name="email" placeholder="ej: name@email.com" value="<%= locals.oldData ? oldData.email : null %>">
                                     <div class="errors-msg">
+                                        <div class="errors3"></div>
                                         <% if(locals.errors && errors.email) { %>
                                             <p><%= errors.email.msg %> </p>
                                                 <% } %>
@@ -42,9 +45,10 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="password">Contraseña</label>
-                                <input type="password" class="form-control" autocorrect="off" autocapitalize="off"
+                                <input type="password" class="form-control" id="password" autocorrect="off" autocapitalize="off"
                                     autocomplete="off" name="password" placeholder="8 caratéres mínimo">
                                     <div class="errors-msg">
+                                        <div class="errors4"></div>
                                         <% if(locals.errors && errors.password) { %>
                                            <p><%= errors.password.msg %> </p> 
                                                 <% } %>
@@ -59,6 +63,8 @@
                     </div>
                 </section>
         </main>
+        <script src="js/header.js"></script>
+        <script src="js/register.js"></script>
         <%- include('./partials/footer') %>
     </body>
 

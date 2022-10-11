@@ -6,12 +6,17 @@
     <body>
         <%- include('./partials/header') %>
             <main>
-                <h1>¿Está seguro que desea eliminar su cuenta?</h1>
-                <form class="form" action="/user/delete/<%= user.id %>?_method=DELETE" method="POST">
-                    <button type="submit">Si</button>
-                    <a href="/user/profile"><button>No</button></a>
-                </form>
+                <div class="form-container">
+                    <h1>¿Está seguro que desea eliminar su cuenta?</h1>
+                    <form class="form" action="/user/delete/<%= user.id %>?_method=DELETE" method="POST">
+                        <div class="button-container">
+                        <button type="submit" class="button">Si</button>
+                        <a href="/user/profile"><button class="button" type="button">No</button></a>
+                    </div>
+                    </form>
+                </div>
             </main>
+            <script src="js/header.js"></script>
             <%- include('./partials/footer') %>
     </body>
 

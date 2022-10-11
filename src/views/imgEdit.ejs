@@ -6,7 +6,7 @@
     <body>
         <%- include('./partials/header') %>
             <main>
-                <h2 class="edit-title">Cambio de imagen de: <%= productToEdit.name %>
+                <h2 class="edit-title">Edición de imagen de: <%= productToEdit.name %>
                 </h2>
                 <div class="container">
                     <div class="form-container">
@@ -14,16 +14,20 @@
                             <div class="c-1">
                                 <div class="product-img">
                                     <figure>
-                                        <img src="./img/products/<%= productToEdit.img %>" alt="product image">
+                                        <p class="img-title">Imagen actual:</p>
+                                        <img src="/img/products/<%= productToEdit.img %>" alt="product image">
                                     </figure>
                                 </div>
+                            </div>
+                            <div class="c-2">
                                 <form action="/products/edit/img/<%= productToEdit.id %>?_method=PUT" method="POST"
-                                    enctype="multipart/form-data">
+                                    enctype="multipart/form-data" class="img-form">
                                     <div class="input-container">
                                         <label for="img" class="label-container">Elegir nueva imagen:</label><br>
-                                        <input type="file" name="img" id="image" class="img-input"
+                                        <input type="file" name="img" id="img" class="img-input"
                                             value="<%= productToEdit.img %>">
                                         <div class="errors-msg">
+                                            <div class="error"></div>
                                             <% if(locals.errors && errors.img) { %>
                                                 <p>
                                                     <%= errors.img.msg %>
@@ -33,14 +37,18 @@
                                     </div>
                             </div>
                         </div>
-                        <div class="button-container">
-                            <button type="submit" class="submit-button">Guardar imagen</button>
+                        <div class="row-2">
+                            <div class="button-container">
+                                <button type="submit" class="submit-button">Guardar imagen</button>
+                            </div>
                         </div>
                     </div>
                     </form>
                 </div>
             </main>
             <%- include('./partials/footer') %>
-    </body>
+            <script src="js/header.js"></script>
+            <script src="js/imgEdit.js"></script>
+        </body>
 
 </html>

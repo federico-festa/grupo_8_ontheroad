@@ -9,7 +9,7 @@
                 <h2 class="create-title">Formulario de creación de productos</h2>
                 <div class="container">
                     <div class="form-container">
-                        <form action="/products/create" method="post" enctype="multipart/form-data">
+                        <form action="/products/create" method="post" enctype="multipart/form-data" class="create-form">
                             <div class="row-1">
                                 <div class="c-1">
                                     <div class="input-container">
@@ -18,6 +18,7 @@
                                         <input type="text" id="name" name="name" placeholder="Ej: Buenos Aires"
                                             class="input" value="<%= locals.oldData ? oldData.name : null %>">
                                         <div class="errors-msg">
+                                            <div class="error"></div>
                                             <% if(locals.errors && errors.name) { %>
                                                 <p>
                                                     <%= errors.name.msg %>
@@ -31,6 +32,7 @@
                                         <input type="text" id="discount" name="discount" placeholder="Ej: 15"
                                             class="input" value="<%= locals.oldData ? oldData.discount : null %>">
                                         <div class="errors-msg">
+                                            <div class="error2"></div>
                                             <% if(locals.errors && errors.discount) { %>
                                                 <p>
                                                     <%= errors.discount.msg %>
@@ -44,6 +46,7 @@
                                         <textarea name="descriptionShort" id="descriptionShort" class="input"
                                             value="<%= locals.oldData ? oldData.descriptionShort : null %>"></textarea>
                                         <div class="errors-msg">
+                                            <div class="error3"></div>
                                             <% if(locals.errors && errors.descriptionShort) { %>
                                                 <p>
                                                     <%= errors.descriptionShort.msg %>
@@ -58,6 +61,7 @@
                                         <textarea name="descriptionLong" id="descriptionLong" class="input-desc"
                                             value="<%= locals.oldData ? oldData.descriptionLong : null %>"></textarea>
                                         <div class="errors-msg">
+                                            <div class="error4"></div>
                                             <% if(locals.errors && errors.descriptionLong) { %>
                                                 <p>
                                                     <%= errors.descriptionLong.msg %>
@@ -70,8 +74,9 @@
                                     <div class="input-container">
                                         <label for="price" class="label-container">Precio:</label>
                                         <br>
-                                        <input type="text" id="price" name="price" placeholder="Ej: 1500" class="input">
-                                        <div class="errors-msg" value="<%= locals.oldData ? oldData.price : null %>">
+                                        <input type="text" id="price" name="price" placeholder="Ej: 1500" class="input" value="<%= locals.oldData ? oldData.price : null %>">
+                                        <div class="errors-msg">
+                                            <div class="error5"></div>
                                             <% if(locals.errors && errors.price) { %>
                                                 <p>
                                                     <%= errors.price.msg %>
@@ -102,6 +107,7 @@
                                         <label for="image" class="label-container">Imagen:</label><br>
                                         <input type="file" name="img" id="img" class="img-input"  value="<%= locals.oldData ? oldData.img : null %>">
                                         <div class="errors-msg">
+                                            <div class="error6"></div>
                                             <% if(locals.errors && errors.img) { %>
                                                 <p>
                                                     <%= errors.img.msg %>
@@ -118,6 +124,8 @@
                     </form>
                 </div>
             </main>
+            <script src="js/header.js"></script>
+            <script src="js/productCreate.js"></script>
             <%- include('partials/footer') %>
     </body>
 

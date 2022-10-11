@@ -2,15 +2,15 @@ const { body } = require('express-validator');
 
 exports.reg = [
     body('firstName')
-        .notEmpty().withMessage('Por favor complete con su nombre').bail()
+        .notEmpty().withMessage('Por favor ingrese su nombre').bail()
         .isLength({ min: 3 }).withMessage('El nombre debe tener al menos 3 caracteres').bail()
         .isLength({ max: 20 }).withMessage('El nombre debe tener maximo 20 caracteres'),
     body('lastName')
-        .notEmpty().withMessage("Por favor complete con su apellido").bail()
+        .notEmpty().withMessage("Por favor ingrese su apellido").bail()
         .isLength({ min: 3 }).withMessage('El apellido debe tener al menos 3 caracteres').bail()
         .isLength({ max: 20 }).withMessage('El apellido debe tener maximo 20 caracteres'),
     body('email')
-        .notEmpty().withMessage('Por favor complete con su email').bail()
+        .notEmpty().withMessage('Por favor ingrese su email').bail()
         .isEmail().withMessage('Por favor ingrese un email válido'),
     body('password')
         .notEmpty().withMessage('Por favor ingrese su contraseña').bail()
@@ -35,16 +35,18 @@ exports.userUpdate = [
         .notEmpty().withMessage('Por favor ingrese su apellido').bail()
         .isLength({ min: 3 }).withMessage('El apellido debe tener al menos 3 caracteres').bail()
         .isLength({ max: 20 }).withMessage('El apellido debe tener maximo 20 caracteres'),
-    body('dni')
-        .isNumeric().withMessage('Ingrese un DNI válido'),
     body('email')
         .notEmpty().withMessage('Por favor ingrese su email').bail()
         .isEmail().withMessage('Por favor ingrese un email válido'),
+];
+
+exports.passwordUpdate = [
     body('password')
         .notEmpty().withMessage('Por favor ingrese la contraseña nueva').bail()
         .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
-    body('telefono')
-        .isNumeric().withMessage('Por favor ingrese un número de teléfono válido'),
+    body('password2')
+        .notEmpty().withMessage('Por favor confirme la contraseña nueva').bail()
+        .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
 ];
 
 exports.userImgUpdate = [

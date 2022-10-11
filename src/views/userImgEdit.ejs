@@ -14,16 +14,21 @@
                             <div class="c-1">
                                 <div class="user-img">
                                     <figure>
-                                        <img src="./img/products/<%= userToEdit.img %>" alt="user image">
+                                        <p class="img-title">Imagen actual:</p>
+                                        <img src="/img/users/<%= userToEdit.img %>" alt="user image">
                                     </figure>
                                 </div>
+                            </div>
+                            <div class="c-2">
                                 <form action="/user/edit/img/<%= userToEdit.id %>?_method=PUT" method="POST"
                                     enctype="multipart/form-data">
                                     <div class="input-container">
-                                        <label for="img" class="label-container">Elegir imagen de perfil:</label><br>
-                                        <input type="file" name="img" id="image" class="img-input"
+                                        <label for="img" class="label-container">Elegir imagen de
+                                            perfil:</label><br>
+                                        <input type="file" name="img" id="img" class="img-input"
                                             value="<%= userToEdit.img %>">
                                         <div class="errors-msg">
+                                            <div class="error"></div>
                                             <% if(locals.errors && errors.img) { %>
                                                 <p>
                                                     <%= errors.img.msg %>
@@ -33,16 +38,20 @@
                                     </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row-2">
                         <div class="button-container">
                             <button type="submit" class="submit-button">Guardar imagen</button>
+                            </form>
+                            <form action="/user/delete/img/<%= userToEdit.id %>?_method=PUT" method="POST">
+                                <button type="submit" class="submit-button">Eliminar imagen</button>
+                            </form>
                         </div>
                     </div>
-                    </form>
-                    <form action="/user/delete/img/<%= userToEdit.id %>?_method=PUT" method="POST">
-                        <button type="submit" class="submit-button">Eliminar imagen</button>
-                    </form>
                 </div>
             </main>
+            <script src="js/header.js"></script>
+            <script src="js/userImgEdit.js"></script>
             <%- include('./partials/footer') %>
     </body>
 

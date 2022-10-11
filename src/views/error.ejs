@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="/" />
+<%- include('partials/head', {title: 'Error' , css: 'error.css' }) %>
+
+    <body>
+        <main>
+            <%- include('./partials/header') %>
+            <section>
+                <h1>
+                    Ups, parece que la página que estás buscando se perdió en el camino
+                </h1>
+                <a href="/">
+                    Volver al Inicio
+                </a>
+            </section>
+        </main>
+        <script src="js/header.js"></script>
+        <%- include('./partials/footer') %>
+    </body>
+
+</html>

@@ -216,6 +216,7 @@ header {
     .dropcont {
         position: relative;
         display: inline-block;
+        z-index: 11;
     }
 
     .droplist {
@@ -273,6 +274,7 @@ header {
         border-top: 1px solid rgba(35, 35, 37, 0.2);
         border-bottom: 1px solid rgba(35, 35, 37, 0.2);
         padding: 5px;
+        z-index: 10;
     }
 
     .top-nav a {
