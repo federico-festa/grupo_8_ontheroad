@@ -187,13 +187,14 @@ const productsController = {
     detail: async (req, res) => {
         try {
             const regions = await db.Region.findAll()
+            const products = await db.Product.findAll({ limit: 4 });
             const product = await db.Product.findOne({
                 where: {
                     id: req.params.id
                 },
                 include: [{ association: 'product_region' }]
             })
-            res.render('detailB', { product: product, regions: regions });
+            res.render('detail', { product: product, regions: regions, products: products });
         } catch (error) {
             console.log(error);
             res.render('error');

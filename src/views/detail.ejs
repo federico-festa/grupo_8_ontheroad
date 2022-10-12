@@ -2,7 +2,7 @@
 <html lang="en">
 <base href="/" />
 <%- include('partials/head', {title: product.name , css: 'detail.css' }) %>
-
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY"></script>
     <body>
         <%- include('./partials/header') %>
             <main>
@@ -28,9 +28,37 @@
                     <iframe id="showMaps"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14667.68003662089!2d-65.35970775994967!3d-23.209585586580353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9404e9a4ba40a8c1%3A0x5ff8703d0479ecf9!2sHumahuaca%2C%20Jujuy!5e0!3m2!1ses-419!2sar!4v1658960062384!5m2!1ses-419!2sar"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.109745219329!2d-58.429769684173195!3d-34.6771795688969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfc5f7fdef5a10f34!2zMzTCsDQwJzM3LjkiUyA1OMKwMjUnMzkuMyJX!5e0!3m2!1ses-419!2sar!4v1665543654284!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <p class="titleProducts">Otros lugares para visitar</p>
                     <section class="product-showcase">
-                        <article class="product">
+                        <% products.forEach((product)=> { %>
+                            <article class="product">
+                                <img src="/img/products/<%= product.img %>" alt="bsas">
+                                <div class="product-description">
+                                    <h5 class="place"><%= product.name %></h5>
+                                    <p class="description">Un dia para conocer los rincones de la ciudad y sentirte un
+                                        porteño más. </p>
+                                    <br>
+                                    <ul>
+                                        <li>Tarde de teatro off. En la ciudad hay numerosas obras de teatro en cartel,
+                                            muchas de
+                                            las
+                                            cuales pertenecen a la escena off (no comercial), cuya entrada suele ser más
+                                            económica
+                                            que
+                                            la de los teatros de la avenida Corrientes.</li>
+                                        <li>Lecturas únicas. Las librerías son una atracción de la ciudad, que no solo
+                                            ofrece
+                                            las
+                                            grandes cadenas sino también las pequeñas, independientes y con una selección
+                                            personal
+                                        </li>
+                                    </ul>
+                                    <p class="price">$<%= product.price %></p>
+                                </div>
+                            </article>
+                        <% }) %>
+                        <!-- <article class="product">
                             <img src="/img/products/bsas3.jpg" alt="bsas">
                             <div class="product-description">
                                 <h5 class="place">Buenos Aires</h5>
@@ -102,7 +130,7 @@
                                 </ul>
                                 <p class="price">$2.000</p>
                             </div>
-                        </article>
+                        </article> -->
                     </section>
                 </section>
                 <section id="tabCalendar" style="display: none">
@@ -133,7 +161,7 @@
                         <div class="priceProducts">
                             <% if(product.discount==null) { %>
                                 <p class="product-detail-price" style="width: 100;">
-                                    <span>$<%= product.price %></span>
+                                    $<span><%= product.price %></span>
                                 </p>
                                 <% } else {%>
                                     <p class="product-detail-price">
