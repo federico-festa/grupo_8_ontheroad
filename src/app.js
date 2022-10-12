@@ -11,6 +11,7 @@ const publicPath = path.resolve(__dirname, '../public');
 const mainRoutes = require('./routes/mainRoutes');
 const productsRoutes = require('./routes/productsRoutes');
 const userRoutes = require('./routes/userRoutes');
+const productsApiRoutes = require('./routes/api/productsApiRoutes');
 
 app.set('view engine', 'ejs');
 
@@ -28,5 +29,6 @@ app.listen(3000, () => {
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/user', userRoutes);
+app.use('/api/products', productsApiRoutes);
 
 module.exports = app;
