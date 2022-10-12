@@ -66,10 +66,10 @@ exports.store = [
     body('discount')
         .notEmpty().withMessage('Por favor ingrese el descuento, si no tiene ingrese 0').bail()
         .isInt().withMessage('Por favor ingrese un número'),
-    body('descriptionShort')
+    body('shortDescription')
         .notEmpty().withMessage('Por favor ingrese la descripción resumida').bail()
         .isLength({ max: 500 }).withMessage('La descripción resumida debe contener menos de 500 caracteres'),
-    body('descriptionLong')
+    body('longDescription')
         .notEmpty().withMessage('Por favor ingrese la descripción completa').bail()
         .isLength({ max: 1000 }).withMessage('La descripción completa debe contener menos de 1000 caracteres'),
     body('price')
@@ -91,10 +91,10 @@ exports.update = [
     body('discount')
         .notEmpty().withMessage('Por favor ingrese el descuento, si no tiene ingrese 0').bail()
         .isInt().withMessage('Por favor ingrese un número'),
-    body('descriptionShort')
+    body('shortDescription')
         .notEmpty().withMessage('Por favor ingrese la descripción resumida').bail()
         .isLength({ max: 500 }).withMessage('La descripción resumida debe contener menos de 500 caracteres'),
-    body('descriptionLong')
+    body('longDescription')
         .notEmpty().withMessage('Por favor ingrese la descripción completa').bail()
         .isLength({ max: 1000 }).withMessage('La descripción completa debe contener menos de 1000 caracteres'),
     body('price')
@@ -115,7 +115,7 @@ exports.imgUpdate = [
 exports.regionStore = [
     body('name')
         .notEmpty().withMessage('Por favor ingrese la región'),
-    body('clima')
+    body('weather')
         .notEmpty().withMessage('Por favor ingrese el clima '),
     body('img')
         .custom((value, { req }) => {
@@ -130,7 +130,7 @@ exports.regionStore = [
 exports.regionUpdate = [
     body('name')
         .notEmpty().withMessage('Por favor ingrese la región'),
-    body('clima')
+    body('weather')
         .notEmpty().withMessage('Por favor ingrese el clima '),
 ];
 

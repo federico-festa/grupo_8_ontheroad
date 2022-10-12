@@ -7,7 +7,7 @@
         <%- include('./partials/header') %>
             <main>
                 <div class="form-container">
-                    <h1>¿Está seguro que desea eliminar el producto <%= product.name %> - <%= product.descriptionShort %>?
+                    <h1>¿Está seguro que desea eliminar el producto <%= product.name %> - <%= product.shortDescription %>?
                     </h1>
                     <form class="form" action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
                         <div class="button-container">

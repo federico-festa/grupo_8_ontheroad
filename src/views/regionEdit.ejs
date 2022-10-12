@@ -27,14 +27,14 @@
                                         </div>
                                     </div>
                                     <div class="input-container">
-                                        <label for="clima" class="label-container">Clima:</label>
+                                        <label for="weather" class="label-container">Clima:</label>
                                         <br>
-                                        <input type="text" id="clima" name="clima" placeholder="Ej: Árido"
-                                            class="input" value="<%= regionToEdit.clima%>">
+                                        <input type="text" id="weather" name="weather" placeholder="Ej: Árido"
+                                            class="input" value="<%= regionToEdit.weather%>">
                                             <div class="errors-msg">
-                                                <% if(locals.errors && errors.regionToEdit) { %>
+                                                <% if(locals.errors && errors.weather) { %>
                                                     <p>
-                                                        <%= errors.regionToEdit.msg %>
+                                                        <%= errors.weather.msg %>
                                                     </p>
                                                     <% } %>
                                             </div>

@@ -2,8 +2,8 @@ window.onload = () => {
     const form = document.querySelector('.create-form');
     const name = document.querySelector('#name');
     const discount = document.querySelector('#discount');
-    const descShort = document.querySelector('#descriptionShort');
-    const descLong = document.querySelector('#descriptionLong');
+    const descShort = document.querySelector('#shortDescription');
+    const descLong = document.querySelector('#longDescription');
     const price = document.querySelector('#price');
     const img = document.querySelector('#img');
     const error = document.querySelector('.error');

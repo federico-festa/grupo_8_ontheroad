@@ -1,5 +1,3 @@
-const path = require('path');
-const fs = require('fs');
 const db = require('../database/models')
 const sequelize = db.sequelize;
 const { Op } = require('sequelize');
@@ -69,7 +67,7 @@ const productsController = {
         } else {
             db.Region.create({
                 name: req.body.name,
-                clima: req.body.clima,
+                weather: req.body.weather,
                 img: req.file.filename
             })
                 .then((region) => {
@@ -106,7 +104,7 @@ const productsController = {
             } else if (req.file) {
                 db.Region.update({
                     name: req.body.name,
-                    clima: req.body.clima,
+                    weather: req.body.clima,
                     img: req.file.filename
                 }, {
                     where: { id: req.params.id }
@@ -175,7 +173,7 @@ const productsController = {
                     img: req.file.filename
                 }, {
                     where: { id: req.params.id }
-                }).then((product) => {
+                }).then((region) => {
                     res.redirect('/');
                 });
             };
@@ -217,8 +215,8 @@ const productsController = {
                     name: req.body.name,
                     price: req.body.price,
                     discount: req.body.discount,
-                    descriptionShort: req.body.descriptionShort,
-                    descriptionLong: req.body.descriptionLong,
+                    shortDescription: req.body.shortDescription,
+                    longDescription: req.body.longDescription,
                     img: req.file.filename,
                     id_region: req.body.id_region
                 })
@@ -265,8 +263,8 @@ const productsController = {
                     price: req.body.price,
                     discount: req.body.discount,
                     id_region: req.body.id_region,
-                    descriptionShort: req.body.descriptionShort,
-                    descriptionLong: req.body.descriptionLong,
+                    shortDescription: req.body.shortDescription,
+                    longDescription: req.body.longDescription,
                 }, {
                     where: { id: req.params.id }
                 }).then((product) => {

@@ -1,5 +1,5 @@
 module.exports = (sequelize, datatype)=>{
-    const alias = "Client";
+    const alias = "User";
     const columns = {
         id:{
             type: datatype.INTEGER, 
@@ -15,7 +15,7 @@ module.exports = (sequelize, datatype)=>{
         dni:{
             type: datatype.INTEGER
         },
-        genero:{
+        gender:{
             type: datatype.STRING(50)
         },
         email:{
@@ -24,16 +24,16 @@ module.exports = (sequelize, datatype)=>{
         password:{
             type: datatype.STRING(50)
         },
-        domicilio:{
+        address:{
             type: datatype.STRING(50)
         },
-        telefono:{
+        telephone:{
             type: datatype.INTEGER
         },
-        codigoPostal:{
+        postalCode:{
             type: datatype.INTEGER
         },
-        pais:{
+        country:{
             type: datatype.STRING(100)
         },
         id_type:{
@@ -44,16 +44,16 @@ module.exports = (sequelize, datatype)=>{
         }
     };
     const config = {
-        tableName: "clients",
+        tableName: "users",
         timestamps: false,
 
     };
-    const Client = sequelize.define(alias, columns, config);
-    Client.associate = (models) => {
-        Client.belongsTo(models.Type, {
-            as: 'type',
+    const User = sequelize.define(alias, columns, config);
+    User.associate = (models) => {
+        User.belongsTo(models.Type, {
+            as: 'user_type',
             foreignKey: 'id_type'
         })
     }
-    return Client;
+    return User;
 };

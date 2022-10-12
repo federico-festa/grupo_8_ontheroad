@@ -26,21 +26,22 @@
                                         </div>
                                     </div>
                                     <div class="input-container">
-                                        <label for="clima" class="label-container">Clima:</label>
+                                        <label for="weather" class="label-container">Clima:</label>
                                         <br>
-                                        <input type="text" id="clima" name="clima" placeholder="Ej: Árido"
-                                            class="input" value="<%= locals.oldData ? oldData.clima : null %>">
+                                        <input type="text" id="weather" name="weather" placeholder="Ej: Árido"
+                                            class="input" value="<%= locals.oldData ? oldData.weather : null %>">
                                         <div class="errors-msg">
-                                            <% if(locals.errors && errors.clima) { %>
+                                            <% if(locals.errors && errors.weather) { %>
                                                 <p>
-                                                    <%= errors.clima.msg %>
+                                                    <%= errors.weather.msg %>
                                                 </p>
                                                 <% } %>
                                         </div>
                                     </div>
                                     <div class="input-container">
-                                        <label for="image" class="label-container">Imagen:</label><br>
-                                        <input type="file" name="img" id="img" class="img-input"  value="<%= locals.oldData ? oldData.img : null %>">
+                                        <label for="img" class="label-container">Imagen:</label><br>
+                                        <input type="file" name="img" id="img" class="img-input"
+                                            value="<%= locals.oldData ? oldData.img : null %>">
                                         <div class="errors-msg">
                                             <% if(locals.errors && errors.img) { %>
                                                 <p>

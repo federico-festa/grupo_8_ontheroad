@@ -6,7 +6,7 @@ module.exports = (sequelize, datatype)=>{
             primaryKey: true,
             autoIncrement: true,
         },
-        rango:{
+        role:{
             type: datatype.STRING(100)
         }
     };
@@ -16,11 +16,11 @@ module.exports = (sequelize, datatype)=>{
 
     };
     const Type = sequelize.define(alias, columns, config);
-    // Category.associate = (models) => {
-    //     Category.hasMany(models.User, {
-    //         as: 'category',
-    //         foreignKey: 'category_id'
-    //     })
-    // };
+    Type.associate = (models) => {
+        Type.hasMany(models.User, {
+            as: 'type_usr',
+            foreignKey: 'id_type'
+        })
+    };
     return Type;
 };
