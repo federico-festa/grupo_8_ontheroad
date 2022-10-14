@@ -1,62 +1,65 @@
 /*Mobile first*/
 
-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 95%;
-    margin: 0;
-}
+@media (max-width: 1024px) {
 
-.brand {
-    display: none;
-}
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 95%;
+        margin: 0;
+    }
 
-.headerLeft {
-    display: block;
-    text-align: center;
-    width: 20%;
-}
+    .brand {
+        display: none;
+    }
 
-.headerLeft img {
-    width: 100%;
-}
+    .headerLeft {
+        display: block;
+        text-align: center;
+        width: 20%;
+    }
 
-.headerCenter {
-    width: 60%;
-}
+    .headerLeft img {
+        width: 100%;
+    }
 
-.headerCenter input {
-    height: 40px;
-    width: 100%;
-    border-radius: 50px;
-    padding-left: 2%;
-    border-style: none;
-    border: 1px solid black;
-}
+    .headerCenter {
+        width: 60%;
+    }
 
-.headerRight {
-    display: block;
-    text-align: center;
-    width: 10%;
-}
+    .headerCenter input {
+        height: 40px;
+        width: 100%;
+        border-radius: 50px;
+        padding-left: 2%;
+        border-style: none;
+        border: 1px solid black;
+    }
 
-.headerRight .usercont {
-    display: none;
-}
+    .headerRight {
+        display: block;
+        text-align: center;
+        width: 10%;
+    }
 
-#btnOrange {
-    background-color: black;
-    border-radius: 20%;
-    padding: 5px 10px;
-    color: white;
-    border-style: none;
-    font-size: 20px;
-}
+    .headerRight .usercont {
+        display: none;
+    }
 
-.top-nav {
-    display: none;
+    #btnOrange {
+        background-color: black;
+        border-radius: 20%;
+        padding: 5px 10px;
+        color: white;
+        border-style: none;
+        font-size: 20px;
+    }
+
+    .top-nav {
+        display: none;
+    }
 }
 
 /*Breakpoints*/
@@ -294,4 +297,6 @@ header {
         height: 50px;
         background-color: rgb(35, 35, 37);
     }
-};
+}
+
+;
