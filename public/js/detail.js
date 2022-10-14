@@ -139,13 +139,6 @@ closePop.onclick = () => {
 let primary = document.querySelector('.primary-img')
 let second = document.querySelectorAll('.second-img')
 
-// second.onclick = () => {
-//     primary.classList.remove('primary-img')
-//     primary.classList.add('second-img')
-//     second.classList.remove('second-img')
-//     second.classList.add('primary-img')
-// }
-
 for(let i = 0; i < second.length; i++) {
     second[i].addEventListener('click', function() {
         primary.classList.remove('primary-img')
@@ -154,3 +147,12 @@ for(let i = 0; i < second.length; i++) {
         pick.classList.add('second-img')
     })
 }
+
+let convertMiles = document.querySelector('.product-detail-price span')
+
+function milesNumeros(numero) {
+    return numero.toString()
+           .replace(/((?!^)|(?:^|.*?[^\d.,])\d{1,3})(\d{3})(?=(?:\d{3})*(?!\d))/gy, "$1,$2");
+};
+
+console.log(milesNumeros(convertMiles));
