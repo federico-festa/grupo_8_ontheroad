@@ -1,16 +1,3 @@
-const logo = document.querySelector('.logo');
-const userIcon = document.querySelector('.fa-user');
-const droplist = document.querySelector('.droplist');
-
-logo.addEventListener('click', () => {
-    window.location.href = '/';
-});
-
-userIcon.addEventListener('click', () => {
-    droplist.classList.toggle('show');
-});
-
-
 window.onscroll = () => {
     const topNav = document.querySelector('nav');
     const links = document.querySelectorAll('nav a');
@@ -28,11 +15,25 @@ window.onscroll = () => {
         });
         droplist.classList.remove('show');
     };
-}
+};
+
+window.onload = () => {
+    const logo = document.querySelector('img');
+    const userIcon = document.querySelector('.fa-user');
+    const droplist = document.querySelector('.droplist');
+
+    logo.addEventListener('click', () => {
+        window.location.href = '/';
+    });
+
+    userIcon.addEventListener('click', () => {
+        droplist.classList.toggle('show');
+    });
+};
 
 window.onclick = (e) => {
     const droplist = document.querySelector('.droplist');
     if (!e.target.matches('.fa-user')){
         droplist.classList.remove('show');
     };
-}
+};
