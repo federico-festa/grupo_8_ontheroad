@@ -45,37 +45,58 @@ const productsController = {
             res.render('error');
         };
     },
-    regions: (req, res) => {
-        db.Region.findAll()
-            .then((regions) => {
-                res.render('regions', { regions: regions });
-            });
+    regions: async (req, res) => {
+        try {
+            const regions = await db.Region.findAll()
+            res.render('regions', { regions: regions })
+        } catch (error) {
+            console.log(error);
+            res.render('error');
+        };
     },
-    regionDetail: (req, res) => {
-        db.Region.findByPk(req.params.id)
-            .then((region) => {
-                res.render('regionDetail', { region: region });
-            });
+    regionDetail: async (req, res) => {
+        try {
+            const products = await db.Product.findAll({
+                where: {
+                    id_region: req.params.id
+                }
+            })
+            const region = await db.Region.findByPk(req.params.id)
+            res.render('regionDetail', { region: region, products: products });
+        } catch (error) {
+            console.log(error);
+            res.render('error');
+        };
     },
     regionCreate: (req, res) => {
-        res.render('regionCreate');
+        try {
+            res.render('regionCreate');
+        } catch (error) {
+            console.log(error);
+            res.render('error');
+        }
     },
     regionStore: (req, res) => {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            res.render('regionCreate', { errors: errors.mapped(), oldData: req.body });
-        } else {
-            db.Region.create({
-                name: req.body.name,
-                weather: req.body.weather,
-                img: req.file.filename
-            })
-                .then((region) => {
-                    res.redirect('/');
+        try {
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                res.render('regionCreate', { errors: errors.mapped(), oldData: req.body });
+            } else {
+                db.Region.create({
+                    name: req.body.name,
+                    weather: req.body.weather,
+                    img: req.file.filename
                 })
-                .catch((error) => {
-                    console.log(error);
-                })
+                    .then((region) => {
+                        res.redirect('/');
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    })
+            };
+        } catch (error) {
+            console.log(error);
+            res.render('error');
         };
     },
     regionEdit: async (req, res) => {
@@ -140,10 +161,15 @@ const productsController = {
         };
     },
     regionDestroy: (req, res) => {
-        db.Region.destroy({
-            where: { id: req.params.id }
-        });
-        res.redirect('/');
+        try {
+            db.Region.destroy({
+                where: { id: req.params.id }
+            });
+            res.redirect('/');
+        } catch (error) {
+            console.log(error);
+            res.render('error');
+        };
     },
     regionImgEdit: async (req, res) => {
         try {
@@ -199,10 +225,15 @@ const productsController = {
         };
     },
     create: (req, res) => {
-        db.Region.findAll()
-            .then((regions) => {
-                res.render('productCreate', { regions: regions });
-            })
+        try {
+            db.Region.findAll()
+                .then((regions) => {
+                    res.render('productCreate', { regions: regions });
+                });
+        } catch (error) {
+            console.log(error);
+            res.render('error');
+        };
     },
     store: async (req, res) => {
         try {
@@ -290,10 +321,15 @@ const productsController = {
         };
     },
     destroy: (req, res) => {
-        db.Product.destroy({
-            where: { id: req.params.id }
-        });
-        res.redirect('/');
+        try {
+            db.Product.destroy({
+                where: { id: req.params.id }
+            });
+            res.redirect('/');
+        } catch (error) {
+            console.log(error);
+            res.render('error');
+        };
     },
     imgEdit: async (req, res) => {
         try {

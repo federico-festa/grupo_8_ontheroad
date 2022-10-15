@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="/" />
+<%- include('partials/head', {title: region.name , css: 'regionDetail.css' }) %>
+
+    <body>
+        <%- include('./partials/header') %>
+            <main>
+                <div class="banner">
+                    <img class="banner-img" src="./img/regions/<%= region.img %>">
+                    <h2 class="region-name">Experiencias en <%= region.name %></h2>
+                </div>
+                <%- include('partials/productShowcase', {title: '' }) %>
+            </main>
+            <%- include('./partials/footer') %>
+                <script src="js/header.js"></script>
+    </body>
+
+</html>

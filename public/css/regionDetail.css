@@ -1,0 +1,61 @@
+/* Mobile */
+
+@media (max-width: 1024px) {
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(35, 35, 37);
+    }
+
+    .banner {
+        position: relative;
+    }
+
+    .banner-img {
+        width: 100%;
+    }
+
+    .region-name {
+        position: absolute;
+        bottom: 40%;
+        left: 2%;
+        z-index: 9;
+        color: white;
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1024px) {
+
+    main {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .banner {
+        position: relative;
+    }
+
+    .banner-img {
+        width: 100%;
+    }
+
+    .region-name {
+        position: absolute;
+        bottom: 40%;
+        left: 25%;
+        z-index: 9;
+        color: white;
+        font-size: 45px;
+    }
+
+    .region-name:hover {
+        transition: all 1s;
+        color: rgba(0, 212, 255, 1);
+    }
+}
