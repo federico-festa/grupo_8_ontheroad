@@ -12,7 +12,6 @@
         </form>
     </div>
     <div class="headerRight">
-        <button id="btnOrange"><i class="fas fa-bars"></i></button>
         <% if(locals.log) { %>
             <div class="usercont">
                 <p class="user">Hola, <%= locals.userLog.firstName %>
@@ -33,6 +32,31 @@
                     <a href="/user/register"><button class="register">Registrarse</button></a>
                 </div>
                 <% } %>
+    </div>
+    <div class="headerRightMobile">
+        <% if(locals.log) { %>
+            <div class="dropMobile">
+                <button id="userMobile"><i class="fa-solid fa-user"></i></button>
+                <div class="mobileDropList">
+                    <a href="/user/profile">Perfil</a>
+                    <a href="#favoritos">Favoritos</a>
+                    <a href="/cart">Carrito</a>
+                    <a href="/user/logout">Cerrar sesión</a>
+                </div>
+            </div>
+            <% } %>
+            <% if(!locals.log) { %>
+                <div class="dropMobileGuest">
+                    <button id="guestMobile"><i class="fa-solid fa-bars"></i></button>
+                    <div class="mobileDropListGuest">
+                        <a href="/user/register">Registrarse</a>
+                        <a href="/user/login">Iniciar sesión</a>
+                        <a href="/products">Experiencias</a>
+                        <a href="/products/regions">Regiones</a>
+                    </div>
+                </div>
+                <% } %>
+
     </div>
     <nav class="top-nav">
         <a href="/">Inicio</a>

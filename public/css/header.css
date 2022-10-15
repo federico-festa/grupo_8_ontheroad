@@ -39,16 +39,23 @@
     }
 
     .headerRight {
-        display: block;
-        text-align: center;
-        width: 10%;
-    }
-
-    .headerRight .usercont {
         display: none;
     }
 
-    #btnOrange {
+    .headerRightMobile {
+        position: relative;
+        display: inline-block;
+    }
+
+    #userMobile {
+        border: none;
+        color: black;
+        background-color: white;
+        font-size: 32px;
+        cursor: pointer;
+    }
+
+    #guestMobile {
         background-color: black;
         border-radius: 20%;
         padding: 5px 10px;
@@ -57,12 +64,54 @@
         font-size: 20px;
     }
 
+    .mobileDropList {
+        display: none;
+        position: absolute;
+        background-color: rgb(35, 35, 37);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 10px;
+    }
+
+    .mobileDropList a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .mobileDropListGuest {
+        display: none;
+        position: absolute;
+        background-color: rgb(35, 35, 37);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 10px;
+    }
+
+    .mobileDropListGuest a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .show2 {
+        display: block;
+    }
+
     .top-nav {
         display: none;
     }
 }
-
-/*Breakpoints*/
 
 /* Desktop */
 
@@ -119,6 +168,10 @@
         width: 120%;
         border-radius: 50px;
         text-align: center;
+    }
+
+    .headerRightMobile {
+        display: none;
     }
 
     .headerRight {
@@ -187,10 +240,6 @@
         margin: 0 2%;
     }
 
-    #btnOrange {
-        display: none;
-    }
-
     .usercont {
         display: flex;
         justify-content: flex-start;
@@ -228,7 +277,7 @@
         background-color: rgb(35, 35, 37);
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
+        z-index: 12;
         border-radius: 10px;
     }
 
@@ -297,6 +346,4 @@
         height: 50px;
         background-color: rgb(35, 35, 37);
     }
-}
-
-;
+};
