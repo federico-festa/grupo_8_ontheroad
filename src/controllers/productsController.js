@@ -34,12 +34,12 @@ const productsController = {
     },
     promotions: async (req, res) => {
         try {
-            const promotions = await db.Product.findAll({
+            const products = await db.Product.findAll({
                 where: {
                     discount: 10
                 }
             });
-            res.render('promotions', { promotions: promotions });
+            res.render('promotions', { products: products });
         } catch (error) {
             console.log(error);
             res.render('error');
