@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head', {title: 'Contacto' , css: 'contact.css' }) %>
+
+    <body>
+        <%- include('./partials/header') %>
+            <main>
+                <section class="top">
+                    <h2 class="contact">Contactanos</h2>
+                    <h3 class="dudas">¿Necesitas ayuda con tu viaje?</h3>
+                </section>
+                <div class="bottom">
+                    <section class="left">
+                        <div class="banner">
+                            <img src="/img/system/contact.jpg" alt="contact-img" class="contact-img">
+                            <div class="info">
+                                <p>¡Queremos escucharte! Escribinos un mensaje acá si tenés alguna duda respecto de
+                                    cómo funciona nuestro sitio web, si necesitás más información o simplemente si
+                                    tenés algo para contarnos. También podés llamarnos o enviarnos un email a: </p>
+                                <br>
+                                <p class="data">Teléfono: 0800-637-7245</p>
+                                <p class="data">Email: contacto@ontheroad.com</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="right">
+                        <form class="c-form">
+                            <div class="inputs">
+                                <input type="text" id="name" name="name" placeholder="Nombre" class="c-input">
+                                <input type="text" id="email" name="email" placeholder="Email" class="c-input">
+                            </div>
+                            <input type="text" id="message" name="message" placeholder="Mensaje" class="msg-input">
+                            <button type="button" class="c-button">Enviar</button>
+                        </form>
+                    </section>
+                </div>
+            </main>
+            <%- include('./partials/footer') %>
+                <script src="js/header.js"></script>
+    </body>
+
+</html>

@@ -12,6 +12,14 @@ const mainController = {
             res.render('error');
         };
     },
+    contact: (req, res) => {
+        try {
+            res.render('contact');
+        } catch (error) {
+            console.log(error);
+            res.render('error');
+        };
+    },
     cart: async (req, res) => {
         try {
             const products = await db.Product.findAll();
