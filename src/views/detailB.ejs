@@ -4,7 +4,7 @@
 <%- include('partials/head', {title: product.name , css: 'detail.css' }) %>
 
     <body>
-        <%- include('./partials/header') %>
+        <!-- <%- include('./partials/header') %> -->
             <main>
                 <article class="product">
                     <a href="/products/detail/<%= product.id %>">
@@ -20,12 +20,12 @@
                             </p>
                         </div>
                     </a>
-                    <button type="button" id="add">Agregar al carrito</button>
+                    <button type="button" class="add" id=<%= product.id %>>Agregar al carrito</button>
                 </article>
             </main>
         </body>
         <script src="js/detailB.js"></script>
-        <script src="js/header.js"></script>
+        <!-- <script src="js/header.js"></script> -->
         <%- include('./partials/footer') %>
     
     </html>

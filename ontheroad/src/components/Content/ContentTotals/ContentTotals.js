@@ -1,8 +1,20 @@
+import React from "react";
+
 function ContentTotals() {
     return (
-        <div className="contentTotals">
-
-        </div>
+        <React.Fragment>
+            <div className="contentTotals">
+                <div className="cardbody">
+                    <span>Total de productos</span>        
+                </div>
+                <div className="cardbody">
+                    <span>Total de regiones</span>        
+                </div>
+                <div className="cardbody">
+                    <span>Total de usuarios</span>        
+                </div>
+            </div>
+        </React.Fragment>
     );
 }
 

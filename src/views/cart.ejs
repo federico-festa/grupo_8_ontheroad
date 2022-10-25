@@ -7,16 +7,6 @@
     <body>
         <%- include('./partials/header') %>
             <main>
-                <div class="data">
-                    {"products": [
-                    <% products.forEach((product)=> { %>
-                        {"id": <%= product.id %>, "name": "<%= product.name %>", "img": "<%= product.img %>", "price":
-                                    <%= product.price %>},
-
-                                        <% }); %>
-                                            {"id": 100, "name": "closure", "img": "closure", "price": 100}]}
-                </div>
-
                 <div class="cart-container">
                     <section class="explore">
                         <h2>Seguí explorando</h2>
@@ -43,17 +33,19 @@
                         </section>
 
                         <div class="empty">El carrito está vacío</div>
+
                         <div class="products">
-                            <section class="cart-product">
+                            <!-- <section class="cart-product">
                                 <div class="exp">
-                                    <i class="fa-sharp fa-solid fa-circle-xmark" id="icon1"></i>
-                                    <img src="" class="img1">
-                                    <h4 class="name1"></h4>
+                                    <i class="fa-sharp fa-solid fa-circle-xmark" id="icon"></i>
+                                    <img src="" class="img">
+                                    <h4 class="name"></h4>
                                 </div>
                                 <div class="price">
-                                    <h3 class="price1"></h3>
+                                    <h3 class="price"></h3>
                                 </div>
                             </section>
+
 
                             <section class="cart-product">
                                 <div class="exp">
@@ -75,7 +67,7 @@
                                 <div class="price">
                                     <h3 class="price3"></h3>
                                 </div>
-                            </section>
+                            </section> -->
 
                             <section class="checkout">
                                 <h2 class="total">Total: $</h2>

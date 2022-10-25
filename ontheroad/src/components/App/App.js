@@ -9,15 +9,12 @@ import Footer from '../Footer/Footer';
 
 function App() {
   return (
-    <Routes>
-      <Route exact path="/">
-        <Header />
-        <Sidebar />
-        <Footer />
-        <Content />
-      </Route>
-      <Route component={Error404} />
-    </Routes>
+    <React.Fragment>
+      <Header />
+      <Sidebar />
+      <Content />
+      <Footer />
+    </React.Fragment>
   );
 }
 

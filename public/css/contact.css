@@ -129,16 +129,18 @@
         width: 45%;
         margin: 2%;
         height: 40px;
+        padding: 2%;
     }
 
     .msg-input{
         width: 96%;
         margin: 2% 2% 5% 2%;
         height: 100px;
+        padding: 2%;
     }
 
     .c-button{
-        background-color: black;
+        background-color:  rgb(35, 35, 37);
         color: white;
         height: 45px;
         width: 200px;
@@ -151,7 +153,7 @@
         font-size: 1em;
     }
 
-    .button:hover {
+    .c-button:hover {
         background-color: rgba(0, 0, 0, 0.651);
         border-color: rgba(0, 0, 0, 0.651);
     }

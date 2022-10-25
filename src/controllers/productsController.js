@@ -218,7 +218,7 @@ const productsController = {
                 },
                 include: [{ association: 'product_region' }]
             })
-            res.render('detail', { product: product, regions: regions, products: products });
+            res.render('detailB', { product: product, regions: regions, products: products });
         } catch (error) {
             console.log(error);
             res.render('error');

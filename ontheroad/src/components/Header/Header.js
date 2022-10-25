@@ -1,24 +1,25 @@
 import React from 'react';
-
+import '../Header/Header.css';
 import logo from '../../assets/On-The-Road-Media-Logo.png';
 
 function Header() {
     return (
-        <header>
-            <div class="headerLeft">
-                <img class="logo" src={logo} alt="logo" />
-                <div class="brand">
-                    <h1>On the road</h1>
-                    <h2>experiencias de viaje alternativas</h2>
+        <React.Fragment>
+            <div className='header'>
+                <div className="headerLeft">
+                    <img className="logo" src={logo} alt="logo" />
+                    <div className="brand">
+                        <h1>On the road</h1>
+                        <h2>experiencias de viaje alternativas</h2>
+                    </div>
+                </div>
+                <div className="headerRight">
+                    <div className="usercont">
+                        <p className="user"></p>
+                    </div>
                 </div>
             </div>
-            <div class="headerRight">
-                <div class="usercont">
-                    <p class="user">Hola</p>
-                </div>
-            </div>
-            <script src="/js/header.js"></script>
-        </header>
+        </React.Fragment>
     );
 }
 

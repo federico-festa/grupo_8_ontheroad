@@ -1,0 +1,13 @@
+.footer {
+    background-color: #ebebeb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logofooter {
+    width: 3px;
+    height: 3%;
+    align-self: center;
+    cursor: pointer;
+}
