@@ -1,20 +1,15 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import Header from '../Header/Header';
-import Sidebar from '../Sidebar/Sidebar';
-import Content from '../Content/Content';
 import Error404 from '../Error404/Error404';
-import Footer from '../Footer/Footer';
+import Dashboard from '../Dashboard/Dashboard';
 
 function App() {
   return (
-    <React.Fragment>
-      <Header />
-      <Sidebar />
-      <Content />
-      <Footer />
-    </React.Fragment>
+    <Routes>
+      <Route path='/' element={<Dashboard />} />
+      <Route path='*' element={<Error404 />} />
+    </Routes>
   );
 }
 

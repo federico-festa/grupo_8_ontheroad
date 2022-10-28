@@ -13,6 +13,11 @@ function Header() {
                         <h2>experiencias de viaje alternativas</h2>
                     </div>
                 </div>
+                <div className='headerCenter'>
+                    <div className='title'>
+                        <h1 className='dashboard'>Dashboard</h1>
+                    </div>
+                </div>
                 <div className="headerRight">
                     <div className="usercont">
                         <p className="user"></p>

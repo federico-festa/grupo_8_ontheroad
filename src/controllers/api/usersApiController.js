@@ -16,7 +16,7 @@ const usersApiController = {
                     },
                     data: {
                         count: users.length,
-                        products: products
+                        users: users
                     }
                 }
                 res.json(response);

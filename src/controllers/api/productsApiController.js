@@ -41,6 +41,27 @@ const productsApiController = {
             console.log(error);
         }
     },
+    regions: (req, res) => {
+        try {
+            db.Region.findAll()
+            .then(regions => {
+                let response = {
+                    meta: {
+                        status: 200,
+                        total: regions.length,
+                        url: 'api/products/regions'
+                    },
+                    data: {
+                        count: regions.length,
+                        regions: regions
+                    }
+                }
+                res.json(response);
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    },
     detail: (req, res) => {
         try {
             db.Product.findByPk(req.params.id)
