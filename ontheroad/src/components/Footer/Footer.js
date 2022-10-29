@@ -1,12 +1,12 @@
 import React from 'react';
-import '../Header/Header.css';
-import logo from '../../assets/On-The-Road-Media-Logo.png';
+import '../Footer/Footer.css';
+import logofooter from '../../assets/On-The-Road-Media-Logo.png';
 
 function Footer() {
     return (
         <React.Fragment>
             <div className="footer">
-                <img className="logofooter" src={logo} />
+                <img className="logofooter" src={logofooter} alt='logo'/>
                 <p>Copyright © 2022 On the road S.R.L</p>
             </div>
         </React.Fragment>

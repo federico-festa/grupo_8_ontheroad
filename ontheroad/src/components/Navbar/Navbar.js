@@ -1,24 +1,25 @@
 import React from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
+import '../Navbar/Navbar.css';
+import { Link } from 'react-router-dom';
 
 function Sidebar() {
     return (
         <React.Fragment>
-            <div className="sidebar">
+            <div className="topnav">
                 <ul className='navbar'>
                     <li className='link'>
                         <Link className='navlink'>
-                            <span>Productos</span>
+                            <span className='text'>Productos</span>
                         </Link>
                     </li>
                     <li className='link'>
                         <Link className='navlink'>
-                            <span>Regiones</span>
+                            <span className='text'>Regiones</span>
                         </Link>
                     </li>
                     <li className='link'>
                         <Link className='navlink'>
-                            <span>Usuarios</span>
+                            <span className='text'>Usuarios</span>
                         </Link>
                     </li>
                 </ul>

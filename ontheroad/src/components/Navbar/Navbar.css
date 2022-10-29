@@ -1,0 +1,40 @@
+/* Desktop */
+
+@media (min-width: 1024px) {
+
+    .topnav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        border-top: 1px solid rgba(35, 35, 37, 0.2);
+        border-bottom: 1px solid rgba(35, 35, 37, 0.2);
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        list-style-type: none;
+        width: 90%;
+        padding: 0%;
+    }
+
+    .link {
+        margin: 0% 10% 0% 10%;
+    }
+
+    .navlink {
+        text-decoration: none;
+    }
+
+    .text {
+        color: rgb(35, 35, 37);
+        text-decoration: none;
+        transition: all 200ms;
+    }
+
+    .text:hover {
+        font-weight: bold;
+    }
+}

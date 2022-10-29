@@ -20,7 +20,7 @@ function Header() {
                 </div>
                 <div className="headerRight">
                     <div className="usercont">
-                        <p className="user"></p>
+                        <p className="user">Hola Admin!</p>
                     </div>
                 </div>
             </div>
