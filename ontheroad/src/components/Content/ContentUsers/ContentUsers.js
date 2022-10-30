@@ -19,6 +19,8 @@ function ContentUsers() {
             .catch(e => console.log(e))
     }, [])
 
+    console.log(users);
+
     return (
         <div className="contentProducts">
             <div className="table">
