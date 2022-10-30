@@ -1,9 +1,8 @@
 import React from "react";
 import { useEffect, useState } from 'react';
 import '../ContentProducts/ContentProducts.css';
-import '../ContentProducts/Table/Table.css';
 
-import Table from '../ContentProducts/Table/Table.js';
+import TableProducts from '../ContentProducts/TableProducts/TableProducts.js';
 
 function ContentProducts() {
 
@@ -35,7 +34,7 @@ function ContentProducts() {
                     </thead>
                     <tbody>
                         {products.map((product, i) => {
-                            return <Table key={`${product}-${i}`} {...product} />
+                            return <TableProducts key={`${product}-${i}`} {...product} />
                         })}
                     </tbody>
                 </table>

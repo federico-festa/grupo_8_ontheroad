@@ -1,7 +1,7 @@
 import React from "react";
-import '../Table/Table.css';
+import '../TableProducts/TableProducts.css';
 
-function Table({lugar, precio, disc, region, desc}) {
+function TableProducts({lugar, precio, disc, region, desc}) {
     return (
         <tr>
             <td>{lugar}</td>
@@ -13,4 +13,4 @@ function Table({lugar, precio, disc, region, desc}) {
     );
 }
 
-export default Table;
+export default TableProducts;

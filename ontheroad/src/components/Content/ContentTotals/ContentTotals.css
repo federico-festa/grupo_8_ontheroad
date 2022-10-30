@@ -2,30 +2,10 @@
 
 @media (min-width: 1024px) {
 
-    .contentTotals {
+    .contentcard {
         display: flex;
         flex-direction: row;
         justify-content: center;
         width: 100%;
-        margin: 3% 0% 3% 0%;
-        padding: 0%;
-    }
-
-    .cardbody {
-        margin: 0% 4% 0% 4%;
-        padding: 0%;
-        border: 1px solid rgba(35, 35, 37, 0.2);
-        border-radius: 5px;
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
-        padding: 3% 5% 3% 5%;
-        transition: all 200ms;
-    }
-
-    .cardbody:hover {
-        box-shadow: 0px 0px 10px rgb(104, 222, 255);
-    }
-
-    .total {
-        text-align: center;
     }
 }
