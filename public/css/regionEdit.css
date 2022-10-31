@@ -89,7 +89,7 @@
 
     .button-container {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
     }
 
     .submit-button {
@@ -100,8 +100,6 @@
         border: 1px solid black;
         border-radius: 50px;
         margin-top: 20px;
-        margin-right: 2%;
-        margin-left: 2%;
         cursor: pointer;
         transition: all 0.4s;
         text-align: center;
