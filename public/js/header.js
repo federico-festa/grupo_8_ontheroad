@@ -15,7 +15,7 @@ window.onscroll = () => {
         });
         droplist.classList.remove('show');
     };
-};
+}
 
 window.onload = () => {
     const logo = document.querySelector('img');
@@ -35,7 +35,7 @@ window.onload = () => {
     userMobile.addEventListener('click', () => {
         mobileDropList.classList.toggle('show');
     });
-};
+}
 
 window.addEventListener('load', () => {
     const guestMobile = document.querySelector('#guestMobile');
@@ -44,7 +44,7 @@ window.addEventListener('load', () => {
     guestMobile.addEventListener('click', () => {
         mobileDropListGuest.style.display = 'block';
     })
-});
+})
 
 window.addEventListener('click', (e) => {
     const mobileDropListGuest = document.querySelector('.mobileDropListGuest');
@@ -52,7 +52,7 @@ window.addEventListener('click', (e) => {
     if (!e.target.matches('.fa-bars')){
         mobileDropListGuest.style.display = 'none';
     };
-});
+})
 
 window.onclick = (e) => {
     const droplist = document.querySelector('.droplist');
@@ -65,4 +65,4 @@ window.onclick = (e) => {
     if (!e.target.matches('.fa-user')){
         mobileDropList.classList.remove('show');
     };
-};
+}

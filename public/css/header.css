@@ -259,6 +259,7 @@
         font-size: 32px;
         transition: all 450ms;
         cursor: pointer;
+        z-index: 9;
     }
 
     .fa-user:hover,
