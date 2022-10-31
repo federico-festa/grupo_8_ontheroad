@@ -9,7 +9,8 @@
                 <h2 class="create-title">Formulario de creación de regiones</h2>
                 <div class="container">
                     <div class="form-container">
-                        <form action="/products/regions/create" method="POST" enctype="multipart/form-data">
+                        <form class="region-create" action="/products/regions/create" method="POST"
+                            enctype="multipart/form-data">
                             <div class="row-1">
                                 <div class="c-1">
                                     <div class="input-container">
@@ -18,6 +19,7 @@
                                         <input type="text" id="name" name="name" placeholder="Ej: Buenos Aires"
                                             class="input" value="<%= locals.oldData ? oldData.name : null %>">
                                         <div class="errors-msg">
+                                            <div class="error"></div>
                                             <% if(locals.errors && errors.name) { %>
                                                 <p>
                                                     <%= errors.name.msg %>
@@ -31,6 +33,7 @@
                                         <input type="text" id="weather" name="weather" placeholder="Ej: Árido"
                                             class="input" value="<%= locals.oldData ? oldData.weather : null %>">
                                         <div class="errors-msg">
+                                            <div class="error2"></div>
                                             <% if(locals.errors && errors.weather) { %>
                                                 <p>
                                                     <%= errors.weather.msg %>
@@ -43,6 +46,7 @@
                                         <input type="file" name="img" id="img" class="img-input"
                                             value="<%= locals.oldData ? oldData.img : null %>">
                                         <div class="errors-msg">
+                                            <div class="error3"></div>
                                             <% if(locals.errors && errors.img) { %>
                                                 <p>
                                                     <%= errors.img.msg %>
@@ -60,6 +64,7 @@
                 </div>
             </main>
             <script src="js/header.js"></script>
+            <script src="js/regionCreate.js"></script>
             <%- include('partials/footer') %>
     </body>
 

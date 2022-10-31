@@ -10,15 +10,17 @@
                 </h2>
                 <div class="container">
                     <div class="form-container">
-                        <form action="/products/regions/edit/<%= regionToEdit.id %>?_method=PUT" method="POST"
-                            enctype="multipart/form-data">
+                        <form class="region-edit" action="/products/regions/edit/<%= regionToEdit.id %>?_method=PUT"
+                            method="POST" enctype="multipart/form-data">
                             <div class="row-1">
                                 <div class="c-1">
                                     <div class="input-container">
                                         <label for="name" class="label-container">Región:</label>
                                         <br>
-                                        <input type="text" id="name" name="name" class="input" value="<%= regionToEdit.name%>">
+                                        <input type="text" id="name" name="name" class="input"
+                                            value="<%= regionToEdit.name%>">
                                         <div class="errors-msg">
+                                            <div class="error"></div>
                                             <% if(locals.errors && errors.name) { %>
                                                 <p>
                                                     <%= errors.name.msg %>
@@ -31,25 +33,14 @@
                                         <br>
                                         <input type="text" id="weather" name="weather" placeholder="Ej: Árido"
                                             class="input" value="<%= regionToEdit.weather%>">
-                                            <div class="errors-msg">
-                                                <% if(locals.errors && errors.weather) { %>
-                                                    <p>
-                                                        <%= errors.weather.msg %>
-                                                    </p>
-                                                    <% } %>
-                                            </div>
-                                    </div>
-                                    <div class="input-container">
-                                        <label for="img" class="label-container">Imagen:</label><br>
-                                        <input type="file" name="img" id="image" class="img-input"
-                                            value="<%= regionToEdit.img %>">
-                                            <div class="errors-msg">
-                                                <% if(locals.errors && errors.img) { %>
-                                                    <p>
-                                                        <%= errors.img.msg %>
-                                                    </p>
-                                                    <% } %>
-                                            </div>
+                                        <div class="errors-msg">
+                                            <div class="error2"></div>
+                                            <% if(locals.errors && errors.weather) { %>
+                                                <p>
+                                                    <%= errors.weather.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -57,12 +48,15 @@
                                 <button type="submit" class="submit-button">Guardar región</button>
                                 <a href="/products/regions/delete/<%= regionToEdit.id %>"><button type="button"
                                         class="submit-button">Eliminar región</button></a>
+                                <a href="/products/regions/edit/img/<%= regionToEdit.id %>"><button type="button"
+                                        class="submit-button">Editar imagen</button></a>
                             </div>
                     </div>
                     </form>
                 </div>
             </main>
             <script src="js/header.js"></script>
+            <script src="js/regionEdit.js"></script>
             <%- include('./partials/footer') %>
     </body>
 
