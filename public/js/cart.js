@@ -2,6 +2,7 @@ window.onload = () => {
     const productsCart = document.querySelector('.products');
     const checkout = document.querySelector('.checkout');
     const empty = document.querySelector('.empty');
+    const total = document.querySelector('.total');
 
     fetch('http://localhost:3001/api/products/list')
         .then(response => response.json())
@@ -43,7 +44,7 @@ window.onload = () => {
             });
         })
         .catch(e => console.log(e));
-
+        
     if (!localStorage.getItem('products')) {
         empty.style.display = 'block';
     };
@@ -59,5 +60,5 @@ window.onload = () => {
         localStorage.removeItem('products');
         alert('¡Tu compra fue aprobada!');
         location.reload();
-    }) 
+    })
 }

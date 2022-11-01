@@ -17,7 +17,7 @@ window.onscroll = () => {
     };
 }
 
-window.onload = () => {
+window.addEventListener('load', () => {
     const logo = document.querySelector('img');
     const userIcon = document.querySelector('.fa-user');
     const droplist = document.querySelector('.droplist');
@@ -35,7 +35,7 @@ window.onload = () => {
     userMobile.addEventListener('click', () => {
         mobileDropList.classList.toggle('show');
     });
-}
+})
 
 window.addEventListener('load', () => {
     const guestMobile = document.querySelector('#guestMobile');
