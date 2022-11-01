@@ -2,6 +2,7 @@ const db = require('../../database/models')
 const sequelize = db.sequelize;
 const { Op } = require('sequelize');
 const { validationResult } = require('express-validator');
+const { promiseImpl } = require('ejs');
 
 const productsApiController = {
     products: (req, res) => {
@@ -44,20 +45,56 @@ const productsApiController = {
     regions: (req, res) => {
         try {
             db.Region.findAll()
-            .then(regions => {
-                let response = {
-                    meta: {
-                        status: 200,
-                        total: regions.length,
-                        url: 'api/products/regions'
-                    },
-                    data: {
-                        count: regions.length,
-                        regions: regions
+                .then(async regions => {
+                    const regionsData = await Promise.all(
+                        regions.map(async (region) => {
+                            const dataRegion = await db.Product.findAll({
+                                where: {
+                                    id_region: region.id
+                                }
+                            })
+                            return {
+                                'name': region.name, 'clima': region.weather, 'quant': dataRegion.length
+                            }
+                        })
+                    )
+                    let response = {
+                        meta: {
+                            status: 200,
+                            total: regionsData.length,
+                            url: 'api/products/regions'
+                        },
+                        data: {
+                            count: regionsData.length,
+                            regions: regionsData
+                        }
                     }
+                    res.json(response);
+                })
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    region1: (req, res) => {
+        try {
+            db.Product.findAll({
+                where: {
+                    id_region: 1
                 }
-                res.json(response);
             })
+                .then(products => {
+                    let response = {
+                        meta: {
+                            status: 200,
+                            total: products.length,
+                            url: 'api/products/region/1'
+                        },
+                        data: {
+                            count: products.length
+                        }
+                    }
+                    res.json(response);
+                })
         } catch (error) {
             console.log(error);
         }

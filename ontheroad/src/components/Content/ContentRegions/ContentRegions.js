@@ -11,11 +11,7 @@ function ContentRegions() {
     useEffect(() => {
         fetch('http://localhost:3001/api/products/regions')
             .then(res => res.json())
-            .then(data => setRegions(data.data.regions.map((region) => {
-                return (
-                    {'region': region.name, 'clima': region.weather, 'quant': 'x'}
-                )
-            })))
+            .then(data => setRegions(data.data.regions))
             .catch(e => console.log(e))
     }, [])
 

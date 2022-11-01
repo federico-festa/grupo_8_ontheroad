@@ -1,10 +1,10 @@
 import React from "react";
 import '../TableRegions/TableRegions.css';
 
-function TableRegions({region, clima, quant}) {
+function TableRegions({name, clima, quant}) {
     return (
         <tr>
-            <td>{region}</td>
+            <td>{name}</td>
             <td>{clima}</td>
             <td>{quant}</td>
         </tr>
