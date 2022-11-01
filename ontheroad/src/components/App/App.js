@@ -7,6 +7,7 @@ import Header from '../Header/Header.js';
 import Navbar from '../Navbar/Navbar.js'
 import Footer from '../Footer/Footer.js';
 import ContentProducts from '../Content/ContentProducts/ContentProducts.js';
+import LastProduct from '../Content/ContentProducts/LastProduct/LastProduct.js';
 import ContentRegions from '../Content/ContentRegions/ContentRegions.js';
 import ContentUsers from '../Content/ContentUsers/ContentUsers.js';
 import ProductsTotal from '../Content/ContentTotals/ProductsTotal/ProductsTotal.js';
@@ -17,8 +18,8 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Dashboard />} />
-      <Route path='*' element={<Error404 />} />
-      <Route path='/products' element={[<Header />, <Navbar />, <ProductsTotal />, <ContentProducts />, <Footer />]} />
+      <Route path='*' element={[<Header />, <Navbar />, <Error404 />, <Footer />]} />
+      <Route path='/products' element={[<Header />, <Navbar />, <ProductsTotal />, <ContentProducts />, <LastProduct />, <Footer />]} />
       <Route path='/regions' element={[<Header />, <Navbar />, <RegionsTotal />, <ContentRegions />, <Footer />]} />
       <Route path='/users' element={[<Header />, <Navbar />, <UsersTotal />, <ContentUsers />, <Footer />]} />
     </Routes>

@@ -1,15 +1,17 @@
 import React from 'react';
 import '../Navbar/Navbar.css';
-import { Link, Routes, Route } from 'react-router-dom';
-
-import Content from '../Content/Content.js';
-import Error404 from '../Error404/Error404.js';
+import { Link } from 'react-router-dom';
 
 function Sidebar() {
     return (
         <React.Fragment>
             <div className="topnav">
                 <ul className='navbar'>
+                <li className='link'>
+                        <Link className='navlink' to='/'>
+                            <span className='text'>Inicio</span>
+                        </Link>
+                    </li>
                     <li className='link'>
                         <Link className='navlink' to='/products'>
                             <span className='text'>Productos</span>
