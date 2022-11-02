@@ -8,41 +8,107 @@
         display: none;
     }
 
-    /*Bottom banner*/
-
-    section.bottom-banner {
-        background-color: #f2f1ec;
-        margin: 50px 10px 100px 10px;
-        padding: 10px;
-        display: flex;
-        border: 1px solid #ebebeb;
+    .account-page {
+        background-color: rgb(35, 35, 37);
     }
-
-    .bottom-banner img {
-        width: 25%;
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    }
-
-    .bottom-text {
-        margin: 10px;
-        padding: 10px;
-    }
-
-    /*login*/
 
     .container {
-        padding-right: 15px;
-        padding-left: 15px;
+        padding: 5%;
         margin: auto;
-        max-width: 85%;
+        width: 100%;
+        background-color: rgb(35, 35, 37);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     h3 {
         color: white;
-        font-size: 38px;
-        padding-top: 30px;
-        padding-bottom: 15px;
+        font-size: 42px;
+        padding: 5%;
         text-align: center;
+    }
+
+    .form-group {   
+        margin-bottom: 20px; 
+        position: relative;
+        width: 100%;
+    }
+    
+    .form-label {
+        color: white;
+        width: 100%;
+        margin-bottom: 10px;
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+    
+    .form-control {
+        display: block;
+        padding: 10px 8px;
+        width: 100%;
+        font-size: 14px;
+        border: 1px solid white;
+        appearance: none;
+        color: black;
+    }
+    
+    .text-center {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 14px;
+    }
+    
+    .errors-msg {
+        background-color: rgb(225,83,82);
+        color: white;
+        margin-top: 2px;
+        padding-left: 10px;
+    }
+    
+    .forgot-button {
+        padding: 10px 15px;
+        color: white;
+    }
+    
+    .sesion-button {
+        display: block;
+        padding: 15px 25px;
+        background-color: #e68524;
+        border: 2px solid #e68524;
+        border-radius: 50px;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: white;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 1px;
+        margin: auto;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: all 0.4s;
+    }
+    
+    .sesion-button:hover {
+        background-color: #e99f55;
+        border: 2px solid #e99f55;
+    }
+    
+    .register-button {
+        font-weight: bold;
+        color: white;
+    }
+    
+    .t2 {
+        color: white;
+    }
+
+    .checkbox {
+        color: white;
     }
 }
 
@@ -155,15 +221,5 @@
 
     .checkbox {
         color: white;
-    }
-}
-
-/* Tablet */
-
-@media (min-width: 481px) and (max-width: 883px) {
-    
-    .container {
-        margin: auto;
-        max-width: 50%;
     }
 }

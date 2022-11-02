@@ -1,3 +1,21 @@
+@media (max-width: 1024px) {
+
+    .errorCont {
+        background-color: rgb(35,35,37);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .errorMsg {
+        padding: 17%;
+        margin-top: 0%;
+        font-size: 27px;
+        text-align: center;
+        color: white;
+    }
+}
+
 /* Desktop */
 
 @media (min-width: 1024px) {

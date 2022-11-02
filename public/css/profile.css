@@ -1,13 +1,156 @@
 /*Mobile first*/
 
-/*Main*/
+@media (max-width: 1024px) {
+
+    main {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(35,35,37);
+    }
+
+    .profile-cont-1 {
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 10px;
+        margin: auto;
+        margin-top: 2%;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        width: 90%;
+    }
+
+    .profile-image {
+        margin: 10px;
+        width: 170px;
+        height: 170px;
+    }
+
+    .profile-image img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .edit-img {
+        background-color: rgb(35, 35, 37);
+        color: white;
+        height: 45px;
+        width: 200px;
+        border: 1px solid rgb(35, 35, 37);
+        border-radius: 50px;
+        margin: 20px 0px 20px 0px;
+        cursor: pointer;
+        transition: all 0.4s;
+        text-align: center;
+        font-size: 1em;
+    }
+
+    .profile-cont-2 {
+        border-radius: 10px;
+        background-color: white;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .profile-checkbox {
+        margin: 10px 0px 20px 0px;
+        border-top: 1px solid #ebebeb;
+        padding-top: 10px;
+    }
+
+    .team {
+        font-size: 18px;
+        margin: 0px 0px 10px 0px;
+        text-align: center;
+    }
+
+    .label {
+        margin: 0px 10px 0px 0px;
+    }
+
+    .input {
+        margin: 0px 0px 0px 30px;
+    }
+
+    .profile-info {
+        border: 1px solid #666;
+        border-radius: 10px;
+        width: 80%;
+        padding: 10px;
+    }
+
+    .name {
+        color: rgb(35, 35, 37);
+    }
+
+    .info-title {
+        font-size: 20px;
+        margin: 10px 0px 20px 10px;
+        width: 90%;
+        border-bottom: 1px solid #666;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 5px;
+        text-decoration: none;
+    }
+
+    .buttons {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .submit-button {
+        background-color: rgb(35, 35, 37);
+        color: white;
+        height: 45px;
+        width: 165px;
+        border: 1px solid rgb(35, 35, 37);
+        border-radius: 50px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: all 0.4s;
+        text-align: center;
+        font-size: 1em;
+    }
+
+    .beach {
+        background-image: url('/img/system/beach.jpg');
+    }
+
+    .mountain {
+        background-image: url('/img/system/mountain.jpg');
+    }
+
+    .city {
+        background-image: url('/img/system/city2.jpeg');
+    }
+}
 
 /*Breakpoints*/
 
 /*Desktop*/
 
 @media (min-width: 1024px) {
-    
+
     /*Profile*/
 
     main {
@@ -15,7 +158,7 @@
         flex-direction: row;
         background-color: #ebebeb;
     }
-    
+
     .profile-cont-1 {
         background-color: white;
         display: flex;
@@ -23,7 +166,7 @@
         flex-wrap: nowrap;
         justify-content: space-around;
         align-items: center;
-        border-radius: 10px;  
+        border-radius: 10px;
         margin: 20px 20px 25px 50px;
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
         width: 19%;
@@ -78,7 +221,7 @@
         border-top: 1px solid #ebebeb;
         padding-top: 10px;
     }
-    
+
     .team {
         font-size: 18px;
         margin: 0px 0px 10px 0px;

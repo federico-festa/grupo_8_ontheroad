@@ -41,23 +41,27 @@
                     <a href="/user/profile">Perfil</a>
                     <a href="#favoritos">Favoritos</a>
                     <a href="/cart">Carrito</a>
+                    <a href="/contact">Contacto</a>
+                    <a href="/products">Experiencias</a>
+                    <a href="/products/regions">Regiones</a>
+                    <a href="/products/promotions">Promociones</a>
                     <a href="/user/logout">Cerrar sesión</a>
                 </div>
             </div>
             <% } %>
-            <% if(!locals.log) { %>
-                <div class="dropMobileGuest">
-                    <button id="guestMobile"><i class="fa-solid fa-bars"></i></button>
-                    <div class="mobileDropListGuest">
-                        <a href="/user/register">Registrarse</a>
-                        <a href="/user/login">Iniciar sesión</a>
-                        <a href="/contact">Contacto</a>
-                        <a href="/products">Experiencias</a>
-                        <a href="/products/regions">Regiones</a>
-                        <a href="/products/promotions">Promociones</a>
+                <% if(!locals.log) { %>
+                    <div class="dropMobileGuest">
+                        <button id="guestMobile"><i class="fa-solid fa-bars"></i></button>
+                        <div class="mobileDropListGuest">
+                            <a href="/user/register">Registrarse</a>
+                            <a href="/user/login">Iniciar sesión</a>
+                            <a href="/contact">Contacto</a>
+                            <a href="/products">Experiencias</a>
+                            <a href="/products/regions">Regiones</a>
+                            <a href="/products/promotions">Promociones</a>
+                        </div>
                     </div>
-                </div>
-                <% } %>
+                    <% } %>
 
     </div>
     <nav class="top-nav">

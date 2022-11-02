@@ -1,6 +1,108 @@
-/* Mobile first */
+/* Mobile*/
 
-/*Breakpoints*/
+@media (max-width: 1024px) {
+
+    main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: rgb(35,35,37);
+    }
+
+    .edit-title {
+        color: white;
+        margin: auto;
+        padding: 2%;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .container {
+        background-color: white;
+        width: 90%;
+        border-radius: 10px;
+        margin: auto;
+        margin-bottom: 2%;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .form-containter {
+        background-color: white;
+        margin: 10px;
+        border: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .row-1 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .c-1 {
+        width: 50%;
+        height: 100%;
+    }
+
+    .c-2 {
+        width: 50%;
+        height: 100%;
+    }
+
+    .input-container {
+        margin: 5px;
+        width: 100%;
+    }
+
+    .label-container {
+        margin: 5px;
+        font-size: 1.2em;
+    }
+
+    .input {
+        width: 80%;
+        border-radius: 5px;
+        border: solid 1px gray;
+        height: 45px;
+        font-size: 1.2em;
+        margin-bottom: 5px;
+        padding: 0px 15px;
+    }
+
+    .errors-msg {
+        background-color: rgb(225, 83, 82);
+        color: white;
+        padding-left: 10px;
+        width: 80%;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .submit-button {
+        background-color: rgb(35, 35, 37);
+        color: white;
+        height: 45px;
+        width: 150px;
+        border: 1px solid rgb(35, 35, 37);
+        border-radius: 50px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: all 0.4s;
+        text-align: center;
+        font-size: 1em;
+    }
+}
 
 /*Desktop*/
 

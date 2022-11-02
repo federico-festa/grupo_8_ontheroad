@@ -1,6 +1,31 @@
-/* Mobile first */
+/* Mobile*/
 
-/* Breakpoints */
+@media (max-width: 1024px) {
+    main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: rgb(35,35,37);
+    }
+
+    .result {
+        margin: 2% 0% 1% 1.5%;
+        color: white;
+    }
+
+    .not-found {
+        color: white;
+        text-align: center;
+    }
+
+    .inspo {
+        text-align: center;
+        margin: auto;
+        margin-left: 5%;
+    }
+
+}
 
 /* Desktop */
 

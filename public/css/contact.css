@@ -12,29 +12,95 @@
         background-color: rgb(35, 35, 37);
     }
 
-    .top{}
+    .top {
+        background-color: rgb(35, 35, 37);
+        margin: auto;
+        padding: 5%;
+    }
 
-    .contact{}
+    .contact {
+        font-size: 34px;
+        color: white;
+        text-align: center;
+        margin: auto;
+    }
 
-    .dudas{}
+    .dudas {
+        color: white;
+        text-align: center;
+        margin: auto;
+    }
 
-    .left{}
+    .bottom {
+        width: 100%;
+    }
 
-    .banner{}
+    .left {
+        display: block;
+    }
 
-    .contact-img{}
+    .banner {
+        color: white;
+        text-align: center;
+        margin: auto;
+        padding: 5%;
+    }
 
-    .info{}
+    .contact-img {
+        display: none;
+    }
 
-    p{}
+    .info {
+        text-align: center;
+    }
 
-    .right{}
+    .right {
+        width: 100%;
+        background-color: rgb(35, 35, 37);
+    }
 
-    .input{}
+    .c-form {
+        display: flex;
+        flex-direction: column;
+        margin: 5%;
+        background-color: white;
+        border-radius: 10px;
+        padding: 3%;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
 
-    .msg-input{}
+    .inputs {
+        display: flex;
+        justify-content: space-around;
+    }
 
-    .button{}
+    .c-input {
+        width: 45%;
+        margin: 2%;
+        height: 40px;
+        padding: 2%;
+    }
+
+    .msg-input {
+        width: 96%;
+        margin: 2% 2% 5% 2%;
+        height: 90px;
+        padding: 2%;
+    }
+
+    .c-button {
+        background-color: rgb(35, 35, 37);
+        color: white;
+        height: 45px;
+        width: 200px;
+        border: 1px solid black;
+        border-radius: 50px;
+        margin: auto;
+        cursor: pointer;
+        transition: all 0.4s;
+        text-align: center;
+        font-size: 1em;
+    }
 }
 
 /*Desktop*/
@@ -50,41 +116,41 @@
         align-items: center;
         width: 100%;
     }
-    
-    .top{
+
+    .top {
         width: 100%;
         margin: 1% 0% 1% 0%;
     }
 
-    .contact{
+    .contact {
         text-align: center;
         font-size: 36px;
         color: #666;
     }
-    
-    .dudas{
+
+    .dudas {
         text-align: center;
         color: rgb(35, 35, 37);
     }
-    
-    .bottom{
+
+    .bottom {
         display: flex;
     }
 
-    .left{
+    .left {
         width: 50%;
-        background-color: rgb(241,228,223);
+        background-color: rgb(241, 228, 223);
     }
 
-    .banner{
+    .banner {
         position: relative;
     }
 
-    .contact-img{
+    .contact-img {
         width: 100%;
     }
 
-    .info{
+    .info {
         z-index: 9;
         position: absolute;
         bottom: 40%;
@@ -94,23 +160,23 @@
         border-radius: 10px;
     }
 
-    p{
+    p {
         text-align: center;
         color: rgb(35, 35, 37);
         font-size: 18px;
     }
 
-    .data{
+    .data {
         color: #666;
         font-size: 20px;
     }
 
-    .right{
+    .right {
         width: 50%;
-        background-color: rgb(241,228,223);
+        background-color: rgb(241, 228, 223);
     }
 
-    .c-form{
+    .c-form {
         display: flex;
         flex-direction: column;
         margin: 16% 5% 5% 5%;
@@ -120,27 +186,27 @@
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
 
-    .inputs{
+    .inputs {
         display: flex;
         justify-content: space-around;
     }
 
-    .c-input{
+    .c-input {
         width: 45%;
         margin: 2%;
         height: 40px;
         padding: 2%;
     }
 
-    .msg-input{
+    .msg-input {
         width: 96%;
         margin: 2% 2% 5% 2%;
         height: 100px;
         padding: 2%;
     }
 
-    .c-button{
-        background-color:  rgb(35, 35, 37);
+    .c-button {
+        background-color: rgb(35, 35, 37);
         color: white;
         height: 45px;
         width: 200px;
