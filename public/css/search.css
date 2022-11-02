@@ -31,13 +31,6 @@
 
 @media (min-width: 1024px) {
 
-    main {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-
     .result {
         margin: 2% 0% 1% 1.5%;
         color: #666;

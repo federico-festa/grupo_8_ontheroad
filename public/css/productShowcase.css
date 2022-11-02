@@ -91,13 +91,15 @@
 
     .content {
         display: flex;
+        flex-direction: row;
         justify-content: center;
-        align-items: center;
-        flex-wrap: nowrap;
+        align-content: flex-start;
+        flex-wrap: wrap;
         margin-bottom: 5%;
         margin-top: 0%;
         border-top: 1px solid #ebebeb;
         border-bottom: 1px solid #ebebeb;
+        width: 100%;
     }
 
     article.product {
@@ -105,11 +107,10 @@
         flex-direction: row;
         justify-content: center;
         border: 0px solid #dadada;
-        margin: 2%;
-        padding: 1%;
+        margin: 1%;
         transition: all 450ms;
         border-radius: 4px;
-        width: 100%;
+        width: 22%;
     }
 
     article.product:hover {

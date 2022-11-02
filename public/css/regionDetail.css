@@ -30,13 +30,6 @@
 
 @media (min-width: 1024px) {
 
-    main {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-
     .banner {
         position: relative;
     }

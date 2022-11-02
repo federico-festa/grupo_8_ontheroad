@@ -10,17 +10,3 @@
         background-color: rgb(35, 35, 37);
     }
 }
-
-/* Desktop */
-
-@media (min-width: 1024px) {
-
-    /*Main*/
-
-    main {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-}
