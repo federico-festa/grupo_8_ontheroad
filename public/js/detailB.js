@@ -9,9 +9,11 @@ window.onload = () => {
             } else if (!products.find(id => id == e.target.id)) {
                 products.push(e.target.id);
                 localStorage.setItem('products', JSON.stringify(products));
+                alert('Se agregó el producto al carrito!');
             };
         } else {
             localStorage.setItem('products', JSON.stringify([e.target.id]))
+            alert('Se agregó el producto al carrito!');
         };
     });
 }

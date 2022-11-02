@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener('load', () => {
     const productsCart = document.querySelector('.products');
     const checkout = document.querySelector('.checkout');
     const empty = document.querySelector('.empty');
@@ -61,4 +61,4 @@ window.onload = () => {
         alert('¡Tu compra fue aprobada!');
         location.reload();
     })
-}
+})
