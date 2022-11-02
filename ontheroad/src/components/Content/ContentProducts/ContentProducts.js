@@ -13,7 +13,7 @@ function ContentProducts() {
             .then(res => res.json())
             .then(data => setProducts(data.data.products.map((product) => {
                 return (
-                    {'lugar': product.name, 'precio': product.price, 'region': product.idRegion, 'desc': product.shortDescription, 'disc': product.discount}
+                    {'lugar': product.name, 'precio': product.price, 'region': product.id_region, 'desc': product.shortDescription, 'disc': product.discount}
                 )
             })))
             .catch(e => console.log(e))
