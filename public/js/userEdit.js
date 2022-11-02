@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener('load', () => {
     const form = document.querySelector('.form-edit');
     const firstName = document.querySelector('#firstName');
     const lastName = document.querySelector('#lastName');
@@ -90,4 +90,4 @@ window.onload = () => {
         error3.innerHTML = '';
         error4.innerHTML = '';    
     });
-}
+})

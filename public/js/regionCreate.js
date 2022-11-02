@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener('load', () => {
     const form = document.querySelector('.region-create');
     const name = document.querySelector('#name');
     const weather = document.querySelector('#weather');
@@ -63,4 +63,4 @@ window.onload = () => {
             form.submit();
         };
     });
-}
+})

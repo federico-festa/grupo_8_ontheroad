@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener('load', () => {
     const form = document.querySelector('.password-form');
     const password = document.querySelector('#password');
     const password2 = document.querySelector('#password2');
@@ -56,4 +56,4 @@ window.onload = () => {
             form.submit();
         };    
     });
-}
+})

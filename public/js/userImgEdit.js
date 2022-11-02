@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener('load', () => {
     const form = document.querySelector('.img-form');
     const img = document.querySelector('#img');
     const error = document.querySelector('.error');
@@ -20,4 +20,4 @@ window.onload = () => {
             form.submit();
         };
     });
-}
+})

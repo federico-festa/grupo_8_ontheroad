@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener('load', () => {
     const form = document.querySelector('.create-form');
     const name = document.querySelector('#name');
     const discount = document.querySelector('#discount');
@@ -125,4 +125,4 @@ window.onload = () => {
             form.submit();
         };
     });
-}
+})
