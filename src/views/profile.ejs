@@ -8,7 +8,11 @@
             <main>
                 <section class="profile-cont-1">
                     <div class="profile-image">
-                        <img src="./img/users/<%= user.img %>">
+                        <% if (user.img) { %>
+                            <img src="./img/users/<%= user.img %>">
+                            <% } else { %>
+                                <img src="./img/users/default.png">
+                            <% } %>
                     </div>
                     <a href="/user/edit/img/<%= user.id %>"><button type="button" class="edit-img">Editar imagen de
                             perfil</button></a>
