@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener('load', () => {
     const buttonAdd = document.querySelector('.add');
 
     buttonAdd.addEventListener('click', (e) => {
@@ -16,4 +16,4 @@ window.onload = () => {
             alert('Se agregó el producto al carrito!');
         };
     });
-}
+})

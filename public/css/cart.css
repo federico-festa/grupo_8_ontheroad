@@ -8,14 +8,13 @@
 
 /*Mobile first*/
 
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
 
     /*Main*/
 
     main {
-        background-image: url('/img/system/cart-back.webp');
         background-size: contain;
-        background-color: #f2f1ec;
+        background-color: rgb(35, 35, 37);
     }
 
     /*Cart*/
@@ -68,6 +67,7 @@
     .exp {
         display: flex;
         flex-direction: column;
+        margin-left: 6%;
     }
 
     .cart-product img {
@@ -78,9 +78,13 @@
         text-align: center;
     }
 
+    .desc {
+        text-align: center;
+    }
+
     .price {
         width: 100%;
-        margin: 10px 0px 0px 0px;
+        margin: auto;
         text-align: center;
     }
 
@@ -89,7 +93,6 @@
         background-color: white;
         margin: 20px;
         padding: 10px;
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
         display: flex;
         flex-direction: column;
     }
@@ -109,6 +112,19 @@
         border-radius: 50px;
         margin: auto;
     }
+
+    .empty-button {
+        background-color: rgb(35, 35, 37);
+        color: white;
+        font-size: 20px;
+        width: 92%;
+        height: 50px;
+        border: 0px;
+        border-radius: 50px;
+        margin: auto;
+        margin-top: 4%;
+    }
+
 }
 
 /*Breakpoints*/
@@ -211,48 +227,45 @@
     .cart-product {
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         align-items: center;
         justify-content: center;
         margin: 6% 0% 6% 0%;
     }
 
-    .cart-product i {
-        font-size: 30px;
-        margin: 0% 13% 0% 13%;
-        align-self: center;
-    }
-
     .exp {
         display: flex;
-        flex-direction: row;
-        width: 70%;
-        margin: 1% 0% 0% 0%;
+        flex-direction: column;
+        width: 50%;
+        margin: auto;
     }
 
 
     .cart-product h4 {
         text-align: center;
         align-self: center;
-        margin: 0% 2% 0% 0%;
+        margin: auto;
+        width: 40%;
     }
 
     .desc {
         text-align: center;
         width: 100%;
-        margin: 0% 0% 0% 2%;
+        margin: auto;
     }
 
     .price {
         display: flex;
-        width: 30%;
+        width: 40%;
         margin: auto;
         text-align: center;
     }
 
     .price h3 {
         text-align: center;
-        margin: 0% 0% 0% 0%;
+        margin: auto;
     }
 
     .checkout {
@@ -282,11 +295,28 @@
         border-radius: 50px;
         transition: all 500ms;
         cursor: pointer;
-        ;
+        margin-bottom: 4%;
     }
 
     .checkout-button:hover {
-        background-color: rgba(0, 0, 0, 0.651);
+        background-color: rgba(46, 82, 47, 0.651);
+        border-color: rgba(0, 0, 0, 0.651);
+    }
+
+    .empty-button {
+        background-color: rgb(35, 35, 37);
+        color: white;
+        font-size: 20px;
+        width: 110%;
+        height: 45px;
+        border: 0px;
+        border-radius: 50px;
+        transition: all 500ms;
+        cursor: pointer;
+    }
+
+    .empty-button:hover {
+        background-color: rgba(60, 21, 21, 0.651);
         border-color: rgba(0, 0, 0, 0.651);
     }
 }

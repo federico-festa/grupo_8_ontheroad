@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener('load', () => {
     const form = document.querySelector('#register-form');
     const reset = document.querySelector('.reset-button');
     const firstName = document.querySelector('#firstName');
@@ -126,4 +126,4 @@ window.onload = () => {
         error3.innerHTML = '';
         error4.innerHTML = '';    
     });
-}
+})

@@ -1,6 +1,8 @@
 window.addEventListener('load', () => {
     const productsCart = document.querySelector('.products');
     const checkout = document.querySelector('.checkout');
+    const checkoutButton = document.querySelector('.checkout-button');
+    const emptyButton = document.querySelector('.empty-button');
     const empty = document.querySelector('.empty');
     const total = document.querySelector('.total');
 
@@ -14,7 +16,6 @@ window.addEventListener('load', () => {
                 if (product.id == cart[0] || cart[1] || cart[2]) {
                     const cartProduct = document.createElement('div');
                     const exp = document.createElement('div');
-                    const i = document.createElement('i');
                     const h4 = document.createElement('h4');
                     const desc = document.createElement('div');
                     const priceDiv = document.createElement('div');
@@ -22,8 +23,6 @@ window.addEventListener('load', () => {
 
                     cartProduct.setAttribute('class', 'cart-product');
                     exp.setAttribute('class', 'exp');
-                    i.setAttribute('class', 'fa-sharp fa-solid fa-circle-xmark');
-                    i.setAttribute('id', 'icon');
                     h4.setAttribute('class', 'name');
                     h4.textContent = product.name;
                     desc.setAttribute('class', 'desc');
@@ -33,7 +32,6 @@ window.addEventListener('load', () => {
                     price.textContent = '$' + product.price;
 
                     cartProduct.appendChild(exp);
-                    exp.appendChild(i);
                     exp.appendChild(h4);
                     exp.appendChild(desc);
                     cartProduct.appendChild(priceDiv);
@@ -47,18 +45,18 @@ window.addEventListener('load', () => {
         
     if (!localStorage.getItem('products')) {
         empty.style.display = 'block';
+        checkout.style.display = 'none';
     };
 
-    const x = document.querySelectorAll('.fa-circle-xmark');
-    if (x != undefined) {
-        console.log(x);
-    } else {
-        console.log('no');
-    };
-
-    checkout.addEventListener('click', (e) => {
+    checkoutButton.addEventListener('click', (e) => {
         localStorage.removeItem('products');
         alert('¡Tu compra fue aprobada!');
+        location.reload();
+    })
+
+    emptyButton.addEventListener('click', (e) => {
+        localStorage.removeItem('products');
+        alert('Se vació el carrito');
         location.reload();
     })
 })
