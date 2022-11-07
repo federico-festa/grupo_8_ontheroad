@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="/" />
+<%- include('partials/head', {title: 'Dashboard' , css: 'dashboard.css' }) %>
+
+    <body>
+        <%- include('./partials/header') %>
+            <main>
+                <div class="dashboardContainer">
+                    <h2 class="dashboardTitle">Dashboard</h2>
+                    <div class="dashboardContent">
+                        <div class="row1">
+                            <p class="total">Total de productos: <%= products.length %>
+                            </p>
+                            <a href="/products/create"><button type="button" class="button">Crear producto</button></a>
+                            <div class="editProduct">
+                                <p class="edit">Editar producto:</p>
+                                <ul class="list">
+                                    <% products.map((product)=> { %>
+                                        <li>
+                                            <a href="/products/edit/<%= product.id %>">
+                                                <%= product.name %>
+                                            </a>
+                                        </li>
+                                        <% }) %>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row2">
+                            <p class="total">Total de regiones: <%= regions.length %>
+                            </p>
+                            <a href="/products/regions/create"><button type="button" class="button">Crear región</button></a>
+                            <div class="editRegion">
+                                <p class="edit">Editar región:</p>
+                                <ul class="list">
+                                    <% regions.map((region)=> { %>
+                                        <li>
+                                            <a href="/products/regions/edit/<%= region.id %>">
+                                                <%= region.name %>
+                                            </a>
+                                        </li>
+                                        <% }) %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <%- include('./partials/footer') %>
+                <script src="js/header.js"></script>
+    </body>
+
+</html>

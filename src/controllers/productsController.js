@@ -367,6 +367,16 @@ const productsController = {
             console.log(error);
             res.render('error');
         };
+    },
+    dashboard: async (req, res) => {
+        try {
+            const products = await db.Product.findAll();
+            const regions = await db.Region.findAll();
+            res.render('dashboard', { products: products, regions: regions });
+        } catch (error) {
+            console.log(error);
+            res.render('error');
+        };
     }
 };
 

@@ -22,6 +22,7 @@ router.get('/create', admin, productsController.create);
 router.get('/edit/:id', admin, productsController.edit);
 router.get('/delete/:id', admin, productsController.delete);
 router.get('/edit/img/:id', admin, productsController.imgEdit);
+router.get('/dashboard', admin, productsController.dashboard);
 
 router.post('/create', admin, productUpload.single('img'), validations.store, productsController.store);
 router.post('/regions/create', admin, regionUpload.single('img'), validations.regionStore, productsController.regionStore);
